@@ -28,7 +28,7 @@ class WelcomeController implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $controller = $app['controllers_factory'];
-        $controller->get('/', [$this, 'indexAction']);
+        $controller->get('/', [$this, 'indexAction'])->bind('index');
         return $controller;
     }
 

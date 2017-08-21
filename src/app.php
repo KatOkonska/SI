@@ -12,8 +12,10 @@ use Silex\Provider\ValidatorServiceProvider;
 use Silex\Provider\LocaleServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 
+
 $app = new Application();
 $app->register(new ServiceControllerServiceProvider());
+$app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new AssetServiceProvider());
 $app->register(
     new DoctrineServiceProvider(),
@@ -36,9 +38,38 @@ $app->register(
     new SecurityServiceProvider(),
     [
         'security.firewalls' => [
-            'unsecured' => [
-                'anonymous' => true,
+            'dev' => [
+                'pattern' => '^/(_(profiler|wdt)|css|images|js)/',
+                'security' => false,
             ],
+            'main' => [
+                'pattern' => '^.*$',
+                'form' => [
+                    'login_path' => 'auth_login',
+                    'check_path' => 'auth_login_check',
+                    'default_target_path' => 'tag_index',
+                    'username_parameter' => 'login_type[login]',
+                    'password_parameter' => 'login_type[password]',
+                ],
+                'anonymous' => true,
+                'logout' => [
+                    'logout_path' => 'auth_logout',
+                    'target_url' => 'index',
+                ],
+                'users' => function () use ($app) {
+                    return new Provider\UserProvider($app['db']);
+                },
+            ],
+        ],
+        'security.access_rules' => [
+            ['^/auth.+$', 'IS_AUTHENTICATED_ANONYMOUSLY'],
+            ['^/index.+$', 'IS_AUTHENTICATED_ANONYMOUSLY'],
+            ['^/calendar.+$', 'ROLE_USER'],
+            ['^/training.+$', 'ROLE_USER'],
+            ['^/.+$', 'ROLE_ADMIN'],
+        ],
+        'security.role_hierarchy' => [
+            'ROLE_ADMIN' => ['ROLE_USER'],
         ],
     ]
 );
@@ -69,5 +100,8 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
 
     return $twig;
 });
+
+//dump($app['security.encoder.bcrypt']->encodePassword('test', ''));
+//dump($app['security.encoder.bcrypt']->encodePassword('qAWfMuqyVEe5', ''));
 
 return $app;

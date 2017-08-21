@@ -8,8 +8,10 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Controller\HelloController;
 use Controller\WelcomeController;
-use Controller\LoggingController;
 use Controller\UserController;
+use Controller\CalendarController;
+use Controller\AuthController;
+use Controller\TrainingController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
@@ -21,9 +23,14 @@ $app->get('/', function () use ($app) {
 
 $app->mount('/index', new WelcomeController());
 
-$app->mount('/logging', new LoggingController());
-
 $app->mount('/user', new UserController());
+
+$app->mount('/calendar', new CalendarController());
+
+$app->mount('/auth', new AuthController());
+
+$app->mount('/training', new TrainingController());
+
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
