@@ -33,7 +33,7 @@ class TrainingRepository
         $this->db = $db;
     }
 
-    public function addTraining($form)
+    public function addTraining($form, $userID)
     {
         $formData = $form->getData();
         $queryBuilder = $this->db->createQueryBuilder();
@@ -43,17 +43,38 @@ class TrainingRepository
                     'Sport_time' => '?',
                     'Sport_kcal' => '?',
                     'Sport_distance' => '?',
-                    'Sport_name' => '?'
+                    'Sport_name_ID' => '?',
+                    'User_ID' => '?'
                 )
             )
             ->setParameter(0, $formData['time'])
             ->setParameter(1, $formData['kcal'])
             ->setParameter(2, $formData['distance'])
-            ->setParameter(3, $formData['name']);
+            ->setParameter(3, $formData['name'])
+            ->setParameter(4, $userID);
 
         return $queryBuilder->execute();
     }
 
+    public function showAllTraining($userID)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID', 'Sport_ID')
+            ->from('Sport')
+            ->where('User_ID = '.$userID);
+
+        return $queryBuilder->execute()->fetchAll();
+    }
+
+    public function showWeekTraining()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID')
+            ->from('Sport')
+            ->where('Sport_time = 222');
+
+        return $queryBuilder->execute()->fetchAll();
+    }
 }
 
 

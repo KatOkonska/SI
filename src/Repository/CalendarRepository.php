@@ -40,9 +40,26 @@ class CalendarRepository
     {
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder->select('*')
-            ->from('kalendarz');
+            ->from('Training_day');
 
         return $queryBuilder->execute()->fetchAll();
     }
 
+    public function showName()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('User_login')
+            ->from('User');
+
+        return $queryBuilder->execute()->fetchAll();
+    }
+
+    public function showColumnName()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('User_login')
+            ->from('User');
+
+        return $queryBuilder->execute()->fetchAll();
+    }
 }

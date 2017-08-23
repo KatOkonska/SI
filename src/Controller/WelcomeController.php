@@ -1,15 +1,21 @@
 <?php
 /**
- * Calendar controller.
+ * Created by PhpStorm.
+ * User: kasia
+ * Date: 15.08.17
+ * Time: 21:54
+ */
+
+/**
+ * Welcome controller.
  *
- * @copyright (c) 2016 Tomasz Chojna
- * @link http://epi.chojna.info.pl
  */
 namespace Controller;
 
 use Silex\Api\ControllerProviderInterface;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Repository\WelcomeRepository;
 
 /**
  * Class WelcomeController.
@@ -29,6 +35,7 @@ class WelcomeController implements ControllerProviderInterface
     {
         $controller = $app['controllers_factory'];
         $controller->get('/', [$this, 'indexAction'])->bind('index');
+        $controller->get('/', [$this, 'welcomeAction'])->bind('index');
         return $controller;
     }
 
@@ -47,15 +54,39 @@ class WelcomeController implements ControllerProviderInterface
         //return 'Witaj'.'{zmienna-imie}'.'!<br>'.$this->todayDate();
         $name = '{zmienna-imie}';
         $current_day = $this->todayDate();
-        echo 'Test';
+        echo 'Test 333';
         return $app['twig']->render('welcome/index.html.twig', ['name' => $name]);
 
     }
 
-    private function todayDate()
+    public function welcomeAction(Application $app)
+    {
+        $name ='';
+
+        $login='';
+
+        $WelcomeRepository = new WelcomeRepository($app['db']);
+        $name = $WelcomeRepository->showName($login);
+
+        return $app['twig']->render(
+            'index.html.twig',
+            ['name' => $name]
+
+        );
+    }
+
+    private function todayDate(Application $app)
     {
         $weekdays = array('niedziela', 'poniedzialek', 'wtorek', 'sroda', 'czwartek', 'piatek','sobota');
-        return 'Dzisiaj jest '.$weekdays[date('w')].'!';
+
+
+        $today = $weekdays[date('w')];
+
+        return $app['twig']->render(
+            'index.html.twig',
+            ['today' => $today]
+
+        );
     }
 
     public function nextTrainingDay()

@@ -1,0 +1,125 @@
+table, td {
+    border: 2px solid black;
+
+}
+
+p
+{
+    font-family: 'Kaushan Script';
+    font-size: 15pt;
+    color: #217789;
+}
+
+
+table
+{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+tr:nth-child(even)
+{
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(1)
+{
+    background-color: #217789;
+
+}
+
+
+
+body
+{
+    background-color: #EFF7F9;
+    text-align: center;
+}
+
+
+h1
+{
+    color: #217789; font-family: 'Kaushan Script'; font-size: 35pt;	text-align:center;
+}
+
+main
+{
+    width: 96%;
+    margin: 1%;
+    padding: 1%;
+    background: white;
+    text-align:center;
+
+}
+
+
+
+img
+{
+    padding: 1%;
+    width: 10%;
+    opacity: 0.50;
+    filter: alpha(opacity=80);
+
+}
+
+img:hover
+{
+    opacity: 1.0;
+    filter: none;
+
+}
+
+
+.powieksz
+{
+
+    background-color:white;
+    padding:15px;
+    border:3px solid #000;
+    transition-duration:2s;
+}
+
+.powieksz:hover {
+    width:10%;
+    height:5%;
+    background-color:black;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+input[type=password]:focus {
+    border: 3px solid #555;
+}
+
+footer
+{
+    clear:both;
+    width: 90%;
+    height: 15%;
+    padding: 0.5%;
+    margin: 0 auto;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    background: #217789;
+    font-family: 'Kaushan Script', cursive;
+    text-align:center;
+}

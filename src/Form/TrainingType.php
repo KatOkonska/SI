@@ -26,15 +26,11 @@ class TrainingType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function __construct($tag)
-    {
-//        $this->db = $db;
-        var_dump($tag);
-        die;
-    }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $choices = $options['data'];
+
         $builder->add(
             'time',
             TextType::class,
@@ -84,7 +80,7 @@ class TrainingType extends AbstractType
             TextType::class,
             [
                 'label' => 'label.distance',
-                'required' => true,
+                'required' => false,
                 'attr' => [
                     'max_length' => 32,
 
@@ -111,12 +107,15 @@ class TrainingType extends AbstractType
 
 
                 ],
+                'choices' => $choices,
                 'constraints' => [
                     new Assert\NotBlank(),
 
                 ],
             ]
         );
+
+
 
     }
 

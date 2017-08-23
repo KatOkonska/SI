@@ -41,9 +41,7 @@ class AuthController implements ControllerProviderInterface
         $controller->match('register', [$this, 'registerAction'])
             ->method('GET|POST')
             ->bind('auth_register');
-        $controller->match('training', [$this, 'addTrainingAction'])
-            ->method('GET|POST')
-            ->bind('auth_add_training');
+
 
 
         return $controller;
@@ -114,35 +112,4 @@ class AuthController implements ControllerProviderInterface
             ]
         );
     }
-
-//    public function addTrainingAction(Application $app, Request $request)
-//    {
-//        $tag = [];
-//
-//        $form = $app['form.factory']->createBuilder(TrainingType::class, $tag)->getForm();
-//        $form->handleRequest($request);
-//
-//        $errors ='';
-//
-//        if ($form->isSubmitted()) {
-//
-//            if ($form->isValid()) {
-//                $UserRepository = new UserRepository($app['db']);
-//                $register = $UserRepository->register($form);
-//
-//                echo 'Wyslano do bazy';
-//
-//            } else{
-//                $errors = $form->getErrors();
-//            }
-//        }
-//
-//        return $app['twig']->render(
-//            'auth/training.html.twig',
-//            [
-//                'form' => $form->createView(),
-//                'error' => $errors,
-//            ]
-//        );
-//    }
 }

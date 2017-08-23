@@ -19,6 +19,7 @@ use Repository\UserRepository;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Repository\SportNameRepository;
 
 /**
  * Class AuthController
@@ -36,6 +37,15 @@ class TrainingController implements ControllerProviderInterface
         $controller->match('add', [$this, 'addTrainingAction'])
             ->method('POST|GET')
             ->bind('add_training');
+        $controller->match('show_all', [$this, 'showAllTrainingAction'])
+            ->method('POST|GET')
+            ->bind('show_all_training');
+        $controller->match('show_week', [$this, 'showWeekTrainingAction'])
+            ->method('POST|GET')
+            ->bind('show_week_training');
+        $controller->match('edit/{id}', [$this, 'editAction'])
+            ->method('POST|GET')
+            ->bind('edit_training');
 
 
         return $controller;
@@ -52,9 +62,37 @@ class TrainingController implements ControllerProviderInterface
 
     public function addTrainingAction(Application $app, Request $request)
     {
+//        echo 'test1';
+//        var_dump($app['user']->getUsername());
+//        var_dump($app['user']->getRoles());
+//        foreach ($app as $k=>$v)
+//        {
+//            var_dump($app['user']);
+//            var_dump('lalala');
+//        }
+//        echo 'test2';
+
+//        $usr= $app->get('security.context')->getToken()->getUser();
+//        var_dump($usr->getUsername());
+//       die;
+
+        $UserRepository = new UserRepository($app['db']);
+        $user = $UserRepository->getUserByLogin($app['user']->getUsername());
+
+
         $tag = 'kaczka';
 
-        $form = $app['form.factory']->createBuilder(new TrainingType($tag))->getForm();
+        $sportNameRepository = new SportNameRepository($app['db']);
+        $choice = $sportNameRepository->showAllSportName();
+//        var_dump($choice);
+//        die;
+
+
+
+//        $form = $app['form.factory']->createBuilder(new TrainingType($tag))->getForm();
+        $form = $app['form.factory']->createBuilder(TrainingType::class, $tag, array(
+            'data' => $choice,
+        ))->getForm();
         $form->handleRequest($request);
 
         $errors ='';
@@ -63,7 +101,7 @@ class TrainingController implements ControllerProviderInterface
 
             if ($form->isValid()) {
                 $TrainingRepository = new TrainingRepository($app['db']);
-                $addTraining = $TrainingRepository->addTraining($form);
+                $addTraining = $TrainingRepository->addTraining($form, $user['User_ID']);
 
                 echo 'Wyslano do bazy';
 
@@ -80,4 +118,75 @@ class TrainingController implements ControllerProviderInterface
             ]
         );
     }
+
+        public function showAllTrainingAction(Application $app)
+    {
+        $table =[];
+
+        $UserRepository = new UserRepository($app['db']);
+        $user = $UserRepository->getUserByLogin($app['user']->getUsername());
+
+        $TrainingRepository = new TrainingRepository($app['db']);
+        $table = $TrainingRepository->showAllTraining($user['User_ID']);
+
+        return $app['twig']->render(
+            'training_show_all.html.twig',
+            ['table' => $table]
+
+        );
+    }
+
+    public function showWeekTrainingAction(Application $app)
+    {
+        $table =[];
+
+        $TrainingRepository = new TrainingRepository($app['db']);
+        $table = $TrainingRepository->showWeekTraining();
+
+        return $app['twig']->render(
+            'training_show_week.html.twig',
+            ['table' => $table]
+
+        );
+    }
+
+    public function editAction(Application $app, $id, Request $request)
+    {
+
+        $UserRepository = new UserRepository($app['db']);
+        $user = $UserRepository->getUserByLogin($app['user']->getUsername());
+
+
+        $sportNameRepository = new SportNameRepository($app['db']);
+        $choice = $sportNameRepository->showAllSportName();
+
+        $form = $app['form.factory']->createBuilder(TrainingType::class, array(), array(
+            'data' => $choice,
+        ))->getForm();
+        $form->handleRequest($request);
+
+        $errors ='';
+
+//        if ($form->isSubmitted()) {
+//
+//            if ($form->isValid()) {
+//                $TrainingRepository = new TrainingRepository($app['db']);
+//                $addTraining = $TrainingRepository->addTraining($form, $user['User_ID']);
+//
+//                echo 'Wyslano do bazy';
+//
+//            } else{
+//                $errors = $form->getErrors();
+//            }
+//        }
+
+        return $app['twig']->render(
+            'training_edit.html.twig',
+            [
+                'form' => $form->createView(),
+                'error' => $errors,
+            ]
+        );
+    }
+
 }

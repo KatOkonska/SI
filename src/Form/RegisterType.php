@@ -38,7 +38,7 @@ class RegisterType extends AbstractType
                     new Assert\NotBlank(),
                     new Assert\Length(
                         [
-                            'min' => 8,
+                            'min' => 1,
                             'max' => 32,
                         ]
                     ),
@@ -50,7 +50,7 @@ class RegisterType extends AbstractType
                     new Assert\NotBlank(),
                     new Assert\Length(
                         [
-                            'min' => 8,
+                            'min' => 1,
                             'max' => 32,
                         ])
             ] ,

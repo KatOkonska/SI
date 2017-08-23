@@ -66,6 +66,7 @@ $app->register(
             ['^/index.+$', 'IS_AUTHENTICATED_ANONYMOUSLY'],
             ['^/calendar.+$', 'ROLE_USER'],
             ['^/training.+$', 'ROLE_USER'],
+            ['^/welcome.+$', 'ROLE_USER'],
             ['^/.+$', 'ROLE_ADMIN'],
         ],
         'security.role_hierarchy' => [

@@ -32,6 +32,7 @@ $app->mount('/auth', new AuthController());
 $app->mount('/training', new TrainingController());
 
 
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;

@@ -25,6 +25,10 @@ class CalendarController implements ControllerProviderInterface
             ->method('POST|GET')
             ->bind('calendar');
 
+//        $controller->get('/', [$this, 'showName'])
+//            ->method('POST|GET')
+//            ->bind('calendar');
+
 //        $controller->get('/{id}', [$this, 'viewAction'])->bind('tag_view');
 
         return $controller;
@@ -44,13 +48,30 @@ class CalendarController implements ControllerProviderInterface
         $CalendarRepository = new CalendarRepository($app['db']);
         $calendar = $CalendarRepository->showAll();
 
-        var_dump($calendar);
-
         return $app['twig']->render(
-            'calendar.html.twig'
+            'calendar.html.twig',
+            ['calendar' => $calendar]
 
         );
     }
+
+//    public function welcomeAction(Application $app)
+//    {
+//        $name ='';
+//
+//        $CalendarRepository = new CalendarRepository($app['db']);
+//        $name = $CalendarRepository->showName();
+//
+//        return $app['twig']->render(
+//            'calendar.html.twig',
+//            ['name' => $name]
+//
+//        );
+//    }
+
+
+
+
 
     /**
      * View action.

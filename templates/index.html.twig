@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    Witaj {#name#} !
+    {#Witaj     {{ dump(name) }} !#}
+    <h1>Cześć {{ app.user.username }} ! </h1>
+
 {% endblock %}
