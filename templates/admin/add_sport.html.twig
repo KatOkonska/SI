@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}'Dodaj sport'{% endblock %}
+
+{% block content %}
+    <h1>Tu możesz dodać kategorię sportu (sportname)</h1>
+    {{ form_start(form, { method: 'post', action: url('add_sport') }) }}
+    {#{{ form_widget(form) }}#}
+    {#<input type="submit" value="Dodaj" class="btn btn-success" />#}
+    {{ form_end(form) }}
+{% endblock %}

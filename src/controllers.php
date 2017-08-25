@@ -12,6 +12,7 @@ use Controller\UserController;
 use Controller\CalendarController;
 use Controller\AuthController;
 use Controller\TrainingController;
+use Controller\AdminController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
@@ -30,6 +31,8 @@ $app->mount('/calendar', new CalendarController());
 $app->mount('/auth', new AuthController());
 
 $app->mount('/training', new TrainingController());
+
+$app->mount('/admin', new AdminController());
 
 
 

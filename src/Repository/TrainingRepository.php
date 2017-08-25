@@ -47,11 +47,30 @@ class TrainingRepository
                     'User_ID' => '?'
                 )
             )
-            ->setParameter(0, $formData['time'])
-            ->setParameter(1, $formData['kcal'])
-            ->setParameter(2, $formData['distance'])
-            ->setParameter(3, $formData['name'])
+            ->setParameter(0, $formData['Sport_time'])
+            ->setParameter(1, $formData['Sport_kcal'])
+            ->setParameter(2, $formData['Sport_distance'])
+            ->setParameter(3, $formData['Sport_name_ID'])
             ->setParameter(4, $userID);
+
+        return $queryBuilder->execute();
+    }
+
+    public function editTraining($id, $form)
+    {
+        $formData = $form->getData();
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->update('Sport')
+            ->set('Sport_time', '?')
+            ->set('Sport_kcal', '?')
+            ->set('Sport_distance', '?')
+            ->set('Sport_name_ID', '?')
+            ->where('Sport_ID = ?')
+            ->setParameter(0, $formData['Sport_time'])
+            ->setParameter(1, $formData['Sport_kcal'])
+            ->setParameter(2, $formData['Sport_distance'])
+            ->setParameter(3, $formData['Sport_name_ID'])
+            ->setParameter(4, $id);
 
         return $queryBuilder->execute();
     }
@@ -66,12 +85,53 @@ class TrainingRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
-    public function showWeekTraining()
+    public function showWeekTraining() //podobnie jak showAllTraining
     {
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID')
             ->from('Sport')
             ->where('Sport_time = 222');
+
+        return $queryBuilder->execute()->fetchAll();
+    }
+
+    /**
+     * Find one record.
+     *
+     * @param string $id Element id
+     *
+     * @return array|mixed Result
+     */
+    public function findOneById($id)
+    {
+        $queryBuilder = $this->queryAll();
+        $queryBuilder->where('s.Sport_ID = :id')
+            ->setParameter(':id', $id, \PDO::PARAM_INT);
+        $result = $queryBuilder->execute()->fetch();
+
+        return !$result ? [] : $result;
+    }
+
+    /**
+     * Query all records.
+     *
+     * @return \Doctrine\DBAL\Query\QueryBuilder Result
+     */
+    protected function queryAll()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select('*')
+            ->from('Sport', 's');
+    }
+
+
+    public function getTraining($ID)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID', 'Sport_ID')
+            ->from('Sport')
+            ->where('Sport_ID = '.$ID);
 
         return $queryBuilder->execute()->fetchAll();
     }

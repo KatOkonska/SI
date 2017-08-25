@@ -160,31 +160,36 @@ class TrainingController implements ControllerProviderInterface
         $sportNameRepository = new SportNameRepository($app['db']);
         $choice = $sportNameRepository->showAllSportName();
 
-        $form = $app['form.factory']->createBuilder(TrainingType::class, array(), array(
-            'data' => $choice,
-        ))->getForm();
+        $TrainingRepository = new TrainingRepository($app['db']);
+        $one_training = $TrainingRepository->findOneById($id);
+
+        $one_training['choice'] = $choice;
+
+        $form = $app['form.factory']->createBuilder(TrainingType::class, $one_training, array())->getForm();
+
         $form->handleRequest($request);
 
         $errors ='';
 
-//        if ($form->isSubmitted()) {
-//
-//            if ($form->isValid()) {
-//                $TrainingRepository = new TrainingRepository($app['db']);
-//                $addTraining = $TrainingRepository->addTraining($form, $user['User_ID']);
-//
-//                echo 'Wyslano do bazy';
-//
-//            } else{
-//                $errors = $form->getErrors();
-//            }
-//        }
+        if ($form->isSubmitted()) {
+
+            if ($form->isValid()) {
+                $TrainingRepository = new TrainingRepository($app['db']);
+                $editTraining = $TrainingRepository->editTraining($id, $form, $user['User_ID']);
+
+                echo 'Wyslano do bazy';
+
+            } else{
+                $errors = $form->getErrors();
+            }
+        }
 
         return $app['twig']->render(
             'training_edit.html.twig',
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'id' => $id
             ]
         );
     }

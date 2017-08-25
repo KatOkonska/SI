@@ -29,10 +29,10 @@ class TrainingType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $choices = $options['data'];
+        $choices = $options['data']; //['choice']; //FFS?
 
         $builder->add(
-            'time',
+            'Sport_time',
             TextType::class,
             [
                 'label' => 'label.time',
@@ -54,14 +54,13 @@ class TrainingType extends AbstractType
         );
 
         $builder->add(
-            'kcal',
+            'Sport_kcal',
             TextType::class,
             [
                 'label' => 'label.kcal',
                 'required' => true,
                 'attr' => [
                     'max_length' => 32,
-
                 ],
                 'constraints' => [
                     new Assert\NotBlank(),
@@ -76,20 +75,18 @@ class TrainingType extends AbstractType
         );
 
         $builder->add(
-            'distance',
+            'Sport_distance',
             TextType::class,
             [
                 'label' => 'label.distance',
                 'required' => false,
                 'attr' => [
                     'max_length' => 32,
-
                 ],
                 'constraints' => [
-                    new Assert\NotBlank(),
                     new Assert\Length(
                         [
-                            'min' => 1,
+                            'min' => 0,
                             'max' => 32,
                         ]
                     ),
@@ -98,25 +95,18 @@ class TrainingType extends AbstractType
         );
 
         $builder->add(
-            'name',
+            'Sport_name_ID',
             ChoiceType::class,
             [
                 'label' => 'label.name',
                 'required' => true,
-                'attr' => [
-
-
-                ],
+                'attr' => [],
                 'choices' => $choices,
                 'constraints' => [
                     new Assert\NotBlank(),
-
                 ],
             ]
         );
-
-
-
     }
 
     /**

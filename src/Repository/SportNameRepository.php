@@ -44,7 +44,6 @@ class SportNameRepository
         foreach ($queryBuilder->execute()->fetchAll() as $data)
         {
             $result[$data['Sport_Name']] = $data['Sport_Name_ID'];
-
         }
 
         return $result;

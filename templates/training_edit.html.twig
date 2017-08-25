@@ -3,14 +3,14 @@
 {% block title %}{{ 'title.auth_add_training'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>{{ 'title.add_add_training'|trans }}</h1>
+    <h1>{{ 'title.edit_training'|trans }}</h1>
 
     {% if error is defined and error|length %}
         {{ dump(error) }}
     {% endif %}
 
     <div>
-        {{ form_start(form, { method: 'post', action: path('add_training') }) }}
+        {{ form_start(form, { method: 'post', action: path('edit_training', {'id': id}) }) }}
         {{ form_widget(form) }}
         <input type="submit" value="{{ 'action.add_training'|trans }}" class="btn btn-success" />
         {{ form_end(form) }}

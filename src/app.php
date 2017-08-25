@@ -47,7 +47,7 @@ $app->register(
                 'form' => [
                     'login_path' => 'auth_login',
                     'check_path' => 'auth_login_check',
-                    'default_target_path' => 'tag_index',
+                    'default_target_path' => 'calendar',
                     'username_parameter' => 'login_type[login]',
                     'password_parameter' => 'login_type[password]',
                 ],
@@ -67,6 +67,7 @@ $app->register(
             ['^/calendar.+$', 'ROLE_USER'],
             ['^/training.+$', 'ROLE_USER'],
             ['^/welcome.+$', 'ROLE_USER'],
+            ['^/admin.+$', 'ROLE_USER'],
             ['^/.+$', 'ROLE_ADMIN'],
         ],
         'security.role_hierarchy' => [
