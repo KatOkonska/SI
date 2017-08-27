@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9aef3807-24e0-45b4-a6fa-ab47ee367865" name="Default" comment="">
+    <list default="true" id="9aef3807-24e0-45b4-a6fa-ab47ee367865" name="Default" comment="Dodanie CSSów oraz linków w menu głównym">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/show_all_users.html.twig" afterPath="$PROJECT_DIR$/templates/admin/show_all_users.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html.twig" afterPath="$PROJECT_DIR$/templates/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.html.twig" afterPath="$PROJECT_DIR$/templates/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_show_week.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_show_week.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" afterPath="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -138,8 +132,8 @@
           <file leaf-file-name="TrainingDayRepository.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Repository/TrainingDayRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="274">
-                  <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="57" selection-end-column="42" />
+                <state relative-caret-position="328">
+                  <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -431,7 +425,7 @@
       <workItem from="1503661546826" duration="9486000" />
       <workItem from="1503690518903" duration="9412000" />
       <workItem from="1503831937691" duration="27958000" />
-      <workItem from="1503864789842" duration="3453000" />
+      <workItem from="1503864789842" duration="3513000" />
     </task>
     <task id="LOCAL-00001" summary="Zmiany z 21 sierpnia - formularz dodawania treningu">
       <created>1503346501422</created>
@@ -468,11 +462,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503861546952</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Dodanie CSSów oraz linków w menu głównym">
+      <created>1503868266901</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1503868266901</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140535000" />
+    <option name="totallyTimeSpent" value="140595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="193" y="190" width="1629" height="873" extended-state="0" />
@@ -530,7 +531,8 @@
     <MESSAGE value="Dodanie edycji nazw sportów dla admina" />
     <MESSAGE value="Dodanie ShowAllUsers, ShowAllTrening, ShowAllTreningDay dla Admina oraz AddTreningDay w TreningDay" />
     <MESSAGE value="Dodanie CSSów" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodanie CSSów" />
+    <MESSAGE value="Dodanie CSSów oraz linków w menu głównym" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodanie CSSów oraz linków w menu głównym" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -911,14 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/TrainingDayRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="57" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/TrainingRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -926,6 +920,14 @@
           <folding>
             <element signature="e#110#139#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TrainingDayRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
