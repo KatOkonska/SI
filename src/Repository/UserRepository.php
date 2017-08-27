@@ -109,6 +109,21 @@ class UserRepository
         }
     }
 
+    public function getUserByID($id)
+    {
+        try {
+            $queryBuilder = $this->db->createQueryBuilder();
+            $queryBuilder->select('u.User_ID', 'u.User_login', 'u.User_password')
+                ->from('User', 'u')
+                ->where('u.User_ID = :id')
+                ->setParameter(':id', $id, \PDO::PARAM_STR);
+
+            return $queryBuilder->execute()->fetch();
+        } catch (DBALException $exception) {
+            return [];
+        }
+    }
+
     /**
      * Gets user roles by User ID.
      *

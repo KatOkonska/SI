@@ -68,6 +68,7 @@ $app->register(
             ['^/training.+$', 'ROLE_USER'],
             ['^/welcome.+$', 'ROLE_USER'],
             ['^/admin.+$', 'ROLE_USER'],
+            ['^/training_day.+$', 'ROLE_USER'],
             ['^/.+$', 'ROLE_ADMIN'],
         ],
         'security.role_hierarchy' => [

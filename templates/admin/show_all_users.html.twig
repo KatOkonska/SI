@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}'To Twoi użytkownicy{% endblock %}
+
+{% block content %}
+    <h1>Czesc, to lista wszystkich Twoich użytkowników!</h1>
+
+
+    <table class="border" width="50%" align="center" text-align="center">
+        <thead>
+        <tr>
+            <th>User_ID</th>
+            <th>Login</th>
+            <th>Haslo</th>
+            <th>Rola</th>
+
+        </tr>
+        </thead>
+
+        {% for data in table %}
+            <tr>
+                <td>{{ data.User_ID }}</td>
+                <td>{{ data.User_login }}</td>
+                <td>{{ data.User_password }}</td>
+                <td>{{ data.Role_ID }}</td>
+                <td>
+                    <a class="btn btn-default" href="{{ url('edit_user' )}}" title="{{ 'auth.logout.label'|trans }}">
+                        {{ 'edit_training'|trans }}
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-default" href="{{ url('index' )}}" title="{{ 'auth.logout.label'|trans }}">
+                        {{ 'delete_training'|trans }}
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

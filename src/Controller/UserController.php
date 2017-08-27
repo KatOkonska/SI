@@ -25,14 +25,13 @@ class UserController implements ControllerProviderInterface
      *
      * @return \Silex\ControllerCollection Result
      */
+
     public function connect(Application $app)
     {
         $controller = $app['controllers_factory'];
         $controller->get('/', [$this, 'indexAction']);
         return $controller;
     }
-
-
 
     /**
      * Index action.
@@ -52,7 +51,7 @@ class UserController implements ControllerProviderInterface
 
     }
 
-    private function todayDate()
+    public function todayDate()
     {
         $weekdays = array('niedziela', 'poniedzialek', 'wtorek', 'sroda', 'czwartek', 'piatek','sobota');
         return 'Dzisiaj jest '.$weekdays[date('w')].'!';

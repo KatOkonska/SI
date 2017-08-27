@@ -12,7 +12,7 @@
  */
 namespace Controller;
 
-use Form\RegisterType;
+
 use Form\TrainingType;
 use Repository\TrainingRepository;
 use Repository\UserRepository;
@@ -43,7 +43,7 @@ class TrainingController implements ControllerProviderInterface
         $controller->match('show_week', [$this, 'showWeekTrainingAction'])
             ->method('POST|GET')
             ->bind('show_week_training');
-        $controller->match('edit/{id}', [$this, 'editAction'])
+        $controller->match('edit/{id}', [$this, 'editTrainingAction'])
             ->method('POST|GET')
             ->bind('edit_training');
 
@@ -111,7 +111,7 @@ class TrainingController implements ControllerProviderInterface
         }
 
         return $app['twig']->render(
-            'training.html.twig',
+            'training/training_add.html.twig',
             [
                 'form' => $form->createView(),
                 'error' => $errors,
@@ -130,7 +130,7 @@ class TrainingController implements ControllerProviderInterface
         $table = $TrainingRepository->showAllTraining($user['User_ID']);
 
         return $app['twig']->render(
-            'training_show_all.html.twig',
+            'training/training_show_all.html.twig',
             ['table' => $table]
 
         );
@@ -144,13 +144,13 @@ class TrainingController implements ControllerProviderInterface
         $table = $TrainingRepository->showWeekTraining();
 
         return $app['twig']->render(
-            'training_show_week.html.twig',
+            'training/training_show_week.html.twig',
             ['table' => $table]
 
         );
     }
 
-    public function editAction(Application $app, $id, Request $request)
+    public function editTrainingAction(Application $app, $id, Request $request)
     {
 
         $UserRepository = new UserRepository($app['db']);
@@ -161,7 +161,7 @@ class TrainingController implements ControllerProviderInterface
         $choice = $sportNameRepository->showAllSportName();
 
         $TrainingRepository = new TrainingRepository($app['db']);
-        $one_training = $TrainingRepository->findOneById($id);
+        $one_training = $TrainingRepository->findOneTrainingById($id);
 
         $one_training['choice'] = $choice;
 
@@ -185,7 +185,7 @@ class TrainingController implements ControllerProviderInterface
         }
 
         return $app['twig']->render(
-            'training_edit.html.twig',
+            'training/training_edit.html.twig',
             [
                 'form' => $form->createView(),
                 'error' => $errors,

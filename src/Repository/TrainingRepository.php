@@ -75,6 +75,11 @@ class TrainingRepository
         return $queryBuilder->execute();
     }
 
+    public function deleteTraining($id, $form)
+    {
+
+    }
+
     public function showAllTraining($userID)
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -102,9 +107,9 @@ class TrainingRepository
      *
      * @return array|mixed Result
      */
-    public function findOneById($id)
+    public function findOneTrainingById($id)
     {
-        $queryBuilder = $this->queryAll();
+        $queryBuilder = $this->querySportAll();
         $queryBuilder->where('s.Sport_ID = :id')
             ->setParameter(':id', $id, \PDO::PARAM_INT);
         $result = $queryBuilder->execute()->fetch();
@@ -117,7 +122,7 @@ class TrainingRepository
      *
      * @return \Doctrine\DBAL\Query\QueryBuilder Result
      */
-    protected function queryAll()
+    protected function querySportAll()
     {
         $queryBuilder = $this->db->createQueryBuilder();
 

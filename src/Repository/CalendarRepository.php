@@ -36,6 +36,11 @@ class CalendarRepository
      * @return array Result
      */
 
+    public function displayCurrentDate()
+    {
+        echo "Today is " . date("Y/m/d") . "<br>";
+    }
+
     public function showAll()
     {
         $queryBuilder = $this->db->createQueryBuilder();

@@ -70,4 +70,68 @@ class AdminRepository
 
         return $queryBuilder->execute();
     }
+
+    public function showAllUsers(Application $app)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('User_ID', 'User_login', 'User_password', 'Role_ID')
+            ->from('User');
+
+        return $queryBuilder->execute()->fetchAll();
+    }
+
+    public function showAllTrainings(Application $app)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID', 'User_ID')
+            ->from('Sport');
+
+        return $queryBuilder->execute()->fetchAll();
+    }
+
+    public function showAllTrainingDays(Application $app)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('Training_day_day_number', 'User_ID')
+            ->from('Training_day');
+
+        return $queryBuilder->execute()->fetchAll();
+    }
+
+//    public function editUser($id, $form)
+//    {
+//        $formData = $form->getData();
+//        $queryBuilder = $this->db->createQueryBuilder();
+//        $queryBuilder->update('User')
+//            ->set('User_login', '?')
+//            ->set('User_password', '?')
+//            ->set('Role_ID', '?')
+//            ->where('User_ID = ?')
+//            ->setParameter(0, $formData['User_login'])
+//            ->setParameter(1, $formData['security.encoder.bcrypt']->encodePassword($formData['password'], ''))
+//            ->setParameter(2, $formData['Role_ID'])
+//            ->setParameter(3, $id);
+//
+//        return $queryBuilder->execute();
+//    }
+
+    public function findOneUserById($id)
+    {
+        $queryBuilder = $this->queryUserAll();
+        $queryBuilder->where('u.User_ID = :id')
+            ->setParameter(':id', $id, \PDO::PARAM_INT);
+        $result = $queryBuilder->execute()->fetch();
+
+        return !$result ? [] : $result;
+    }
+
+
+    protected function queryUserAll()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select('*')
+            ->from('User', 'u');
+    }
+
 }

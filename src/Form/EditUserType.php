@@ -17,11 +17,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class TrainingType
+ * Class EditUserType
  *
  * @package Form
  */
-class TrainingType extends AbstractType
+class EditUserType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -29,10 +29,10 @@ class TrainingType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $choices = $options['data'];//['choice'];
+        $choices = $options['data']['choice'];
 
         $builder->add(
-            'Sport_time',
+            'User_login',
             TextType::class,
             [
                 'label' => 'label.time',
@@ -54,7 +54,7 @@ class TrainingType extends AbstractType
         );
 
         $builder->add(
-            'Sport_kcal',
+            'User_password',
             TextType::class,
             [
                 'label' => 'label.kcal',
@@ -75,30 +75,10 @@ class TrainingType extends AbstractType
         );
 
         $builder->add(
-            'Sport_distance',
-            TextType::class,
-            [
-                'label' => 'label.distance',
-                'required' => false,
-                'attr' => [
-                    'max_length' => 32,
-                ],
-                'constraints' => [
-                    new Assert\Length(
-                        [
-                            'min' => 0,
-                            'max' => 32,
-                        ]
-                    ),
-                ],
-            ]
-        );
-
-        $builder->add(
-            'Sport_name_ID',
+            'Role_ID',
             ChoiceType::class,
             [
-                'label' => 'label.name',
+                'label' => 'label.rola',
                 'required' => true,
                 'attr' => [],
                 'choices' => $choices,
@@ -107,6 +87,8 @@ class TrainingType extends AbstractType
                 ],
             ]
         );
+
+
     }
 
     /**
@@ -114,6 +96,6 @@ class TrainingType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'training_type';
+        return 'edit_user_type';
     }
 }
