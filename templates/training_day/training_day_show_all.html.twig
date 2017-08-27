@@ -23,8 +23,9 @@
     <table class="vitamins" width="50%" align="center" text-align="center">
         <thead>
         <tr>
-            <th>Czas</th>
+            <th>Dzień treningu</th>
             <th>Edytuj</th>
+            <th>Usuń</th>
 
         </tr>
         </thead>
@@ -32,6 +33,12 @@
         {% for data in table %}
             <tr>
                 <td>{{ data.Training_day_day_number}}</td>
+
+                <td>
+                    <a class="btn btn-default" href="{{ url('edit_training', {'id': data.User_ID})}}" title="{{ 'auth.logout.label'|trans }}">
+                        {{ 'edit_training'|trans }}
+                    </a>
+                </td>
 
                 <td>
                     <a class="btn btn-default" href="{{ url('edit_training', {'id': data.User_ID})}}" title="{{ 'auth.logout.label'|trans }}">

@@ -3,13 +3,18 @@
 {% block content %}
     {#Witaj     {{ dump(name) }} !#}
     {#<h1>Cześć {{ app.user.username }} ! </h1>#}
-    {% if is_granted("ROLE") %}
-       <h1>Witaj {{ app.user.username }}</h1> Hi {{ app.user.username }}
-  {% else %}
-    <h1>
-        Witaj Nieznajomy!
-    </h1>
-
+    {% if is_granted("ROLE_USER") %}
+       <h1>
+           Witaj {{ app.user.username }} !
+       </h1>
+    {% elseif  is_granted("ROLE_ADMIN") %}
+        <h1>
+            Witaj Administratorze!
+        </h1>
+    {%  else %}
+        <h1>
+            Witaj Nieznajomy!
+        </h1>
   {% endif %}
 
 

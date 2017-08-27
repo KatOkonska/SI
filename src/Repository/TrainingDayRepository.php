@@ -57,6 +57,7 @@ class TrainingDayRepository
             ->from('Training_day')
             ->where('User_ID = '.$userID);
 
+
         return $queryBuilder->execute()->fetchAll();
     }
 
