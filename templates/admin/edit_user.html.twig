@@ -12,7 +12,7 @@
 <div>
     {{ form_start(form, { method: 'post', action: path('edit_user'}, {'id': id})) }}
     {{ form_widget(form) }}
-    <input type="submit" value="{{ 'edytuj'|trans }}" class="btn btn-success" />
+    <input type="submit" value="{{ 'edytuj'|trans }}" class="button" />
     {{ form_end(form) }}
 </div>
 {% endblock %}

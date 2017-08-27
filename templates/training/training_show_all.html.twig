@@ -20,14 +20,17 @@
     {#</tr>#}
 
 
-    <table class="border" width="50%" align="center" text-align="center">
+    <article>
+
+    <table class="vitamins" width="80%" align="center" text-align="center">
         <thead>
         <tr>
             <th>Czas</th>
-            <th>Kcal</th>
+            <th>KCAL</th>
             <th>Dystans</th>
-            <th>Sport_name_id</th>
+            <th>Nazwa sport</th>
             <th>Edytuj</th>
+            <th>Usuń</th>
 
         </tr>
         </thead>
@@ -37,15 +40,27 @@
                     <td>{{ data.Sport_time }}</td>
                     <td>{{ data.Sport_kcal }}</td>
                     <td>{{ data.Sport_distance }}</td>
-                    <td>{{ data.Sport_name_ID }}</td>
+                    <td>{{ data.Sport_Name }}</td>
+
                     <td>
                         <a class="btn btn-default" href="{{ url('edit_training', {'id': data.Sport_ID})}}" title="{{ 'auth.logout.label'|trans }}">
                         {{ 'edit_training'|trans }}
                         </a>
                     </td>
+
+
+                    <td>
+                        <a class="btn btn-default" href="{{ url('index' )}}" title="{{ 'auth.logout.label'|trans }}">
+                            {{ 'delete_training'|trans }}
+                        </a>
+                    </td>
+
                 </tr>
             {% endfor %}
 
     </table>
+
+    </article>
+
 
 {% endblock %}

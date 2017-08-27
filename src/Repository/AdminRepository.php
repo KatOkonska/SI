@@ -83,8 +83,13 @@ class AdminRepository
     public function showAllTrainings(Application $app)
     {
         $queryBuilder = $this->db->createQueryBuilder();
-        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID', 'User_ID')
-            ->from('Sport');
+//        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID', 'User_ID')
+//            ->from('Sport');
+
+        $queryBuilder
+            ->select('*')
+            ->from('Sport_Name', 'sn')
+            ->innerJoin('sn','Sport', 's','sn.Sport_Name_ID = s.Sport_ID');
 
         return $queryBuilder->execute()->fetchAll();
     }
@@ -98,22 +103,6 @@ class AdminRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
-//    public function editUser($id, $form)
-//    {
-//        $formData = $form->getData();
-//        $queryBuilder = $this->db->createQueryBuilder();
-//        $queryBuilder->update('User')
-//            ->set('User_login', '?')
-//            ->set('User_password', '?')
-//            ->set('Role_ID', '?')
-//            ->where('User_ID = ?')
-//            ->setParameter(0, $formData['User_login'])
-//            ->setParameter(1, $formData['security.encoder.bcrypt']->encodePassword($formData['password'], ''))
-//            ->setParameter(2, $formData['Role_ID'])
-//            ->setParameter(3, $id);
-//
-//        return $queryBuilder->execute();
-//    }
 
     public function findOneUserById($id)
     {
@@ -133,5 +122,51 @@ class AdminRepository
         return $queryBuilder->select('*')
             ->from('User', 'u');
     }
+
+
+//    public function editUser($id, $form)
+//    {
+//        $formData = $form->getData();
+//        $queryBuilder = $this->db->createQueryBuilder();
+//        $queryBuilder->update('User')
+//            ->set('User_login', '?')
+//            ->set('User_password', '?')
+//            ->set('Role_ID', '?')
+//            ->where('User_ID = ?')
+//            ->setParameter(0, $formData['User_login'])
+//            ->setParameter(1, $formData['security.encoder.bcrypt']->encodePassword($formData['password'], ''))
+//            ->setParameter(2, $formData['Role_ID'])
+//            ->setParameter(3, $id);
+//
+//        return $queryBuilder->execute();
+//    }
+
+    public function editRole()
+    {
+
+        //edytuj rolę użytkownika
+    }
+
+
+    public function editSportName()
+    {
+
+        //edytuj rolę użytkownika
+    }
+
+    public function deleteSportName()
+    {
+
+        //edytuj rolę użytkownika
+    }
+
+
+    public function deleteUser()
+    {
+
+        //edytuj rolę użytkownika
+    }
+
+
 
 }

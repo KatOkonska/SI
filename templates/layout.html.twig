@@ -19,6 +19,30 @@
     </head>
     <body>
         <nav class="navbar navbar-default">
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+            </ul>
+
+            <h1>„W konfrontacji strumienia ze skałą, strumień zawsze wygrywa - nie przez swoją siłę, ale przez wytrwałość." <br> Buddha</h1>
+
+            <div class="parallax"></div>
+
+            <div style="height:100px;">
+                Scroll Up and Down this page to see the parallax scrolling effect.
+                This div is just here to enable scrolling.
+                Tip: Try to remove the background-attachment property to remove the scrolling effect.
+            </div>
+
             <div class="container-fluid">
                 <div class="btn-group pull-right" role="group" aria-label="{{ 'label.actions'|trans }}">
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -37,5 +61,12 @@
         {#{% include 'default/_flash_messages.html.twig' %}#}
 
         {% block content %}{% endblock %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer> That's all folks</footer>
     </body>
 </html>

@@ -75,16 +75,21 @@ class TrainingRepository
         return $queryBuilder->execute();
     }
 
-    public function deleteTraining($id, $form)
-    {
-
-    }
 
     public function showAllTraining($userID)
     {
         $queryBuilder = $this->db->createQueryBuilder();
-        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID', 'Sport_ID')
-            ->from('Sport')
+//        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID', 'Sport_ID')
+//            ->from('Sport')
+//            ->where('User_ID = '.$userID); -> to na pewno działa
+
+//        SELECT * FROM Sport_Name INNER JOIN Sport ON Sport_Name.Sport_Name_ID = Sport.Sport_ID;
+
+
+        $queryBuilder
+            ->select('*')
+            ->from('Sport_Name', 'sn')
+            ->innerJoin('sn','Sport', 's','sn.Sport_Name_ID = s.Sport_ID')
             ->where('User_ID = '.$userID);
 
         return $queryBuilder->execute()->fetchAll();
@@ -140,6 +145,14 @@ class TrainingRepository
 
         return $queryBuilder->execute()->fetchAll();
     }
+
+
+    public function deleteTraining($id, $form)
+    {
+
+    }
+
+
 }
 
 

@@ -129,6 +129,9 @@ class TrainingController implements ControllerProviderInterface
         $TrainingRepository = new TrainingRepository($app['db']);
         $table = $TrainingRepository->showAllTraining($user['User_ID']);
 
+//        var_dump($table);
+//        die;
+
         return $app['twig']->render(
             'training/training_show_all.html.twig',
             ['table' => $table]
@@ -192,6 +195,11 @@ class TrainingController implements ControllerProviderInterface
                 'id' => $id
             ]
         );
+    }
+
+    public function deleteTrainingAction(Application $app)
+    {
+
     }
 
 }

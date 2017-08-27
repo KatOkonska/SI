@@ -6,14 +6,18 @@
     <h1>Czesc, to lista wszystkich treningów Twoich użytkowników!</h1>
 
 
-    <table class="border" width="50%" align="center" text-align="center">
+    <table class="vitamins" width="50%" align="center" text-align="center">
         <thead>
         <tr>
             <th>Czas</th>
-            <th>Spalone kcal</th>
-            <th>ID_Sportu</th>
+            <th>KCAL</th>
             <th>Dystans</th>
+            <th>Nazwa sport</th>
             <th>Id_usera</th>
+            <th>Edytuj</th>
+            <th>Usuń</th>
+
+
 
         </tr>
         </thead>
@@ -22,11 +26,9 @@
             <tr>
                 <td>{{ data.Sport_time }}</td>
                 <td>{{ data.Sport_kcal }}</td>
-                <td>{{ data.Sport_name_ID }}</td>
                 <td>{{ data.Sport_distance }}</td>
-
+                <td>{{ data.Sport_Name }}</td>
                 <td>{{ data.User_ID }}</td>
-
 
                 <td>
                     <a class="btn btn-default" href="{{ url('edit_training', {'id': data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">

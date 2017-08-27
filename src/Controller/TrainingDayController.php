@@ -110,6 +110,19 @@ class TrainingDayController implements ControllerProviderInterface
 
         );
     }
+
+    public function editTrainingDayAction()
+    {
+
+    }
+
+
+    public function deleteTrainingDayAction()
+    {
+
+    }
+
+
 //
 //    public function showWeekTrainingAction(Application $app)
 //    {

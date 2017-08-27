@@ -193,6 +193,32 @@ class AdminController implements ControllerProviderInterface
     }
 
 
+    public function editRoleAction()
+    {
+
+        //edytuj rolę użytkownika
+    }
+
+
+    public function editSportNameAction()
+    {
+
+        //edytuj rolę użytkownika
+    }
+
+    public function deleteSportNameAction()
+    {
+
+        //edytuj rolę użytkownika
+    }
+
+
+    public function deleteUserAction()
+    {
+
+        //edytuj rolę użytkownika
+    }
+
 
 
 

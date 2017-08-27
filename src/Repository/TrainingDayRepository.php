@@ -60,6 +60,17 @@ class TrainingDayRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
+    public function editTrainingDayAction()
+    {
+
+    }
+
+
+    public function deleteTrainingDayAction()
+    {
+
+    }
+
     //
 //    public function editTrainingDay($id, $form)
 //    {
