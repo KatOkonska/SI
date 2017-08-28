@@ -12,11 +12,13 @@
  */
 namespace Controller;
 
+use Form\DeleteUserType;
 use Form\EditUserType;
 use Form\LoginType;
 use Form\RegisterType;
 use Form\TrainingType;
 use Form\SportNameType;
+use Form\EditPasswordType;
 use Repository\AdminRepository;
 use Repository\CalendarRepository;
 use Repository\UserRepository;
@@ -54,9 +56,15 @@ class AdminController implements ControllerProviderInterface
         $controller->match('show_all_training_days', [$this, 'showAllTrainingDaysAction'])
             ->method('GET|POST')
             ->bind('show_all_training_days');
-        $controller->match('edit_user', [$this, 'editUserAction'])
+        $controller->match('edit_user/{id}', [$this, 'editUserAction'])
             ->method('GET|POST')
             ->bind('edit_user');
+        $controller->match('edit_password/{id}', [$this, 'editPasswordAction'])
+            ->method('GET|POST')
+            ->bind('edit_password');
+        $controller->match('delete_user/{id}', [$this, 'deleteUserAction'])
+            ->method('GET|POST')
+            ->bind('delete_user');
 
         return $controller;
     }
@@ -144,26 +152,16 @@ class AdminController implements ControllerProviderInterface
     public function editUserAction(Application $app, $id, Request $request)
     {
 //
-//        $choice = array(
-//            'jeden' => 1,
-//            'dwa' => 2
-//        );
+
 
         $adminRepository = new AdminRepository($app['db']);
-        $one_user = $adminRepository->findOneUserById($id);
-        var_dump($one_user);
-        die;
+        $data = $adminRepository->findOneUserById($id);
+        $data['choice'] = array(
+            'Użytkownik' => 2,
+            'Admin' => 1
 
-
-//        $UserRepository = new UserRepository($app['db']);
-//        $kaczka = $UserRepository->getUserByID($app['id']->getID());
-
-//        $one_user['choice'] = $choice;
-
-//        $form = $app['form.factory']->createBuilder(TrainingType::class, $one_training, array())->getForm();
-        $form = $app['form.factory']->createBuilder(EditUserType::class, $choice, array(
-            'data' => $choice,
-        ))->getForm();
+        );
+        $form = $app['form.factory']->createBuilder(EditUserType::class, $data)->getForm();
 
         $form->handleRequest($request);
 
@@ -173,7 +171,7 @@ class AdminController implements ControllerProviderInterface
 
             if ($form->isValid()) {
                 $adminRepository = new AdminRepository($app['db']);
-                $editUser = $adminRepository->editUser($id, $form, $user['User_ID']);
+                $editUser = $adminRepository->editUser($id, $form);
 
                 echo 'Wyslano do bazy';
 
@@ -183,7 +181,7 @@ class AdminController implements ControllerProviderInterface
         }
 
         return $app['twig']->render(
-            'edit_user.html.twig',
+            'admin/edit_user.html.twig',
             [
                 'form' => $form->createView(),
                 'error' => $errors,
@@ -191,6 +189,39 @@ class AdminController implements ControllerProviderInterface
             ]
         );
     }
+
+    public function editPasswordAction(Application $app, $id, Request $request)
+    {
+//
+
+        $form = $app['form.factory']->createBuilder(EditPasswordType::class)->getForm();
+        $form->handleRequest($request);
+
+        $errors ='';
+
+
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $adminRepository = new AdminRepository($app['db']);
+                $editPassword = $adminRepository->editPassword($id, $form, $app);
+
+                echo 'Wyslano do bazy';
+
+            } else{
+                $errors = $form->getErrors();
+            }
+        }
+
+        return $app['twig']->render(
+            'admin/edit_password.html.twig',
+            [
+                'form' => $form->createView(),
+                'error' => $errors,
+                'id' => $id
+            ]
+        );
+    }
+
 
 
     public function editRoleAction()
@@ -213,10 +244,35 @@ class AdminController implements ControllerProviderInterface
     }
 
 
-    public function deleteUserAction()
+    public function deleteUserAction(Application $app, $id, Request $request)
     {
+        $form = $app['form.factory']->createBuilder(DeleteUserType::class)->getForm();
+        $form->handleRequest($request);
 
-        //edytuj rolę użytkownika
+        $errors ='';
+
+
+        if ($form->isSubmitted()) {
+
+            if ($form->isValid()) {
+                $adminRepository = new AdminRepository($app['db']);
+                $editPassword = $adminRepository->deleteUser($id);
+
+                return $app->redirect($app['url_generator']->generate('show_all_users'), 301);
+
+            } else{
+                $errors = $form->getErrors();
+            }
+        }
+
+        return $app['twig']->render(
+            'admin/delete_user.html.twig',
+            [
+                'form' => $form->createView(),
+                'error' => $errors,
+                'id' => $id
+            ]
+        );
     }
 
 

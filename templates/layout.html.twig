@@ -21,33 +21,43 @@
         <nav class="navbar navbar-default">
 
             <ul>
-                <li><a href="http://localhost:8000/web/index_dev.php/index/">Home</a></li>
+                <li><a href="{{ url('index' )}}">Home</a></li>
+                {#bind#}
 
                 <li><a href="http://localhost:8000/web/index_dev.php/auth/login">Login</a></li>
 
-                <li><a href="http://localhost:8000/web/index_dev.php/auth/logout">Logout</a></li>
-
                 <li><a href="http://localhost:8000/web/index_dev.php/auth/register">Register</a></li>
 
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Training</a>
-                    <div class="dropdown-content">
-                        <a href="http://localhost:8000/web/index_dev.php/training/show_week">Show week</a>
-                        <a href="http://localhost:8000/web/index_dev.php/training/show_all">Show all</a>
-                        <a href="http://localhost:8000/web/index_dev.php/training/add">Add</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </li>
+            </ul>
 
 
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Training Day</a>
-                    <div class="dropdown-content">
-                        <a href="http://localhost:8000/web/index_dev.php/training_day/add">Add training day</a>
-                        <a href="http://localhost:8000/web/index_dev.php/training_day/show_all">Show all</a>
-                    </div>
-                </li>
+                {% if is_granted("ROLE_USER") %}
 
+                    <ul>
+                        <li><a href="http://localhost:8000/web/index_dev.php/auth/logout">Logout</a></li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Training</a>
+                        <div class="dropdown-content">
+                            <a href="http://localhost:8000/web/index_dev.php/training/show_week">Show week</a>
+                            <a href="http://localhost:8000/web/index_dev.php/training/show_all">Show all</a>
+                            <a href="http://localhost:8000/web/index_dev.php/training/add">Add</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Training Day</a>
+                        <div class="dropdown-content">
+                            <a href="http://localhost:8000/web/index_dev.php/training_day/add">Add training day</a>
+                            <a href="http://localhost:8000/web/index_dev.php/training_day/show_all">Show all</a>
+                        </div>
+                    </li>
+                    </ul>
+
+                {#{% elseif  is_granted("ROLE_ADMIN") %}#}
+                <ul>
 
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Admin</a>
@@ -59,13 +69,9 @@
                     </div>
                 </li>
 
-                <li><a href="">        </a></li>
-                <li><a href="">        </a></li>
-                <li><a href="">        </a></li>
-                <li><a href="">Logout</a></li>
+                </ul>
 
-            </ul>
-
+                {% endif %}
 
 
             <h1>„W konfrontacji strumienia ze skałą,<br>

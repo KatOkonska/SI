@@ -83,14 +83,14 @@ class TrainingController implements ControllerProviderInterface
         $tag = 'kaczka';
 
         $sportNameRepository = new SportNameRepository($app['db']);
-        $choice = $sportNameRepository->showAllSportName();
+        $choice['choice'] = $sportNameRepository->showAllSportName();
 //        var_dump($choice);
 //        die;
 
 
 
 //        $form = $app['form.factory']->createBuilder(new TrainingType($tag))->getForm();
-        $form = $app['form.factory']->createBuilder(TrainingType::class, $tag, array(
+        $form = $app['form.factory']->createBuilder(TrainingType::class, $choice, array(
             'data' => $choice,
         ))->getForm();
         $form->handleRequest($request);

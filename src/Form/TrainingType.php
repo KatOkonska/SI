@@ -29,7 +29,7 @@ class TrainingType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $choices = $options['data'];//['choice'];
+        $choices = $options['data']['choice'];
 
         $builder->add(
             'Sport_time',

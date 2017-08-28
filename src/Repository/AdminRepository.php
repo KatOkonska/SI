@@ -124,22 +124,35 @@ class AdminRepository
     }
 
 
-//    public function editUser($id, $form)
-//    {
-//        $formData = $form->getData();
-//        $queryBuilder = $this->db->createQueryBuilder();
-//        $queryBuilder->update('User')
-//            ->set('User_login', '?')
-//            ->set('User_password', '?')
-//            ->set('Role_ID', '?')
-//            ->where('User_ID = ?')
-//            ->setParameter(0, $formData['User_login'])
-//            ->setParameter(1, $formData['security.encoder.bcrypt']->encodePassword($formData['password'], ''))
-//            ->setParameter(2, $formData['Role_ID'])
-//            ->setParameter(3, $id);
-//
-//        return $queryBuilder->execute();
-//    }
+    public function editUser($id, $form)
+    {
+        $formData = $form->getData();
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->update('User')
+            ->set('User_login', '?')
+            ->set('Role_ID', '?')
+            ->where('User_ID = ?')
+            ->setParameter(0, $formData['User_login'])
+            ->setParameter(1, $formData['Role_ID'])
+            ->setParameter(2, $id);
+
+        return $queryBuilder->execute();
+    }
+
+
+    public function editPassword($id, $form, Application $app)
+    {
+        $formData = $form->getData();
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->update('User')
+            ->set('User_password', '?')
+            ->where('User_ID = ?')
+            ->setParameter(0, $app['security.encoder.bcrypt']->encodePassword($formData['User_password'], ''))
+            ->setParameter(1, $id);
+
+        return $queryBuilder->execute();
+    }
+
 
     public function editRole()
     {
@@ -161,10 +174,11 @@ class AdminRepository
     }
 
 
-    public function deleteUser()
+    public function deleteUser($id)
     {
-
-        //edytuj rolę użytkownika
+//        $queryBuilder = $this->db->createQueryBuilder();
+//        $queryBuilder->delete('User', ['id' => $id]);
+        return $this->db->delete('User', ['User_ID' => $id]);
     }
 
 

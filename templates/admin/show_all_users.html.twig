@@ -15,6 +15,7 @@
             <th>Haslo</th>
             <th>Rola</th>
             <th>Edytuj</th>
+            <th>Zmień hasło</th>
             <th>Usuń</th>
 
         </tr>
@@ -27,13 +28,19 @@
                 <td>{{ data.User_password }}</td>
                 <td>{{ data.Role_ID }}</td>
                 <td>
-                    <a class="btn btn-default" href="{{ url('edit_user' )}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'edit_training'|trans }}
+                    <a class="btn btn-default" href="{{ url('edit_user',{'id':data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
+                        {{ 'edit_user'|trans }}
                     </a>
                 </td>
                 <td>
-                    <a class="btn btn-default" href="{{ url('index' )}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'delete_training'|trans }}
+                    <a class="btn btn-default" href="{{ url('edit_password',{'id':data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
+                        {{ 'edit_password'|trans }}
+                    </a>
+                </td>
+
+                <td>
+                    <a class="btn btn-default" href="{{ url('delete_user',{'id':data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
+                        {{ 'delete_user'|trans }}
                     </a>
                 </td>
             </tr>

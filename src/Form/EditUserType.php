@@ -35,7 +35,7 @@ class EditUserType extends AbstractType
             'User_login',
             TextType::class,
             [
-                'label' => 'label.time',
+                'label' => 'label.login',
                 'required' => true,
                 'attr' => [
                     'max_length' => 32,
@@ -53,26 +53,26 @@ class EditUserType extends AbstractType
             ]
         );
 
-        $builder->add(
-            'User_password',
-            TextType::class,
-            [
-                'label' => 'label.kcal',
-                'required' => true,
-                'attr' => [
-                    'max_length' => 32,
-                ],
-                'constraints' => [
-                    new Assert\NotBlank(),
-                    new Assert\Length(
-                        [
-                            'min' => 1,
-                            'max' => 32,
-                        ]
-                    ),
-                ],
-            ]
-        );
+//        $builder->add(
+//            'User_password',
+//            TextType::class,
+//            [
+//                'label' => 'label.password',
+//                'required' => true,
+//                'attr' => [
+//                    'max_length' => 32,
+//                ],
+//                'constraints' => [
+//                    new Assert\NotBlank(),
+//                    new Assert\Length(
+//                        [
+//                            'min' => 1,
+//                            'max' => 32,
+//                        ]
+//                    ),
+//                ],
+//            ]
+//        );
 
         $builder->add(
             'Role_ID',
