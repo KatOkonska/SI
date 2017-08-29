@@ -49,6 +49,12 @@ class TrainingType extends AbstractType
                             'max' => 32,
                         ]
                     ),
+                    new Assert\Type(
+                        [
+                            'type'=>'integer',
+                            'message'=>'The value {{ value }} is not a valid {{ type }}.',
+                        ]
+                    )
                 ],
             ]
         );
@@ -70,6 +76,12 @@ class TrainingType extends AbstractType
                             'max' => 32,
                         ]
                     ),
+                    new Assert\Type(
+                        [
+                            'type'=>'integer',
+                            'message'=>'The value {{ value }} is not a valid {{ type }}.',
+                        ]
+                    )
                 ],
             ]
         );
@@ -90,6 +102,12 @@ class TrainingType extends AbstractType
                             'max' => 32,
                         ]
                     ),
+                    new Assert\Type(
+                        [
+                            'type'=>'integer',
+                            'message'=>'The value {{ value }} is not a valid {{ type }}.',
+                        ]
+                    )
                 ],
             ]
         );

@@ -14,6 +14,7 @@ namespace Controller;
 
 use Form\DeleteSportNameType;
 use Form\DeleteUserType;
+use Form\EditSportNameType;
 use Form\EditUserType;
 use Form\LoginType;
 use Form\RegisterType;
@@ -49,8 +50,8 @@ class AdminController implements ControllerProviderInterface
             ->method('GET|POST')
             ->bind('add_sport');
         $controller->match('show_all_users', [$this, 'showAllUsersAction'])
-                    ->method('GET|POST')
-                    ->bind('show_all_users');
+            ->method('GET|POST')
+            ->bind('show_all_users');
         $controller->match('show_all_trainings', [$this, 'showAllTrainingsAction'])
             ->method('GET|POST')
             ->bind('show_all_trainings');
@@ -63,6 +64,9 @@ class AdminController implements ControllerProviderInterface
         $controller->match('edit_password/{id}', [$this, 'editPasswordAction'])
             ->method('GET|POST')
             ->bind('edit_password');
+        $controller->match('edit_sport_name/{id}', [$this, 'editSportNameAction'])
+            ->method('GET|POST')
+            ->bind('edit_sport_name');
         $controller->match('show_all_sport_names', [$this, 'showAllSportNamesAction'])
             ->method('GET|POST')
             ->bind('show_all_sport_names');
@@ -77,6 +81,11 @@ class AdminController implements ControllerProviderInterface
     }
 
 
+    /**
+     * @param Application $app
+     * @param Request $request
+     * @return mixed
+     */
     public function addSportAction (Application $app, Request $request)
     {
 
@@ -231,17 +240,40 @@ class AdminController implements ControllerProviderInterface
 
 
 
-    public function editRoleAction()
+    public function editSportNameAction(Application $app, $id, Request $request)
     {
 
-        //edytuj rolę użytkownika
-    }
+
+        $adminRepository = new AdminRepository($app['db']);
+        $sportname = $adminRepository->findOneSportNameById($id);
+        $form = $app['form.factory']->createBuilder(EditSportNameType::class, $sportname)->getForm();
+        $form->handleRequest($request);
+
+        $errors ='';
 
 
-    public function editSportNameAction()
-    {
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $adminRepository = new AdminRepository($app['db']);
+                $editSportName = $adminRepository->editSportName($id, $form, $app);
 
-        //edytuj rolę użytkownika
+                echo 'Wyslano do bazy';
+                return $app->redirect($app['url_generator']->generate('show_all_sport_names'), 301);
+
+
+            } else{
+                $errors = $form->getErrors();
+            }
+        }
+
+        return $app['twig']->render(
+            'admin/edit_sport_name.html.twig',
+            [
+                'form' => $form->createView(),
+                'error' => $errors,
+                'id' => $id
+            ]
+        );
     }
 
     public function showAllSportNamesAction(Application $app)
@@ -273,7 +305,7 @@ class AdminController implements ControllerProviderInterface
                 $adminRepository = new AdminRepository($app['db']);
                 $deleteSportName = $adminRepository->deleteSportName($id);
 
-                return $app->redirect($app['url_generator']->generate('index'), 301);
+                return $app->redirect($app['url_generator']->generate('show_all_sport_names'), 301);
 
             } else{
                 $errors = $form->getErrors();
@@ -281,7 +313,7 @@ class AdminController implements ControllerProviderInterface
         }
 
         return $app['twig']->render(
-            'training/training_delete.html.twig',
+            'admin/delete_sport_name.html.twig',
             [
                 'form' => $form->createView(),
                 'error' => $errors,

@@ -222,7 +222,7 @@ class TrainingController implements ControllerProviderInterface
                 $deleteTraining = $trainingRepository->deleteTraining($id);
 
                 return $app->redirect($app['url_generator']->generate('show_all_training'), 301);
-                //przydałoby się dla admina inne przekierowanie
+                //TODO: przydałoby się dla admina inne przekierowanie
 
             } else{
                 $errors = $form->getErrors();

@@ -44,7 +44,7 @@ class TrainingDayRepository
                     'User_ID' => '?'
                 )
             )
-            ->setParameter(0, $formData['Training_day_day_number'])
+            ->setParameter(0, date_format($formData['Training_day_day_number'], 'Y-m-d'))
             ->setParameter(1, $userID);
 
         return $queryBuilder->execute();
@@ -61,15 +61,43 @@ class TrainingDayRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
-    public function editTrainingDayAction()
+    public function findOneTrainingDayById($id)
     {
+        $queryBuilder = $this->queryTrainingDayAll();
+        $queryBuilder->where('td.Training_day_ID = :id')
+            ->setParameter(':id', $id, \PDO::PARAM_INT);
+        $result = $queryBuilder->execute()->fetch();
+        $result ["Training_day_day_number"] = new \DateTime($result ["Training_day_day_number"]);
+//        var_dump($result);
+//        die;
 
+        return !$result ? [] : $result;
     }
 
-
-    public function deleteTrainingDayAction()
+    protected function queryTrainingDayAll()
     {
+        $queryBuilder = $this->db->createQueryBuilder();
 
+        return $queryBuilder->select('*')
+            ->from('Training_day', 'td');
+    }
+
+    public function editTrainingDay($id, $form)
+    {
+        $formData = $form->getData();
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->update('Training_day')
+            ->set('Training_day_day_number', '?')
+            ->where('Training_day_ID = ?')
+            ->setParameter(0, date_format($formData['Training_day_day_number'], 'Y-m-d'))
+            ->setParameter(1, $id);
+
+        return $queryBuilder->execute();
+    }
+
+    public function deleteTrainingDay($id)
+    {
+        return $this->db->delete('Training_day', ['Training_day_ID' => $id]);
     }
 
     //

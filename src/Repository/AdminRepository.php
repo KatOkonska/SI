@@ -100,6 +100,23 @@ class AdminRepository
         return !$result ? [] : $result;
     }
 
+    public function findOneSportNameById($id)
+    {
+        $queryBuilder = $this->querySportNameAll();
+        $queryBuilder->where('sn.Sport_Name_ID = :id')
+            ->setParameter(':id', $id, \PDO::PARAM_INT);
+        $result = $queryBuilder->execute()->fetch();
+
+        return !$result ? [] : $result;
+    }
+
+    protected function querySportNameAll()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select('*')
+            ->from('Sport_Name', 'sn');
+    }
 
     protected function queryUserAll()
     {
@@ -171,10 +188,17 @@ class AdminRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
-    public function editSportName()
+    public function editSportName($id, $form, Application $app)
     {
+        $formData = $form->getData();
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->update('Sport_Name')
+            ->set('Sport_Name', '?')
+            ->where('Sport_Name_ID = ?')
+            ->setParameter(0, $formData['Sport_Name'])
+            ->setParameter(1, $id);
 
-        //edytuj rolę użytkownika
+        return $queryBuilder->execute();
     }
 
     public function deleteSportName($id)

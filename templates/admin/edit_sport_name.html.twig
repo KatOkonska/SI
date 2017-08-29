@@ -3,19 +3,19 @@
 {% block title %}{{ 'title.auth_add_training'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>{{ 'title.edit_training_day'|trans }}</h1>
-    <h2></h2>
+<h1>{{ 'title.edit_sport_name'|trans }}</h1>
+<h2></h2>
 
-    {% if error is defined and error|length %}
-        {{ dump(error) }}
-    {% endif %}
+{% if error is defined and error|length %}
+{{ dump(error) }}
+{% endif %}
 
-    <div>
-        {{ form_start(form, { method: 'post', action: path('edit_training_day', {'id':id})}) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="{{ 'edytuj'|trans }}" class="button" />
-        {{ form_end(form) }}
-    </div>
+<div>
+    {{ form_start(form, { method: 'post', action: path('edit_sport_name', {'id':id})}) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="{{ 'edytuj'|trans }}" class="button" />
+    {{ form_end(form) }}
+</div>
 {% endblock %}
 
 

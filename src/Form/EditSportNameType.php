@@ -12,17 +12,18 @@ namespace Form;
 use Symfony\Component\Form\AbstractType;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class TrainingDayType
+ * Class EditSportNameType
  *
  * @package Form
  */
-class TrainingDayType extends AbstractType
+class EditSportNameType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -31,21 +32,28 @@ class TrainingDayType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-        $builder->add(
-            'Training_day_day_number',
-            DateType::class,
-            [
-                'label' => 'label.time',
-                'required' => true,
 
+        $builder->add(
+            'Sport_Name',
+            TextType::class,
+            [
+                'label' => 'label.Sport_Name',
+                'required' => true,
+                'attr' => [
+                    'max_length' => 32,
+
+                ],
                 'constraints' => [
                     new Assert\NotBlank(),
-
+                    new Assert\Length(
+                        [
+                            'min' => 1,
+                            'max' => 32,
+                        ]
+                    ),
                 ],
             ]
         );
-
-
     }
 
     /**
@@ -53,6 +61,6 @@ class TrainingDayType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'training_day_type';
+        return 'edit_user_type';
     }
 }

@@ -35,14 +35,14 @@
                 <td>{{ data.Training_day_day_number}}</td>
 
                 <td>
-                    <a class="btn btn-default" href="{{ url('edit_training', {'id': data.User_ID})}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'edit_training'|trans }}
+                    <a class="btn btn-default" href="{{ url('edit_training_day', {'id': data.Training_day_ID})}}" title="{{ 'auth.logout.label'|trans }}">
+                        {{ 'edit_training_day'|trans }}
                     </a>
                 </td>
 
                 <td>
-                    <a class="btn btn-default" href="{{ url('edit_training', {'id': data.User_ID})}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'edit_training'|trans }}
+                    <a class="btn btn-default" href="{{ url('delete_training_day', {'id': data.Training_day_ID})}}" title="{{ 'auth.logout.label'|trans }}">
+                        {{ 'delete_training_day'|trans }}
                     </a>
                 </td>
             </tr>

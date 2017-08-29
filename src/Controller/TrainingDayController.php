@@ -13,6 +13,8 @@
 namespace Controller;
 
 
+use Form\DeleteTrainingDayType;
+use Form\EditTrainingDayType;
 use Form\TrainingType;
 use Form\TrainingDayType;
 use Repository\TrainingRepository;
@@ -42,9 +44,12 @@ class TrainingDayController implements ControllerProviderInterface
         $controller->match('show_all', [$this, 'showAllTrainingDayAction'])
             ->method('POST|GET')
             ->bind('show_all_training_day');
-//        $controller->match('edit/{id}', [$this, 'editTrainingDayAction'])
-//            ->method('POST|GET')
-//            ->bind('edit');
+        $controller->match('delete_training_day/{id}', [$this, 'deleteTrainingDayAction'])
+            ->method('GET|POST')
+            ->bind('delete_training_day');
+        $controller->match('edit_training_day/{id}', [$this, 'editTrainingDayAction'])
+            ->method('POST|GET')
+            ->bind('edit_training_day');
 
 
         return $controller;
@@ -111,15 +116,76 @@ class TrainingDayController implements ControllerProviderInterface
         );
     }
 
-    public function editTrainingDayAction()
+    public function editTrainingDayAction(Application $app, $id, Request $request  )
     {
 
+        $trainingDayRepository = new TrainingDayRepository($app['db']);
+        $trainingday = $trainingDayRepository->findOneTrainingDayById($id);
+        $form = $app['form.factory']->createBuilder(EditTrainingDayType::class, $trainingday)->getForm();
+        $form->handleRequest($request);
+
+        $errors ='';
+
+
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                  $editSportName = $trainingDayRepository->editTrainingDay($id, $form);
+
+                echo 'Wyslano do bazy';
+                return $app->redirect($app['url_generator']->generate('show_all_training_day'), 301);
+
+
+            } else{
+                $errors = $form->getErrors();
+            }
+        }
+
+        return $app['twig']->render(
+            'training_day/training_day_edit.html.twig',
+            [
+                'form' => $form->createView(),
+                'error' => $errors,
+                'id' => $id
+            ]
+        );
     }
 
 
-    public function deleteTrainingDayAction()
+    /**
+     * @param Application $app
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function deleteTrainingDayAction(Application $app, $id, Request $request)
     {
+        $form = $app['form.factory']->createBuilder(DeleteTrainingDayType::class)->getForm();
+        $form->handleRequest($request);
 
+        $errors ='';
+
+
+        if ($form->isSubmitted()) {
+
+            if ($form->isValid()) {
+                $trainingDayRepository = new TrainingDayRepository($app['db']);
+                $deleteTrainingDay = $trainingDayRepository->deleteTrainingDay($id);
+
+                return $app->redirect($app['url_generator']->generate('show_all_training_day'), 301);
+
+            } else{
+                $errors = $form->getErrors();
+            }
+        }
+
+        return $app['twig']->render(
+            'training_day/training_day_delete.html.twig',
+            [
+                'form' => $form->createView(),
+                'error' => $errors,
+                'id' => $id
+            ]
+        );
     }
 
 

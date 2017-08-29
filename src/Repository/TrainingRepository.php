@@ -152,7 +152,6 @@ class TrainingRepository
         return $this->db->delete('Sport', ['Sport_ID' => $id]);
     }
 
-
 }
 
 
