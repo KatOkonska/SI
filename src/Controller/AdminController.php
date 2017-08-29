@@ -12,6 +12,7 @@
  */
 namespace Controller;
 
+use Form\DeleteSportNameType;
 use Form\DeleteUserType;
 use Form\EditUserType;
 use Form\LoginType;
@@ -62,9 +63,15 @@ class AdminController implements ControllerProviderInterface
         $controller->match('edit_password/{id}', [$this, 'editPasswordAction'])
             ->method('GET|POST')
             ->bind('edit_password');
+        $controller->match('show_all_sport_names', [$this, 'showAllSportNamesAction'])
+            ->method('GET|POST')
+            ->bind('show_all_sport_names');
         $controller->match('delete_user/{id}', [$this, 'deleteUserAction'])
             ->method('GET|POST')
             ->bind('delete_user');
+        $controller->match('delete_sport_name/{id}', [$this, 'deleteSportNameAction'])
+            ->method('GET|POST')
+            ->bind('delete_sport_name');
 
         return $controller;
     }
@@ -237,10 +244,50 @@ class AdminController implements ControllerProviderInterface
         //edytuj rolę użytkownika
     }
 
-    public function deleteSportNameAction()
+    public function showAllSportNamesAction(Application $app)
     {
+        $table =[];
 
-        //edytuj rolę użytkownika
+        $adminRepository = new AdminRepository($app['db']);
+        $table = $adminRepository->showAllSportNames($app);
+
+
+        return $app['twig']->render(
+            'admin/show_all_sport_names.html.twig',
+            ['table' => $table]
+
+        );
+    }
+
+    public function deleteSportNameAction(Application $app, $id, Request $request)
+    {
+        $form = $app['form.factory']->createBuilder(DeleteSportNameType::class)->getForm();
+        $form->handleRequest($request);
+
+        $errors ='';
+
+
+        if ($form->isSubmitted()) {
+
+            if ($form->isValid()) {
+                $adminRepository = new AdminRepository($app['db']);
+                $deleteSportName = $adminRepository->deleteSportName($id);
+
+                return $app->redirect($app['url_generator']->generate('index'), 301);
+
+            } else{
+                $errors = $form->getErrors();
+            }
+        }
+
+        return $app['twig']->render(
+            'training/training_delete.html.twig',
+            [
+                'form' => $form->createView(),
+                'error' => $errors,
+                'id' => $id
+            ]
+        );
     }
 
 
@@ -256,7 +303,7 @@ class AdminController implements ControllerProviderInterface
 
             if ($form->isValid()) {
                 $adminRepository = new AdminRepository($app['db']);
-                $editPassword = $adminRepository->deleteUser($id);
+                $deletePassword = $adminRepository->deleteUser($id);
 
                 return $app->redirect($app['url_generator']->generate('show_all_users'), 301);
 

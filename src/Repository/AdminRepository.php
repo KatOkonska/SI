@@ -56,20 +56,6 @@ class AdminRepository
      *
      * @return array Result
      */
-    public function addSportName($form, Application $app)
-    {
-        $formData = $form->getData();
-        $queryBuilder = $this->db->createQueryBuilder();
-        $queryBuilder->insert('Sport_Name')
-            ->values(
-                array(
-                    'Sport_Name' => '?',
-                )
-            )
-            ->setParameter(0, $formData['Sport_Name']);
-
-        return $queryBuilder->execute();
-    }
 
     public function showAllUsers(Application $app)
     {
@@ -139,6 +125,14 @@ class AdminRepository
         return $queryBuilder->execute();
     }
 
+    public function deleteUser($id)
+    {
+//        $queryBuilder = $this->db->createQueryBuilder();
+//        $queryBuilder->delete('User', ['id' => $id]);
+        return $this->db->delete('User', ['User_ID' => $id]);
+    }
+
+
 
     public function editPassword($id, $form, Application $app)
     {
@@ -153,13 +147,29 @@ class AdminRepository
         return $queryBuilder->execute();
     }
 
-
-    public function editRole()
+    public function addSportName($form, Application $app)
     {
+        $formData = $form->getData();
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->insert('Sport_Name')
+            ->values(
+                array(
+                    'Sport_Name' => '?',
+                )
+            )
+            ->setParameter(0, $formData['Sport_Name']);
 
-        //edytuj rolę użytkownika
+        return $queryBuilder->execute();
     }
 
+    public function showAllSportNames(Application $app)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('*')
+            ->from('Sport_Name');
+
+        return $queryBuilder->execute()->fetchAll();
+    }
 
     public function editSportName()
     {
@@ -167,19 +177,12 @@ class AdminRepository
         //edytuj rolę użytkownika
     }
 
-    public function deleteSportName()
+    public function deleteSportName($id)
     {
-
-        //edytuj rolę użytkownika
+        return $this->db->delete('Sport_Name', ['Sport_Name_ID' => $id]);
     }
 
 
-    public function deleteUser($id)
-    {
-//        $queryBuilder = $this->db->createQueryBuilder();
-//        $queryBuilder->delete('User', ['id' => $id]);
-        return $this->db->delete('User', ['User_ID' => $id]);
-    }
 
 
 

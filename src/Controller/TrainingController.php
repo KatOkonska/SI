@@ -13,6 +13,7 @@
 namespace Controller;
 
 
+use Form\DeleteTrainingType;
 use Form\TrainingType;
 use Repository\TrainingRepository;
 use Repository\UserRepository;
@@ -46,6 +47,9 @@ class TrainingController implements ControllerProviderInterface
         $controller->match('edit/{id}', [$this, 'editTrainingAction'])
             ->method('POST|GET')
             ->bind('edit_training');
+        $controller->match('delete_training/{id}', [$this, 'deleteTrainingAction'])
+            ->method('GET|POST')
+            ->bind('delete_training');
 
 
         return $controller;
@@ -197,9 +201,42 @@ class TrainingController implements ControllerProviderInterface
         );
     }
 
-    public function deleteTrainingAction(Application $app)
+    /**
+     * @param Application $app
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function deleteTrainingAction(Application $app, $id, Request $request)
     {
+        $form = $app['form.factory']->createBuilder(DeleteTrainingType::class)->getForm();
+        $form->handleRequest($request);
 
+        $errors ='';
+
+
+        if ($form->isSubmitted()) {
+
+            if ($form->isValid()) {
+                $trainingRepository = new TrainingRepository($app['db']);
+                $deleteTraining = $trainingRepository->deleteTraining($id);
+
+                return $app->redirect($app['url_generator']->generate('show_all_training'), 301);
+                //przydałoby się dla admina inne przekierowanie
+
+            } else{
+                $errors = $form->getErrors();
+            }
+        }
+
+        return $app['twig']->render(
+            'training/training_delete.html.twig',
+            [
+                'form' => $form->createView(),
+                'error' => $errors,
+                'id' => $id
+            ]
+        );
     }
 
 }

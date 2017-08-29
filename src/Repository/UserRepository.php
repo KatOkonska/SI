@@ -174,6 +174,7 @@ class UserRepository
         return $queryBuilder->execute();
     }
 
+
 //    public function addTraining($form)
 //    {
 //        $formData = $form->getData();

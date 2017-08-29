@@ -147,9 +147,9 @@ class TrainingRepository
     }
 
 
-    public function deleteTraining($id, $form)
+    public function deleteTraining($id)
     {
-
+        return $this->db->delete('Sport', ['Sport_ID' => $id]);
     }
 
 
