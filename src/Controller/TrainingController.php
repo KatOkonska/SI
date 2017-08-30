@@ -147,8 +147,14 @@ class TrainingController implements ControllerProviderInterface
     {
         $table =[];
 
+        $UserRepository = new UserRepository($app['db']);
+        $user = $UserRepository->getUserByLogin($app['user']->getUsername());
+
         $TrainingRepository = new TrainingRepository($app['db']);
-        $table = $TrainingRepository->showWeekTraining();
+        $table = $TrainingRepository->showWeekTraining($user['User_ID']);
+
+//        var_dump($table);
+//        die;
 
         return $app['twig']->render(
             'training/training_show_week.html.twig',

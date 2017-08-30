@@ -174,6 +174,19 @@ class UserRepository
         return $queryBuilder->execute();
     }
 
+    public function editOwnPassword($id, $form, Application $app)
+    {
+        $formData = $form->getData();
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->update('User')
+            ->set('User_password', '?')
+            ->where('User_ID = ?')
+            ->setParameter(0, $app['security.encoder.bcrypt']->encodePassword($formData['User_password'], ''))
+            ->setParameter(1, $id);
+
+        return $queryBuilder->execute();
+    }
+
 
 //    public function addTraining($form)
 //    {

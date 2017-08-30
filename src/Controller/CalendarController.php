@@ -21,9 +21,12 @@ class CalendarController implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $controller = $app['controllers_factory'];
-        $controller->get('/', [$this, 'indexAction'])
+        $controller->get('/', [$this, 'showLastMonthAction'])
             ->method('POST|GET')
             ->bind('calendar');
+//        $controller->get('/', [$this, 'displayCurrentDateAction'])
+//            ->method('POST|GET')
+//            ->bind('calendar');
 
 //        $controller->get('/', [$this, 'showName'])
 //            ->method('POST|GET')
@@ -41,12 +44,12 @@ class CalendarController implements ControllerProviderInterface
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      */
-    public function indexAction(Application $app)
+    public function showLastMonthAction(Application $app)
     {
         $calendar=[];
 
         $CalendarRepository = new CalendarRepository($app['db']);
-        $calendar = $CalendarRepository->showAll();
+        $calendar = $CalendarRepository->showLastMonth();
 
         return $app['twig']->render(
             'calendar.html.twig',
@@ -54,6 +57,22 @@ class CalendarController implements ControllerProviderInterface
 
         );
     }
+
+//    public function displayCurrentDateAction(Application $app)
+//    {
+//        $calendar=[];
+//
+//        $CalendarRepository = new CalendarRepository($app['db']);
+//        $currentDate = $CalendarRepository->displayCurrentDate();
+//
+//        return $app['twig']->render(
+//            'calendar.html.twig',
+//            ['calendar' => $calendar,
+//            'currentDate' =>$currentDate]
+//
+//        );
+//    }
+
 
 //    public function welcomeAction(Application $app)
 //    {

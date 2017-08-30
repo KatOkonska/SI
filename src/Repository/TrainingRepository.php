@@ -95,12 +95,16 @@ class TrainingRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
-    public function showWeekTraining() //podobnie jak showAllTraining
+    public function showWeekTraining($userID)
     {
         $queryBuilder = $this->db->createQueryBuilder();
-        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID')
-            ->from('Sport')
-            ->where('Sport_time = 222');
+        $queryBuilder
+            ->select('*')
+            ->from('Sport_Name', 'sn')
+            ->innerJoin('sn','Sport', 's','sn.Sport_Name_ID = s.Sport_ID')
+            ->where('User_ID = '.$userID)
+            ->orderBy('Sport_Name')
+            ->setMaxResults(5);
 
         return $queryBuilder->execute()->fetchAll();
     }

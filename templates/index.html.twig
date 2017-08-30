@@ -1,6 +1,12 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
+
+    <h1>
+        {{ 'title.bookmarks_list'|trans }}
+    </h1>
+
+
     {#Witaj     {{ dump(name) }} !#}
     {#<h1>Cześć {{ app.user.username }} ! </h1>#}
     {% if is_granted("ROLE_USER") %}

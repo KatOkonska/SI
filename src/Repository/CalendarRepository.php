@@ -41,14 +41,23 @@ class CalendarRepository
         echo "Today is " . date("Y/m/d") . "<br>";
     }
 
-    public function showAll()
+    public function showLastMonth()
     {
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder->select('*')
             ->from('Training_day');
+//            ->where('Training_day_day_number' >= DATE_SUB(NOW(), INTERVAL 1 YEAR));
 
         return $queryBuilder->execute()->fetchAll();
     }
+
+//select
+//*
+//from
+//Training_day
+//where
+//Training_day_day_number >= DATE_SUB(NOW(), INTERVAL 1 YEAR);
+
 
     public function showName()
     {

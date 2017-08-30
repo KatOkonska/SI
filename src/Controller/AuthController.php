@@ -12,6 +12,7 @@
  */
 namespace Controller;
 
+use Form\EditPasswordType;
 use Form\LoginType;
 use Form\RegisterType;
 use Form\TrainingType;
@@ -41,6 +42,10 @@ class AuthController implements ControllerProviderInterface
         $controller->match('register', [$this, 'registerAction'])
             ->method('GET|POST')
             ->bind('auth_register');
+        $controller->match('edit_own_password/{id}', [$this, 'editOwnPasswordAction'])
+            ->method('GET|POST')
+            ->bind('auth_edit_own_password');
+
 
 
 
@@ -109,6 +114,38 @@ class AuthController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+            ]
+        );
+    }
+
+    public function editOwnPasswordAction(Application $app, $id, Request $request)
+    {
+//
+
+        $form = $app['form.factory']->createBuilder(EditPasswordType::class)->getForm();
+        $form->handleRequest($request);
+
+        $errors ='';
+
+
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $userRepository = new UserRepository($app['db']);
+                $editOwnPassword = $userRepository->editOwnPassword($id, $form, $app);
+
+                echo 'Wyslano do bazy';
+
+            } else{
+                $errors = $form->getErrors();
+            }
+        }
+
+        return $app['twig']->render(
+            'auth/edit_own_password.html.twig',
+            [
+                'form' => $form->createView(),
+                'error' => $errors,
+                'id' => $id
             ]
         );
     }

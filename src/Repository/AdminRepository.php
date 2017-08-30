@@ -83,7 +83,7 @@ class AdminRepository
     public function showAllTrainingDays(Application $app)
     {
         $queryBuilder = $this->db->createQueryBuilder();
-        $queryBuilder->select('Training_day_day_number', 'User_ID')
+        $queryBuilder->select('*')
             ->from('Training_day');
 
         return $queryBuilder->execute()->fetchAll();

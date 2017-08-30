@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title '' %} - My Silex Application</title>
+        <title>{% block title '' %}Monitor treningu sportowego</title>
 
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
 
@@ -24,9 +24,9 @@
                 <li><a href="{{ url('index' )}}">Home</a></li>
                 {#bind#}
 
-                <li><a href="http://localhost:8000/web/index_dev.php/auth/login">Login</a></li>
+                <li><a href="{{ url('auth_login') }}">Login</a></li>
 
-                <li><a href="http://localhost:8000/web/index_dev.php/auth/register">Register</a></li>
+                <li><a href="{{ url('auth_register') }}">Register</a></li>
 
             </ul>
 
@@ -34,14 +34,16 @@
                 {% if is_granted("ROLE_USER") %}
 
                     <ul>
-                        <li><a href="http://localhost:8000/web/index_dev.php/auth/logout">Logout</a></li>
+                        <li><a href="{{ url('auth_logout') }}">Logout</a></li>
+                        <li><a href="{{ url('index') }}">Change password</a></li>
+                        <li><a href="{{ url('calendar') }}">Calendar</a></li>
 
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn">Training</a>
                         <div class="dropdown-content">
-                            <a href="http://localhost:8000/web/index_dev.php/training/show_week">Show week</a>
-                            <a href="http://localhost:8000/web/index_dev.php/training/show_all">Show all</a>
-                            <a href="http://localhost:8000/web/index_dev.php/training/add">Add</a>
+                            <a href="{{ url('show_week_training') }}">Show last 5 trainings</a>
+                            <a href="{{ url('show_all_training') }}">Show all</a>
+                            <a href="{{ url('add_training') }}">Add training</a>
                             <a href="#">Link 3</a>
                         </div>
                     </li>
@@ -50,8 +52,8 @@
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn">Training Day</a>
                         <div class="dropdown-content">
-                            <a href="http://localhost:8000/web/index_dev.php/training_day/add">Add training day</a>
-                            <a href="http://localhost:8000/web/index_dev.php/training_day/show_all">Show all</a>
+                            <a href="{{ url('add_training_day') }}">Add training day</a>
+                            <a href="{{ url('show_all_training_day') }}">Show all</a>
                         </div>
                     </li>
                     </ul>
@@ -62,11 +64,11 @@
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Admin</a>
                     <div class="dropdown-content">
-                        <a href="http://localhost:8000/web/index_dev.php/admin/add_sport">Add sport name</a>
-                        <a href="http://localhost:8000/web/index_dev.php/admin/show_all_users">Show all users</a>
-                        <a href="http://localhost:8000/web/index_dev.php/admin/show_all_trainings">Show all trainings</a>
-                        <a href="http://localhost:8000/web/index_dev.php/admin/show_all_training_days">Show all training days</a>
-                        <a href="http://localhost:8000/web/index_dev.php/admin/show_all_sport_names">Show all sport names</a>
+                        <a href="{{ url('add_sport') }}">Add sport name</a>
+                        <a href="{{ url('show_all_users') }}">Show all users</a>
+                        <a href="{{ url('show_all_trainings') }}">Show all trainings</a>
+                        <a href="{{ url('show_all_training_days') }}">Show all training days</a>
+                        <a href="{{ url('show_all_sport_names') }}">Show all sport names</a>
 
                     </div>
                 </li>
@@ -76,18 +78,18 @@
                 {% endif %}
 
 
-            <h1>„W konfrontacji strumienia ze skałą,<br>
+            <h1>Monitor treningu sportowego</h1>
+
+            <h3>„W konfrontacji strumienia ze skałą,<br>
                 strumień zawsze wygrywa -<br>
                 nie przez swoją siłę, <br>
                 ale przez wytrwałość." <br>
-                ~Buddha</h1>
+                ~Buddha</h3>
 
             <div class="parallax"></div>
 
-            <div style="height:100px;">
-                Scroll Up and Down this page to see the parallax scrolling effect.
-                This div is just here to enable scrolling.
-                Tip: Try to remove the background-attachment property to remove the scrolling effect.
+            <div style="height:50px;">
+
             </div>
 
             <div class="container-fluid">
@@ -114,6 +116,6 @@
     <br>
     <br>
 
-    <footer> That's all folks</footer>
+    <footer> Autor: Katarzyna Okońska 2017</footer>
     </body>
 </html>

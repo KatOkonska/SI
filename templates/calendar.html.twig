@@ -3,17 +3,19 @@
 {% block title %}'To Twój Kalendarz'{% endblock %}
 
 {% block content %}
-    <h1>Czesc, Twój kalendarz działa!</h1>
+    <h1>Oto Twój kalendarz treningów z ostatniego miesiąca</h1>
 
 {#{{ dump(calendar) }}#}
 
-    <h1>Dni treningu</h1>
+    <h2>Dni treningu</h2>
     <tr>
         {% for data in calendar %}
-            <h2>dzien treningu</h2>
+            <h3>dzien treningu</h3>
             <td>{{ data.Training_day_day_number }}</td>
              <br>
         {% endfor %}
     </tr>
+
+{#{{ currentDate}}#}
 
 {% endblock %}
