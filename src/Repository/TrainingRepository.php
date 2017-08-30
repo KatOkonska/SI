@@ -85,11 +85,13 @@ class TrainingRepository
 
 //        SELECT * FROM Sport_Name INNER JOIN Sport ON Sport_Name.Sport_Name_ID = Sport.Sport_ID;
 
+//        SELECT * FROM Sport_Name INNER JOIN Sport ON Sport.Sport_Name_ID = Sport_Name.Sport_Name_ID;
+//
 
         $queryBuilder
             ->select('*')
             ->from('Sport_Name', 'sn')
-            ->innerJoin('sn','Sport', 's','sn.Sport_Name_ID = s.Sport_ID')
+            ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
             ->where('User_ID = '.$userID);
 
         return $queryBuilder->execute()->fetchAll();

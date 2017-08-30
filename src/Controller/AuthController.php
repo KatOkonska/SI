@@ -42,7 +42,7 @@ class AuthController implements ControllerProviderInterface
         $controller->match('register', [$this, 'registerAction'])
             ->method('GET|POST')
             ->bind('auth_register');
-        $controller->match('edit_own_password/{id}', [$this, 'editOwnPasswordAction'])
+        $controller->match('edit_own_password', [$this, 'editOwnPasswordAction'])
             ->method('GET|POST')
             ->bind('auth_edit_own_password');
 
@@ -118,9 +118,13 @@ class AuthController implements ControllerProviderInterface
         );
     }
 
-    public function editOwnPasswordAction(Application $app, $id, Request $request)
+    public function editOwnPasswordAction(Application $app,  Request $request)
     {
 //
+
+        $UserRepository = new UserRepository($app['db']);
+        $user = $UserRepository->getUserByLogin($app['user']->getUsername());
+
 
         $form = $app['form.factory']->createBuilder(EditPasswordType::class)->getForm();
         $form->handleRequest($request);
@@ -131,7 +135,7 @@ class AuthController implements ControllerProviderInterface
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                 $userRepository = new UserRepository($app['db']);
-                $editOwnPassword = $userRepository->editOwnPassword($id, $form, $app);
+                $editOwnPassword = $userRepository->editOwnPassword($user['User_ID'], $form, $app);
 
                 echo 'Wyslano do bazy';
 
@@ -145,7 +149,7 @@ class AuthController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'id' => $id
+
             ]
         );
     }

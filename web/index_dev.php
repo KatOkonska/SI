@@ -1,5 +1,8 @@
 <?php
 
+//phpinfo();
+//die;
+
 use Symfony\Component\Debug\Debug;
 
 // This check prevents access to debug front controllers that are deployed by accident to production servers.

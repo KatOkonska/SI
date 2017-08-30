@@ -18,19 +18,6 @@ $app = new Application();
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new AssetServiceProvider());
-//$app->register(new LocaleServiceProvider());
-//$app->register(
-//    new TranslationServiceProvider(),
-//    [
-//        'locale' => 'pl',
-//        'locale_fallbacks' => array('en'),
-//    ]
-//);
-//$app->extend('translator', function ($translator, $app) {
-//    $translator->addResource('xliff', __DIR__.'/../translations/messages.en.xlf', 'en', 'messages');
-//    $translator->addResource('xliff', __DIR__.'/../translations/validators.en.xlf', 'en', 'validators');
-//    $translator->addResource('xliff', __DIR__.'/../translations/messages.pl.xlf', 'pl', 'messages');
-//    $translator->addResource('xliff', __DIR__.'/../translations/validators.pl.xlf', 'pl', 'validators');
 
 
 $app->register(
@@ -83,7 +70,7 @@ $app->register(
             ['^/calendar.+$', 'ROLE_USER'],
             ['^/training.+$', 'ROLE_USER'],
             ['^/welcome.+$', 'ROLE_USER'],
-            ['^/admin.+$', 'ROLE_USER'],
+            ['^/admin.+$', 'ROLE_ADMIN'],
             ['^/training_day.+$', 'ROLE_USER'],
             ['^/.+$', 'ROLE_ADMIN'],
         ],
@@ -102,8 +89,15 @@ $app->register(
 );
 $app->extend('translator', function ($translator, $app) {
 
+    $translator->addResource('xliff', __DIR__ . '/../translations/messages.en.xlf', 'en', 'messages');
+//    $translator->addResource('xliff', __DIR__.'/../translations/validators.en.yml', 'en', 'validators');
+    $translator->addResource('xliff', __DIR__.'/../translations/messages.pl.yml', 'pl', 'messages');
+//    $translator->addResource('xliff', __DIR__.'/../translations/validators.pl.yml', 'pl', 'validators');
+
     return $translator;
 });
+
+
 $app->register(new FormServiceProvider());
 $app->register(new ValidatorServiceProvider());
 
@@ -113,7 +107,13 @@ $app->register(
         'twig.path' => dirname(dirname(__FILE__)).'/templates',
     ]
 );
+
+
 $app->register(new HttpFragmentServiceProvider());
+
+
+
+
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
     // add custom globals, filters, tags, ...
 

@@ -12,6 +12,7 @@ namespace Form;
 use Symfony\Component\Form\AbstractType;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -33,7 +34,7 @@ class TrainingType extends AbstractType
 
         $builder->add(
             'Sport_time',
-            TextType::class,
+            IntegerType::class,
             [
                 'label' => 'label.time',
                 'required' => true,
@@ -61,7 +62,7 @@ class TrainingType extends AbstractType
 
         $builder->add(
             'Sport_kcal',
-            TextType::class,
+            IntegerType::class,
             [
                 'label' => 'label.kcal',
                 'required' => true,
@@ -88,7 +89,7 @@ class TrainingType extends AbstractType
 
         $builder->add(
             'Sport_distance',
-            TextType::class,
+            IntegerType::class,
             [
                 'label' => 'label.distance',
                 'required' => false,
