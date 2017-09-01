@@ -2,24 +2,17 @@
 
 {% block content %}
 
-    {#<h1>#}
-        {#{{ 'title.bookmarks_list'|trans }}#}
-    {#</h1>#}
-
-
-    {#Witaj     {{ dump(name) }} !#}
-    {#<h1>Cześć {{ app.user.username }} ! </h1>#}
     {% if is_granted("ROLE_USER") %}
        <h1>
-           Witaj {{ app.user.username }} !
+           {{  'hello'|trans }} {{ app.user.username }} !
        </h1>
     {% elseif  is_granted("ROLE_ADMIN") %}
         <h1>
-            Witaj Administratorze!
+            {{  'hello'|trans }} Admin!
         </h1>
     {%  else %}
         <h1>
-            Witaj Nieznajomy!
+            {{  'hello'|trans }} {{  'stranger'|trans }}
         </h1>
   {% endif %}
 

@@ -3,9 +3,13 @@
 {% block title %}'Dodaj sport'{% endblock %}
 
 {% block content %}
-    <h1>Tu możesz dodać kategorię sportu (sportname)</h1>
+    <h1>{{ 'title.add_sport_header'|trans}}</h1>
     {{ form_start(form, { method: 'post', action: url('add_sport') }) }}
     {{ form_widget(form) }}
-    <input type="submit" value="Dodaj" class="button" />
+    <input type="submit" value="{{'button.add'|trans}}" class="button" />
     {{ form_end(form) }}
+
+    {% if status %}
+        <h2>{{ 'sent_to_database'|trans }}</h2>
+    {% endif %}
 {% endblock %}

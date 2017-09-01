@@ -53,7 +53,7 @@ class TrainingType extends AbstractType
                     new Assert\Type(
                         [
                             'type'=>'integer',
-                            'message'=>'The value {{ value }} is not a valid {{ type }}.',
+                            'message'=>'{{ \'value_message\'|trans }}',
                         ]
                     )
                 ],
@@ -117,7 +117,7 @@ class TrainingType extends AbstractType
             'Sport_name_ID',
             ChoiceType::class,
             [
-                'label' => 'label.name',
+                'label' => 'label.Sport_Name',
                 'required' => true,
                 'attr' => [],
                 'choices' => $choices,

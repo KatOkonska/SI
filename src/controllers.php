@@ -23,7 +23,11 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
-$app->mount('/index', new WelcomeController());
+$app->get('/index', function () use ($app) {
+    return $app['twig']->render('index.html.twig', array());
+})
+    ->bind('index')
+;
 
 $app->mount('/user', new UserController());
 

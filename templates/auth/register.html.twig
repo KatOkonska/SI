@@ -1,12 +1,12 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}{{ 'title.auth_register'|trans }}{% endblock %}
+{% block title %}{{ 'title.register'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>{{ 'title.auth_register'|trans }}</h1>
+    <h1>{{ 'title.register'|trans }}</h1>
 
     {% if error is defined and error|length %}
-        {{ dump(error) }}
+        {{ error }}
     {% endif %}
 
     <div>
@@ -14,7 +14,12 @@
         <br>
         {{ form_widget(form) }}
         <br>
-        <input type="submit" value="{{ 'action.login'|trans }}" class="button" />
+        <input type="submit" value="{{ 'button.register'|trans }}" class="button" />
         {{ form_end(form) }}
     </div>
+
+    {% if status %}
+        <h2>{{ 'sent_to_database'|trans }}</h2>
+    {% endif %}
+
 {% endblock %}

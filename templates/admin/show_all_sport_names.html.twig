@@ -1,17 +1,17 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}'To Twoi użytkownicy{% endblock %}
+{% block title %}{{ 'title.list_all_sport_names'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Czesc, to lista wszystkich treningów Twoich użytkowników!</h1>
+    <h1>"{{ 'title.list_all_sport_names'|trans }}"</h1>
 
 
     <table class="vitamins" width="50%" align="center" text-align="center">
         <thead>
         <tr>
-            <th>Nazwa sportu</th>
-            <th>Edytuj</th>
-            <th>Usuń</th>
+            <th>{{ 'table.sport_name'|trans }}</th>
+            <th>{{ 'table.edit'|trans }}</th>
+            <th>{{ 'table.delete'|trans }}</th>
 
         </tr>
         </thead>
@@ -23,13 +23,13 @@
 
                 <td>
                     <a class="btn btn-default" href="{{ url('edit_sport_name', {'id': data.Sport_Name_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'edit_sport_name'|trans }}
+                        {{ 'button.change'|trans }}
                     </a>
                 </td>
 
                 <td>
                     <a class="btn btn-default" href="{{ url('delete_sport_name', {'id': data.Sport_Name_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'delete_sport_name'|trans }}
+                        {{ 'button.delete'|trans }}
                     </a>
                 </td>
             </tr>

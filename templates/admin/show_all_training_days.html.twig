@@ -3,16 +3,16 @@
 {% block title %}'To Twoi użytkownicy{% endblock %}
 
 {% block content %}
-    <h1>Czesc, to lista wszystkich treningów Twoich użytkowników!</h1>
+    <h1>{{'title.list_all_training_days'|trans }}</h1>
 
 
     <table class="vitamins" width="50%" align="center" text-align="center">
         <thead>
         <tr>
-            <th>Dzień treningu</th>
-            <th>Id_usera</th>
-            <th>Edytuj</th>
-            <th>Usun</th>
+            <th>{{ 'table.training_day'|trans }}</th>
+            <th>{{ 'table.user_id'|trans }}</th>
+            <th>{{ 'table.edit'|trans }}</th>
+            <th>{{ 'table.delete'|trans }}</th>
 
         </tr>
         </thead>
@@ -25,13 +25,13 @@
 
                 <td>
                     <a class="btn btn-default" href="{{ url('edit_training_day', {'id': data.Training_day_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'edit_training_day'|trans }}
+                        {{ 'button.change'|trans }}
                     </a>
                 </td>
 
                 <td>
                     <a class="btn btn-default" href="{{ url('delete_training_day', {'id': data.Training_day_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'delete_training_day'|trans }}
+                        {{ 'button.delete'|trans }}
                     </a>
                 </td>
             </tr>

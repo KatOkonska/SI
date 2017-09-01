@@ -1,31 +1,16 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}'To Twoje Treningi{% endblock %}
+{% block title %}{{ 'title.list_training_days'|trans }}i{% endblock %}
 
 {% block content %}
-    <h1>Czesc, Twoje treningi działają!</h1>
-
-    {#{{ dump(table) }}#}
-
-    {#<h1>Dni treningu</h1>#}
-    {#<tr>#}
-    {#{% for data in table %}#}
-    {#<h2>dzien treningu</h2>#}
-    {#<td>{{ data.Sport_time }}</td>#}
-    {#<td>{{ data.Sport_kcal }}</td>#}
-    {#<td>{{ data.Sport_distance }}</td>#}
-    {#<td>{{ data.Sport_name_ID }}</td>#}
-    {#<br>#}
-    {#{% endfor %}#}
-    {#</tr>#}
-
+    <h1>{{ 'title.list_training_days'|trans }}</h1>
 
     <table class="vitamins" width="50%" align="center" text-align="center">
         <thead>
         <tr>
-            <th>Dzień treningu</th>
-            <th>Edytuj</th>
-            <th>Usuń</th>
+            <th>{{  'table.training_day'|trans }}</th>
+            <th>{{  'table.edit'|trans }}</th>
+            <th>{{  'table.delete'|trans }}</th>
 
         </tr>
         </thead>

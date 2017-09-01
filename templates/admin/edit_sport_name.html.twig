@@ -7,15 +7,19 @@
 <h2></h2>
 
 {% if error is defined and error|length %}
-{{ dump(error) }}
+{{ error }}
 {% endif %}
 
 <div>
     {{ form_start(form, { method: 'post', action: path('edit_sport_name', {'id':id})}) }}
     {{ form_widget(form) }}
-    <input type="submit" value="{{ 'edytuj'|trans }}" class="button" />
+    <input type="submit" value="{{ 'button.change'|trans }}" class="button" />
     {{ form_end(form) }}
 </div>
+
+    {% if status %}
+        <h2>{{ 'sent_to_database'|trans }}</h2>
+    {% endif %}
 {% endblock %}
 
 

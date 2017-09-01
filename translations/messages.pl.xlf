@@ -2,20 +2,394 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" target-language="pl" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="title.bookmarks_list">
-                <source>title.bookmarks_list</source>
-                <target>Lista zakładek</target>
+            <!--<trans-unit id="title.bookmarks_list">-->
+                <!--<source>title.bookmarks_list</source>-->
+                <!--<target>Lista zakładek</target>-->
+            <!--</trans-unit>-->
+
+            <!--<trans-unit id="auth.login.label">-->
+                <!--<source>auth.login.label</source>-->
+                <!--<target> Zaloguj się</target>-->
+            <!--</trans-unit>-->
+
+            <!--<trans-unit id="time.label">-->
+                <!--<source>time.label</source>-->
+                <!--<target>Czas777</target>-->
+            <!--</trans-unit>-->
+
+            <trans-unit id="sent_to_database">
+                <source>sent_to_database</source>
+                <target>Wysłano do bazy</target>
             </trans-unit>
 
-            <trans-unit id="auth.login.label">
-                <source>auth.login.label</source>
-                <target> Zaloguj się</target>
+            <trans-unit id="message.deleted">
+                <source>message.deleted</source>
+                <target>Usunięto pomyślnie</target>
             </trans-unit>
 
-            <trans-unit id="time.label">
-                <source>time.label</source>
-                <target>Czas777</target>
+
+            <trans-unit id="button.add">
+                <source>button.add</source>
+                <target>Dodaj</target>
             </trans-unit>
+
+            <trans-unit id="button.register">
+                <source>button.register</source>
+                <target>Zarejestruj się</target>
+            </trans-unit>
+
+            <trans-unit id="button.delete">
+                <source>button.delete</source>
+                <target>Usuń</target>
+            </trans-unit>
+
+            <trans-unit id="button.change">
+                <source>button.change</source>
+                <target>Zmień</target>
+            </trans-unit>
+
+            <trans-unit id="button.login">
+                <source>button.login</source>
+                <target>Zaloguj się</target>
+            </trans-unit>
+
+            <trans-unit id="title.delete_sport">
+                <source>title.delete_sport</source>
+                <target>Czy na pewno chcesz usunąć tę nazwę sportu?</target>
+            </trans-unit>
+
+            <trans-unit id="header.delete_sport">
+                <source>header.delete_sport</source>
+                <target>Usuń nazwę sportu</target>
+            </trans-unit>
+
+            <trans-unit id="header.add_training">
+                <source>header.add_training</source>
+                <target>Dodaj trening</target>
+            </trans-unit>
+
+            <trans-unit id="title.delete_training}">
+                <source>title.delete_training</source>
+                <target>Czy na pewno chcesz usunąć ten trening?</target>
+            </trans-unit>
+
+            <trans-unit id="header.delete_training}">
+                <source>header.delete_training</source>
+                <target>Usuń trening</target>
+            </trans-unit>
+
+            <trans-unit id="title.delete_user">
+                <source>title.delete_user</source>
+                <target>Czy na pewno chcesz usunąć tego użytkownika?</target>
+            </trans-unit>
+
+            <trans-unit id="header.delete_user">
+                <source>header.delete_user</source>
+                <target>Usuń użytkownika</target>
+            </trans-unit>
+
+            <trans-unit id="title.edit_password">
+                <source>title.edit_password</source>
+                <target>Edytuj haśło</target>
+            </trans-unit>
+
+            <trans-unit id="title.register">
+                <source>title.register</source>
+                <target>Zarejestruj</target>
+            </trans-unit>
+
+            <trans-unit id="title.edit_sport_name'}">
+                <source>title.edit_sport_name</source>
+                <target>Edytuj nazwę sportu</target>
+            </trans-unit>
+
+            <trans-unit id="title.edit_user}">
+                <source>title.edit_user</source>
+                <target>Edytuj użytkownika</target>
+            </trans-unit>
+
+            <trans-unit id="title.edit_training">
+                <source>title.edit_training</source>
+                <target>Edytuj trening</target>
+            </trans-unit>
+
+            <trans-unit id="title.list_all_trainings">
+                <source>title.list_all_trainings</source>
+                <target>Oto lista wszystkich treningów Twoich użytkowników</target>
+            </trans-unit>
+
+            <trans-unit id="title.list_all_training_days">
+                <source>title.list_all_training_days</source>
+                <target>Oto lista wszystkich dni treningów Twoich użytkowników</target>
+            </trans-unit>
+
+            <trans-unit id="title.list_all_sport_names}">
+                <source>title.list_all_sport_names</source>
+                <target>To lista wszystkich nazw sportów</target>
+            </trans-unit>
+
+            <trans-unit id="title.list_all_users">
+                <source>title.list_all_sport_names</source>
+                <target>To lista wszystkich Twoich użytkowników</target>
+            </trans-unit>
+
+            <trans-unit id="title.list_training">
+                <source>title.list_training</source>
+                <target>To lista Twoich treningów</target>
+            </trans-unit>
+
+            <trans-unit id="title.list_training_5">
+                <source>title.list_training_5</source>
+                <target>To lista Twoich ostatnich 5 treningów</target>
+            </trans-unit>
+
+            <!--Training day-->
+
+            <trans-unit id="title.list_training_days">
+                <source>title.list_training_days</source>
+                <target>To lista Twoich dni treningów</target>
+            </trans-unit>
+
+            <trans-unit id="title.add_training_days">
+                <source>title.add_training_days</source>
+                <target>Dodaj dzień treningu</target>
+            </trans-unit>
+
+            <trans-unit id="title.delete_training_days}">
+                <source>title.delete_training_days</source>
+                <target>Usuń dzień treningu</target>
+            </trans-unit>
+
+            <trans-unit id="title.edit_training_days">
+                <source>title.edit_training_days</source>
+                <target>Edytuj dzień treningu</target>
+            </trans-unit>
+
+            <trans-unit id="header.delete_training_day">
+                <source>header.delete_training_day</source>
+                <target>Czy na pewno chcesz usunąć ten dzień treningu?</target>
+            </trans-unit>
+
+
+            <!--table-->
+
+            <trans-unit id="table.sport_name">
+                <source>table.sport_name</source>
+                <target>Nazwa sportu</target>
+            </trans-unit>
+
+            <trans-unit id="table.sport_time">
+                <source>table.sport_time</source>
+                <target>Czas (w minutach)</target>
+            </trans-unit>
+
+            <trans-unit id="table.sport_distance">
+                <source>table.sport_distance</source>
+                <target>Dystans</target>
+            </trans-unit>
+
+            <trans-unit id="table.sport_kcal">
+                <source>table.sport_kcal</source>
+                <target>Spalone kcal</target>
+            </trans-unit>
+
+            <trans-unit id="table.username">
+                <source>table.username</source>
+                <target>Nazwa użytkownika</target>
+            </trans-unit>
+
+            <trans-unit id="table.password">
+                <source>table.password</source>
+                <target>Hasło</target>
+            </trans-unit>
+
+            <trans-unit id="table.training_day">
+                <source>table.training_day</source>
+                <target>Dzień treningu</target>
+            </trans-unit>
+
+            <trans-unit id="table.user_id">
+                <source>table.user_id</source>
+                <target>ID użytkownika</target>
+            </trans-unit>
+
+            <trans-unit id="table.edit}">
+                <source>table.edit</source>
+                <target>Edytuj</target>
+            </trans-unit>
+
+            <trans-unit id="table.delete">
+                <source>table.delete</source>
+                <target>Usuń</target>
+            </trans-unit>
+
+            <trans-unit id="table.login">
+                <source>table.login</source>
+                <target>Login</target>
+            </trans-unit>
+
+            <trans-unit id="table.role'">
+                <source>table.role</source>
+                <target>Rola</target>
+            </trans-unit>
+
+            <trans-unit id="table.change_password">
+                <source>table.change_password</source>
+                <target>Zmień hasło</target>
+            </trans-unit>
+
+            <!--welcome-->
+
+            <trans-unit id="hello}">
+                <source>hello</source>
+                <target>Hej</target>
+            </trans-unit>
+
+            <trans-unit id="stranger">
+                <source>stranger</source>
+                <target>Nieznajomy</target>
+            </trans-unit>
+
+            <!--form-->
+
+            <trans-unit id="label.time">
+                <source>label.time</source>
+                <target>Czas</target>
+            </trans-unit>
+
+            <trans-unit id="label.Sport_Name">
+                <source>label.Sport_Name</source>
+                <target>Nazwa sportu</target>
+            </trans-unit>
+
+            <trans-unit id="label.Training_day">
+                <source>label.Training_day</source>
+                <target>Dzień treningu</target>
+            </trans-unit>
+
+            <trans-unit id="label.login">
+                <source>label.login</source>
+                <target>Login</target>
+            </trans-unit>
+
+            <trans-unit id="label.kcal">
+                <source>label.kcal</source>
+                <target>Spalone kcal</target>
+            </trans-unit>
+
+            <trans-unit id="label.distance">
+                <source>label.distance</source>
+                <target>Dystans</target>
+            </trans-unit>
+
+            <trans-unit id="label.Role_ID">
+                <source>label.Role_ID</source>
+                <target>ID roli</target>
+            </trans-unit>
+
+            <trans-unit id="label.password">
+                <source>label.password</source>
+                <target>Hasło</target>
+            </trans-unit>
+
+            <!--menu toolbar-->
+
+            <trans-unit id="menu.home}">
+                <source>menu.home</source>
+                <target>Strona główna</target>
+            </trans-unit>
+
+            <trans-unit id="menu.login">
+                <source>menu.login</source>
+                <target>Zaloguj się</target>
+            </trans-unit>
+
+            <trans-unit id="{menu.register">
+                <source>menu.register</source>
+                <target>Zarejestruj się</target>
+            </trans-unit>
+
+            <trans-unit id="menu.training">
+                <source>menu.training</source>
+                <target>Trening</target>
+            </trans-unit>
+
+            <trans-unit id="menu.show_last_5_trainings">
+                <source>menu.show_last_5_trainings</source>
+                <target>Pokaż ostatnie 5 treningów</target>
+            </trans-unit>
+
+            <trans-unit id="menu.show_all_trainings}">
+                <source>menu.show_all_trainings</source>
+                <target>Pokaż wszystkie treningi</target>
+            </trans-unit>
+
+            <trans-unit id="menu.add_training">
+                <source>menu.add_training</source>
+                <target>Dodaj trening</target>
+            </trans-unit>
+
+            <trans-unit id="menu.training_day">
+                <source>menu.training_day</source>
+                <target>Dzień treningu</target>
+            </trans-unit>
+
+            <trans-unit id="menu.add_training_day">
+                <source>menu.add_training_day</source>
+                <target>Dodaj dzień treningu</target>
+            </trans-unit>
+
+            <trans-unit id="menu.show_all_training_day">
+                <source>menu.show_all_training_day</source>
+                <target>Pokaż wszystkie dni treningu</target>
+            </trans-unit>
+
+
+            <trans-unit id="menu.add_sport">
+                <source>menu.add_sport</source>
+                <target>Dodaj nazwę sportu</target>
+            </trans-unit>
+
+
+            <trans-unit id="menu.show_all_users">
+                <source>menu.show_all_users</source>
+                <target>Pokaż wszystkich użytkowników</target>
+            </trans-unit>
+
+            <trans-unit id="menu.show_all_trainings">
+                <source>menu.show_all_trainings</source>
+                <target>Pokaż wszystkie treningi użytkowników</target>
+            </trans-unit>
+
+
+            <trans-unit id="'menu.show_all_training_days">
+                <source>menu.show_all_training_days</source>
+                <target>Pokaż wszystkie dni treningów użytkowników</target>
+            </trans-unit>
+
+
+            <trans-unit id="menu.show_all_sport_names">
+                <source>menu.show_all_sport_names</source>
+                <target>Pokaż wszystkie nazwy sportu</target>
+            </trans-unit>
+
+
+            <!--app name-->
+
+            <trans-unit id="title.Sport_application">
+                <source>title.Sport_application</source>
+                <target> Monitor treningu sportowego </target>
+            </trans-unit>
+
+            <trans-unit id="title.Budda_quote">
+                <source>title.Budda_quote</source>
+                <target>W konfrontacji strumienia ze skałą,
+                strumień zawsze wygrywa –
+                nie przez swoją siłę,
+                ale przez wytrwałość.</target>
+            </trans-unit>
+
+
 
         </body>
     </file>

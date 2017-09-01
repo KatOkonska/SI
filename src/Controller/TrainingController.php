@@ -107,7 +107,7 @@ class TrainingController implements ControllerProviderInterface
                 $TrainingRepository = new TrainingRepository($app['db']);
                 $addTraining = $TrainingRepository->addTraining($form, $user['User_ID']);
 
-                echo 'Wyslano do bazy';
+                echo '{{"sent_to_database"}}|translate';
 
             } else{
                 $errors = $form->getErrors();
@@ -184,13 +184,15 @@ class TrainingController implements ControllerProviderInterface
 
         $errors ='';
 
+        $status = '';
+
         if ($form->isSubmitted()) {
 
             if ($form->isValid()) {
                 $TrainingRepository = new TrainingRepository($app['db']);
                 $editTraining = $TrainingRepository->editTraining($id, $form, $user['User_ID']);
 
-                echo 'Wyslano do bazy';
+                $status = true;
 
             } else{
                 $errors = $form->getErrors();
@@ -202,6 +204,7 @@ class TrainingController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'status'=> $status,
                 'id' => $id
             ]
         );
@@ -227,8 +230,15 @@ class TrainingController implements ControllerProviderInterface
                 $trainingRepository = new TrainingRepository($app['db']);
                 $deleteTraining = $trainingRepository->deleteTraining($id);
 
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'info',
+                        'message' => 'message.deleted',
+                    ]
+                );
+
                 return $app->redirect($app['url_generator']->generate('show_all_training'), 301);
-                //TODO: przydałoby się dla admina inne przekierowanie
 
             } else{
                 $errors = $form->getErrors();

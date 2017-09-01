@@ -94,6 +94,8 @@ class AdminController implements ControllerProviderInterface
         $form->handleRequest($request);
 
         $errors ='';
+        $status = '';
+
 
         if ($form->isSubmitted()) {
 
@@ -102,7 +104,7 @@ class AdminController implements ControllerProviderInterface
                 $adminRepository = new AdminRepository($app['db']);
                 $register = $adminRepository->addSportName($form, $app);
 
-                echo 'Wyslano do bazy';
+
             }
             else
             {
@@ -116,6 +118,7 @@ class AdminController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'status'=> $status,
             ]
         );
     }
@@ -183,13 +186,15 @@ class AdminController implements ControllerProviderInterface
 
         $errors ='';
 
+        $status = '';
+
         if ($form->isSubmitted()) {
 
             if ($form->isValid()) {
                 $adminRepository = new AdminRepository($app['db']);
                 $editUser = $adminRepository->editUser($id, $form);
 
-                echo 'Wyslano do bazy';
+
 
             } else{
                 $errors = $form->getErrors();
@@ -201,6 +206,7 @@ class AdminController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'status'=> $status,
                 'id' => $id
             ]
         );
@@ -215,13 +221,15 @@ class AdminController implements ControllerProviderInterface
 
         $errors ='';
 
+        $status = '';
+
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                 $adminRepository = new AdminRepository($app['db']);
                 $editPassword = $adminRepository->editPassword($id, $form, $app);
 
-                echo 'Wyslano do bazy';
+
 
             } else{
                 $errors = $form->getErrors();
@@ -233,6 +241,7 @@ class AdminController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'status'=> $status,
                 'id' => $id
             ]
         );
@@ -252,12 +261,15 @@ class AdminController implements ControllerProviderInterface
         $errors ='';
 
 
+        $status = '';
+
+
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                 $adminRepository = new AdminRepository($app['db']);
                 $editSportName = $adminRepository->editSportName($id, $form, $app);
 
-                echo 'Wyslano do bazy';
+
                 return $app->redirect($app['url_generator']->generate('show_all_sport_names'), 301);
 
 
@@ -271,6 +283,7 @@ class AdminController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'status'=> $status,
                 'id' => $id
             ]
         );
@@ -305,6 +318,13 @@ class AdminController implements ControllerProviderInterface
                 $adminRepository = new AdminRepository($app['db']);
                 $deleteSportName = $adminRepository->deleteSportName($id);
 
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'info',
+                        'message' => 'message.deleted',
+                    ]
+                );
                 return $app->redirect($app['url_generator']->generate('show_all_sport_names'), 301);
 
             } else{
@@ -336,6 +356,14 @@ class AdminController implements ControllerProviderInterface
             if ($form->isValid()) {
                 $adminRepository = new AdminRepository($app['db']);
                 $deletePassword = $adminRepository->deleteUser($id);
+
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'info',
+                        'message' => 'message.deleted',
+                    ]
+                );
 
                 return $app->redirect($app['url_generator']->generate('show_all_users'), 301);
 

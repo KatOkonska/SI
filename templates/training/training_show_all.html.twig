@@ -1,9 +1,9 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}'To Twoje Treningi{% endblock %}
+{% block title %}{{'title.list_training'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Czesc, Twoje treningi działają!</h1>
+    <h1>{{'title.list_training'|trans }}</h1>
 
     {#{{ dump(table) }}#}
 
@@ -25,13 +25,12 @@
     <table class="vitamins" width="80%" align="center" text-align="center">
         <thead>
         <tr>
-            <th>{{ 'time.label'|trans }}</th>
-            <th>KCAL</th>
-            <th>Dystans</th>
-            <th>Nazwa sport</th>
-            <th>Edytuj</th>
-            <th>Usuń</th>
-
+            <th>{{ 'table.sport_time'|trans }}</th>
+            <th>{{ 'table.sport_kcal'|trans }}</th>
+            <th>{{ 'table.sport_distance'|trans }}</th>
+            <th>{{ 'table.sport_name'|trans }}</th>
+            <th>{{ 'table.edit'|trans }}</th>
+            <th>{{ 'table.delete'|trans }}</th>
         </tr>
         </thead>
 
@@ -44,14 +43,14 @@
 
                     <td>
                         <a class="btn btn-default" href="{{ url('edit_training', {'id': data.Sport_ID})}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'edit_training'|trans }}
+                        {{ 'button.change'|trans }}
                         </a>
                     </td>
 
 
                     <td>
                         <a class="btn btn-default" href="{{ url('delete_training', {'id':data.Sport_ID})}}" title="{{ 'auth.logout.label'|trans }}">
-                            {{ 'delete_training'|trans }}
+                            {{ 'button.delete'|trans }}
                         </a>
                     </td>
 

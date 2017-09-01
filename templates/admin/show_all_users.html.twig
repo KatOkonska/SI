@@ -1,23 +1,22 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}'To Twoi użytkownicy{% endblock %}
+{% block title %}{{'title.list_all_users'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Czesc, to lista wszystkich Twoich użytkowników!</h1>
+    <h1>{{'title.list_all_users'|trans }}</h1>
     <br>
 
 
     <table class="vitamins" width="50%" align="center" text-align="center">
         <thead>
         <tr>
-            <th>User_ID</th>
-            <th>Login</th>
-            <th>Haslo</th>
-            <th>Rola</th>
-            <th>Edytuj</th>
-            <th>Zmień hasło</th>
-            <th>Usuń</th>
-
+            <th>{{'table.user_id'|trans }}</th>
+            <th>{{'table.login'|trans }}</th>
+            <th>{{'table.password'|trans }}</th>
+            <th>{{'table.role'|trans }}</th>
+            <th>{{'table.edit'|trans }}</th>
+            <th>{{'table.change_password'|trans }}</th>
+            <th>{{'table.delete'|trans }}</th>
         </tr>
         </thead>
 
@@ -29,18 +28,18 @@
                 <td>{{ data.Role_ID }}</td>
                 <td>
                     <a class="btn btn-default" href="{{ url('edit_user',{'id':data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'edit_user'|trans }}
+                        {{ 'button.change'|trans }}
                     </a>
                 </td>
                 <td>
                     <a class="btn btn-default" href="{{ url('edit_password',{'id':data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'edit_password'|trans }}
+                        {{ 'button.change'|trans }}
                     </a>
                 </td>
 
                 <td>
                     <a class="btn btn-default" href="{{ url('delete_user',{'id':data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
-                        {{ 'delete_user'|trans }}
+                        {{ 'button.delete'|trans }}
                     </a>
                 </td>
             </tr>

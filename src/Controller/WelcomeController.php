@@ -51,11 +51,11 @@ class WelcomeController implements ControllerProviderInterface
      */
     public function indexAction(Application $app, Request $request)
     {
-        //return 'Witaj'.'{zmienna-imie}'.'!<br>'.$this->todayDate();
-        $name = '{zmienna-imie}';
-        $current_day = $this->todayDate();
-        echo 'Test 333';
-        return $app['twig']->render('welcome/index.html.twig', ['name' => $name]);
+//        //return 'Witaj'.'{zmienna-imie}'.'!<br>'.$this->todayDate();
+//        $name = '{zmienna-imie}';
+////        $current_day = $this->todayDate();
+//        echo 'Test 333';
+        return $app['twig']->render('welcome/index.html.twig');
 
     }
 
@@ -75,27 +75,27 @@ class WelcomeController implements ControllerProviderInterface
         );
     }
 
-    private function todayDate(Application $app)
-    {
-        $weekdays = array('niedziela', 'poniedzialek', 'wtorek', 'sroda', 'czwartek', 'piatek','sobota');
-
-
-        $today = $weekdays[date('w')];
-
-        return $app['twig']->render(
-            'index.html.twig',
-            ['today' => $today]
-
-        );
-    }
-
-    public function nextTrainingDay()
-    {
-        echo 'Twój następny trening odbędzie się'.'!';
-    }
-
-    public function lastTraining()
-    {
-
-    }
+//    private function todayDate(Application $app)
+//    {
+//        $weekdays = array('niedziela', 'poniedzialek', 'wtorek', 'sroda', 'czwartek', 'piatek','sobota');
+//
+//
+//        $today = $weekdays[date('w')];
+//
+//        return $app['twig']->render(
+//            'index.html.twig',
+//            ['today' => $today]
+//
+//        );
+//    }
+//
+//    public function nextTrainingDay()
+//    {
+//        echo 'Twój następny trening odbędzie się'.'!';
+//    }
+//
+//    public function lastTraining()
+//    {
+//
+//    }
 }

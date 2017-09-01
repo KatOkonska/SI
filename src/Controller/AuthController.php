@@ -95,13 +95,15 @@ class AuthController implements ControllerProviderInterface
 
         $errors ='';
 
+        $status = '';
+
         if ($form->isSubmitted()) {
 
             if ($form->isValid()) {
                 $UserRepository = new UserRepository($app['db']);
                 $register = $UserRepository->register($form, $app);
 
-                echo 'Wyslano do bazy';
+
 
             } else{
                 $errors = $form->getErrors();
@@ -114,6 +116,7 @@ class AuthController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'status'=> $status,
             ]
         );
     }
@@ -131,13 +134,14 @@ class AuthController implements ControllerProviderInterface
 
         $errors ='';
 
+        $status = '';
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                 $userRepository = new UserRepository($app['db']);
                 $editOwnPassword = $userRepository->editOwnPassword($user['User_ID'], $form, $app);
 
-                echo 'Wyslano do bazy';
+
 
             } else{
                 $errors = $form->getErrors();
@@ -149,6 +153,7 @@ class AuthController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'status'=> $status,
 
             ]
         );

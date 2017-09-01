@@ -75,6 +75,7 @@ class TrainingDayController implements ControllerProviderInterface
 
 
         $errors ='';
+        $status = '';
 
         if ($form->isSubmitted()) {
 
@@ -82,7 +83,6 @@ class TrainingDayController implements ControllerProviderInterface
                 $trainingDayRepository = new TrainingDayRepository($app['db']);
                 $addTraining = $trainingDayRepository->addTrainingDay($form, $user['User_ID']);
 
-                echo 'Wyslano do bazy';
 
             } else{
                 $errors = $form->getErrors();
@@ -94,6 +94,7 @@ class TrainingDayController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'status'=> $status,
             ]
         );
     }
@@ -125,13 +126,13 @@ class TrainingDayController implements ControllerProviderInterface
         $form->handleRequest($request);
 
         $errors ='';
-
+        $status = '';
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                   $editSportName = $trainingDayRepository->editTrainingDay($id, $form);
 
-                echo 'Wyslano do bazy';
+
                 return $app->redirect($app['url_generator']->generate('show_all_training_day'), 301);
 
 
@@ -145,6 +146,7 @@ class TrainingDayController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
+                'status'=> $status,
                 'id' => $id
             ]
         );
@@ -170,6 +172,14 @@ class TrainingDayController implements ControllerProviderInterface
             if ($form->isValid()) {
                 $trainingDayRepository = new TrainingDayRepository($app['db']);
                 $deleteTrainingDay = $trainingDayRepository->deleteTrainingDay($id);
+
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'info',
+                        'message' => 'message.deleted',
+                    ]
+                );
 
                 return $app->redirect($app['url_generator']->generate('show_all_training_day'), 301);
 

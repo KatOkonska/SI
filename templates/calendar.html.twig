@@ -10,7 +10,7 @@
     <h2>Dni treningu</h2>
     <tr>
         {% for data in calendar %}
-            <h3>dzien treningu</h3>
+            <h3>{{  'table.training_day'|trans }}</h3>
             <td>{{ data.Training_day_day_number }}</td>
              <br>
         {% endfor %}

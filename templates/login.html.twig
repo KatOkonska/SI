@@ -1,11 +1,11 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}'Zaloguj sie'{% endblock %}
+{% block title %}{{ 'button.login'|trans}}{% endblock %}
 
 {% block content %}
-    <h1>Czesc, dzialam!</h1>
+    <h1>{{ 'button.login'|trans}}</h1>
     {{ form_start(form, { method: 'post', action: url('login') }) }}
     {{ form_widget(form) }}
-    <input type="submit" value="Zaloguj" class="button" />
+    <input type="submit" value="{{ 'button.login'|trans}}" class="button" />
     {{ form_end(form) }}
 {% endblock %}

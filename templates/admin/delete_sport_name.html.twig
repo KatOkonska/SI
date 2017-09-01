@@ -3,19 +3,21 @@
 {% block title %}{{ 'title.auth_add_training'|trans }}{% endblock %}
 
 {% block content %}
-<h1>{{ 'title.Usun'|trans }}</h1>
-<h2>Czy na pewno chcesz usunąć te nazwe sportu?</h2>
+<h1>{{ 'header.delete_sport'|trans}}</h1>
+<h2>{{'title.delete_sport'|trans}}</h2>
 
 {% if error is defined and error|length %}
-{{ dump(error) }}
+{{error }}
 {% endif %}
 
 <div>
     {{ form_start(form, { method: 'post', action: path('delete_sport_name', {'id':id})}) }}
     {{ form_widget(form) }}
-    <input type="submit" value="{{ 'Usuń'|trans }}" class="button" />
+    <input type="submit" value="{{ 'button.delete'|trans}}" class="button" />
     {{ form_end(form) }}
 </div>
+
+
 {% endblock %}
 
 

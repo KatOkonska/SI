@@ -1,36 +1,22 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}{{ 'title.auth_add_training'|trans }}{% endblock %}
+{% block title %}{{  'title.edit_training'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>{{ 'title.add_add_training'|trans }}</h1>
+    <h1>{{  'header.add_training'|trans }}</h1>
 
     {% if error is defined and error|length %}
-        {{ dump(error) }}
+        {{ error }}
     {% endif %}
 
     <div>
         {{ form_start(form, { method: 'post', action: path('add_training') }) }}
         {{ form_widget(form) }}
-        <input type="submit" value="{{ 'action.add_training'|trans }}" class="button" />
+        <input type="submit" value="{{ 'button.add'|trans}}" class="button" />
         {{ form_end(form) }}
     </div>
+
+    {% if status %}
+        <h2>{{ 'sent_to_database'|trans }}</h2>
+    {% endif %}
 {% endblock %}
-
-
-
-{#{% block content %}#}
-    {#<h1>Czesc, Twój kalendarz działa!</h1>#}
-
-    {#{{ dump(calendar) }}#}
-
-    {#<h1>Dni treningu</h1>#}
-    {#<tr>#}
-        {#{% for data in calendar %}#}
-            {#<h2>dzien treningu</h2>#}
-            {#<td>{{ data.Training_day_day_number }}</td>#}
-            {#<br>#}
-        {#{% endfor %}#}
-    {#</tr>#}
-
-{#{% endblock %}#}

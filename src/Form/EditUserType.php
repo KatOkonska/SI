@@ -78,7 +78,7 @@ class EditUserType extends AbstractType
             'Role_ID',
             ChoiceType::class,
             [
-                'label' => 'label.rola',
+                'label' => 'label.Role_ID',
                 'required' => true,
                 'attr' => [],
                 'choices' => $choices,

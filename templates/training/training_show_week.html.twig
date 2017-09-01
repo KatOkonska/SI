@@ -1,10 +1,9 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}'To Twoje Treningi{% endblock %}
+{% block title %}{{'title.list_training_5'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Czesc, Twoje treningi działają!</h1>
-    <br>
+    <h1>{{'title.list_training_5'|trans }}</h1>
 
     {#{{ dump(table) }}#}
 
@@ -24,12 +23,10 @@
     <table class="vitamins" width="50%" align="center" text-align="center">
         <thead>
         <tr>
-            <th>Czas</th>
-            <th>Kcal</th>
-            <th>Dystans</th>
-            <th>Sport_name_id</th>
-            <th>Dodaj</th>
-            <th>Usun</th>
+            <th>{{ 'table.sport_time'|trans }}</th>
+            <th>{{ 'table.sport_kcal'|trans }}</th>
+            <th>{{ 'table.sport_distance'|trans }}</th>
+            <th>{{ 'table.sport_name'|trans }}</th>
 
         </tr>
         </thead>

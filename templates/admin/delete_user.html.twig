@@ -3,17 +3,17 @@
 {% block title %}{{ 'title.auth_add_training'|trans }}{% endblock %}
 
 {% block content %}
-<h1>{{ 'title.Usun'|trans }}</h1>
-<h2>Czy na pewno chcesz usunąć użytkownika?</h2>
+<h1>{{'header.delete_user'|trans}}</h1>
+<h2>{{'title.delete_user'|trans}}</h2>
 
 {% if error is defined and error|length %}
-{{ dump(error) }}
+{{ error }}
 {% endif %}
 
 <div>
     {{ form_start(form, { method: 'post', action: path('delete_user', {'id':id})}) }}
     {{ form_widget(form) }}
-    <input type="submit" value="{{ 'Usuń'|trans }}" class="button" />
+    <input type="submit" value="{{ 'button.delete'|trans }}" class="button" />
     {{ form_end(form) }}
 </div>
 {% endblock %}
