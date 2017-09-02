@@ -88,11 +88,12 @@ class TrainingRepository
 //        SELECT * FROM Sport_Name INNER JOIN Sport ON Sport.Sport_Name_ID = Sport_Name.Sport_Name_ID;
 //
 
+
         $queryBuilder
             ->select('*')
             ->from('Sport_Name', 'sn')
             ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
-            ->where('User_ID = '.$userID);
+            ->where('s.User_ID = '.$userID);
 
         return $queryBuilder->execute()->fetchAll();
     }
@@ -138,6 +139,18 @@ class TrainingRepository
         $queryBuilder = $this->querySportAll();
         $queryBuilder->where('s.Sport_ID = :id')
             ->setParameter(':id', $id, \PDO::PARAM_INT);
+        $result = $queryBuilder->execute()->fetch();
+
+        return !$result ? [] : $result;
+    }
+
+    public function findOneTrainingByIdAndUser($id, $userID)
+    {
+        $queryBuilder = $this->querySportAll();
+        $queryBuilder->where('s.Sport_ID = :Sport_ID')
+        ->andWhere('s.User_ID = :User_ID')
+            ->setParameter(':Sport_ID', $id, \PDO::PARAM_INT)
+            ->setParameter(':User_ID', $userID, \PDO::PARAM_INT);
         $result = $queryBuilder->execute()->fetch();
 
         return !$result ? [] : $result;

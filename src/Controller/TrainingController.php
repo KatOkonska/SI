@@ -78,7 +78,6 @@ class TrainingController implements ControllerProviderInterface
         $form->handleRequest($request);
 
         $errors ='';
-        $status='';
 
         if ($form->isSubmitted()) {
 
@@ -86,18 +85,24 @@ class TrainingController implements ControllerProviderInterface
                 $trainingRepository = new TrainingRepository($app['db']);
                 $addTraining = $trainingRepository->addTraining($form, $user['User_ID']);
 
-                echo '{{"sent_to_database"}}|translate';
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.element_successfully_added',
+                    ]
+                );
 
             } else{
                 $errors = $form->getErrors();
             }
         }
 
+
         return $app['twig']->render(
             'training/training_add.html.twig',
             [
                 'form' => $form->createView(),
-                'status'=> $status,
                 'error' => $errors,
             ]
         );
@@ -141,15 +146,28 @@ class TrainingController implements ControllerProviderInterface
     public function editTrainingAction(Application $app, $id, Request $request)
     {
 
+        $chosenTraining= new TrainingRepository($app['db']);
+
         $userRepository = new UserRepository($app['db']);
         $user = $userRepository->getUserByLogin($app['user']->getUsername());
 
 
+        if(in_array('ROLE_ADMIN', $userRepository->getUserRoles($user['User_ID'])) )
+        {
+            $oneTraining = $chosenTraining->findOneTrainingById($id);
+        }
+        else
+        {
+            $oneTraining = $chosenTraining->findOneTrainingByIdAndUser($id, $user['User_ID']);
+        }
+
+        if (!$oneTraining)
+        {
+                return $app->abort('404', 'message.cant_edit_training');
+        }
+
         $sportNameRepository = new SportNameRepository($app['db']);
         $choice = $sportNameRepository->showAllSportName();
-
-        $trainingRepository = new TrainingRepository($app['db']);
-        $oneTraining = $trainingRepository->findOneTrainingById($id);
 
         $oneTraining['choice'] = $choice;
 
@@ -159,7 +177,6 @@ class TrainingController implements ControllerProviderInterface
 
         $errors ='';
 
-        $status = '';
 
         if ($form->isSubmitted())
         {
@@ -169,7 +186,13 @@ class TrainingController implements ControllerProviderInterface
                 $trainingRepository = new TrainingRepository($app['db']);
                 $editTraining = $trainingRepository->editTraining($id, $form, $user['User_ID']);
 
-                $status = true;
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.element_successfully_edited',
+                    ]
+                );
 
             }
             else
@@ -178,15 +201,17 @@ class TrainingController implements ControllerProviderInterface
             }
         }
 
+
         return $app['twig']->render(
             'training/training_edit.html.twig',
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'status'=> $status,
                 'id' => $id
             ]
         );
+
+
     }
 
     /**
@@ -197,11 +222,25 @@ class TrainingController implements ControllerProviderInterface
      */
     public function deleteTrainingAction(Application $app, $id, Request $request)
     {
+        $chosenTraining= new TrainingRepository($app['db']);
+
+        $userRepository = new UserRepository($app['db']);
+        $user = $userRepository->getUserByLogin($app['user']->getUsername());
+
+        $oneTraining = $chosenTraining->findOneTrainingByIdAndUser($id, $user['User_ID']);
+
+        if(!in_array('ROLE_ADMIN', $userRepository->getUserRoles($user['User_ID'])) )
+        {
+            if (!$oneTraining)
+            {
+                return $app->abort('404', 'message.cant_delete_training');
+            }
+        }
+
         $form = $app['form.factory']->createBuilder(DeleteTrainingType::class)->getForm();
         $form->handleRequest($request);
 
         $errors ='';
-
 
         if ($form->isSubmitted())
         {

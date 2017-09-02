@@ -72,8 +72,9 @@ class AdminRepository
 
         $queryBuilder
             ->select('*')
-            ->from('Sport_Name', 'sn')
-            ->innerJoin('sn','Sport', 's','sn.Sport_Name_ID = s.Sport_ID');
+            ->from('Sport', 's')
+            ->leftJoin('s','Sport_Name', 'sn','s.Sport_Name_ID = sn.Sport_Name_ID');
+
 
         return $queryBuilder->execute()->fetchAll();
     }

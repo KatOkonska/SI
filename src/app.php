@@ -9,8 +9,8 @@ use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\SecurityServiceProvider;
 use Silex\Provider\FormServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
-use Silex\Provider\LocaleServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
+use Silex\Provider\SessionServiceProvider;
 
 
 
@@ -18,6 +18,7 @@ $app = new Application();
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new AssetServiceProvider());
+$app->register(new SessionServiceProvider());
 
 
 $app->register(

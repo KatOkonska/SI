@@ -169,6 +169,11 @@ class AdminController implements ControllerProviderInterface
     {
         $adminRepository = new AdminRepository($app['db']);
         $data = $adminRepository->findOneUserById($id);
+        if(!$data)
+        {
+            return $app->abort('404', 'message.cant_edit_user');
+        }
+
         $data['choice'] = array
         (
             'Użytkownik' => 2,
@@ -210,7 +215,12 @@ class AdminController implements ControllerProviderInterface
 
     public function editPasswordAction(Application $app, $id, Request $request)
     {
-//
+        $adminRepository = new AdminRepository($app['db']);
+        $data = $adminRepository->findOneUserById($id);
+        if(!$data)
+        {
+            return $app->abort('404', 'message.cant_edit_user_password');
+        }
 
         $form = $app['form.factory']->createBuilder(EditPasswordType::class)->getForm();
         $form->handleRequest($request);
@@ -253,9 +263,14 @@ class AdminController implements ControllerProviderInterface
     public function editSportNameAction(Application $app, $id, Request $request)
     {
 
-
         $adminRepository = new AdminRepository($app['db']);
         $sportname = $adminRepository->findOneSportNameById($id);
+        if(!$sportname)
+        {
+            return $app->abort('404', 'message.cant_edit_sportname');
+        }
+
+
         $form = $app['form.factory']->createBuilder(EditSportNameType::class, $sportname)->getForm();
         $form->handleRequest($request);
 
@@ -310,6 +325,13 @@ class AdminController implements ControllerProviderInterface
 
     public function deleteSportNameAction(Application $app, $id, Request $request)
     {
+        $adminRepository = new AdminRepository($app['db']);
+        $sportname = $adminRepository->findOneSportNameById($id);
+        if(!$sportname)
+        {
+            return $app->abort('404', 'message.cant_delete_sportname');
+        }
+
         $form = $app['form.factory']->createBuilder(DeleteSportNameType::class)->getForm();
         $form->handleRequest($request);
 
@@ -354,6 +376,13 @@ class AdminController implements ControllerProviderInterface
 
     public function deleteUserAction(Application $app, $id, Request $request)
     {
+        $adminRepository = new AdminRepository($app['db']);
+        $data = $adminRepository->findOneUserById($id);
+        if(!$data)
+        {
+            return $app->abort('404', 'message.cant_delete_user');
+        }
+
         $form = $app['form.factory']->createBuilder(DeleteUserType::class)->getForm();
         $form->handleRequest($request);
 

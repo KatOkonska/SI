@@ -74,6 +74,24 @@ class TrainingDayRepository
         return !$result ? [] : $result;
     }
 
+
+    public function findOneTrainingDayByIdAndUser($id, $userID)
+    {
+        $queryBuilder = $this->queryTrainingDayAll();
+        $queryBuilder->where('td.Training_day_ID = :Training_day_ID')
+            ->andWhere('td.User_ID = :User_ID')
+        ->setParameter(':Training_day_ID', $id, \PDO::PARAM_INT)
+        ->setParameter(':User_ID', $userID, \PDO::PARAM_INT);
+        $result = $queryBuilder->execute()->fetch();
+        if($result)
+        {
+            $result ["Training_day_day_number"] = new \DateTime($result ["Training_day_day_number"]);
+
+        }
+
+        return !$result ? [] : $result;
+    }
+
     protected function queryTrainingDayAll()
     {
         $queryBuilder = $this->db->createQueryBuilder();

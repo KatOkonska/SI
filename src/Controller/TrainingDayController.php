@@ -122,9 +122,19 @@ class TrainingDayController implements ControllerProviderInterface
 
     public function editTrainingDayAction(Application $app, $id, Request $request  )
     {
+        $userRepository = new UserRepository($app['db']);
+        $user = $userRepository->getUserByLogin($app['user']->getUsername());
 
         $trainingDayRepository = new TrainingDayRepository($app['db']);
-        $trainingDay = $trainingDayRepository->findOneTrainingDayById($id);
+        $trainingDay = $trainingDayRepository->findOneTrainingDayByIdAndUser($id, $user['User_ID']);
+
+        if(!in_array('ROLE_ADMIN', $userRepository->getUserRoles($user['User_ID'])) )
+        {
+            if (!$trainingDay) {
+                return $app->abort('404', 'message.cant_edit_training_day');
+            }
+        }
+
         $form = $app['form.factory']->createBuilder(EditTrainingDayType::class, $trainingDay)->getForm();
         $form->handleRequest($request);
 
@@ -169,6 +179,22 @@ class TrainingDayController implements ControllerProviderInterface
      */
     public function deleteTrainingDayAction(Application $app, $id, Request $request)
     {
+        $userRepository = new UserRepository($app['db']);
+        $user = $userRepository->getUserByLogin($app['user']->getUsername());
+
+        $trainingDayRepository = new TrainingDayRepository($app['db']);
+        $trainingDay = $trainingDayRepository->findOneTrainingDayByIdAndUser($id, $user['User_ID']);
+
+        if(!in_array('ROLE_ADMIN', $userRepository->getUserRoles($user['User_ID'])) )
+
+        {
+            if (!$trainingDay)
+            {
+                return $app->abort('404', 'message.cant_delete_training_day');
+            }
+        }
+
+
         $form = $app['form.factory']->createBuilder(DeleteTrainingDayType::class)->getForm();
         $form->handleRequest($request);
 
