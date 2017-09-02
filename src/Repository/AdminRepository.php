@@ -69,8 +69,6 @@ class AdminRepository
     public function showAllTrainings(Application $app)
     {
         $queryBuilder = $this->db->createQueryBuilder();
-//        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID', 'User_ID')
-//            ->from('Sport');
 
         $queryBuilder
             ->select('*')
@@ -144,8 +142,6 @@ class AdminRepository
 
     public function deleteUser($id)
     {
-//        $queryBuilder = $this->db->createQueryBuilder();
-//        $queryBuilder->delete('User', ['id' => $id]);
         return $this->db->delete('User', ['User_ID' => $id]);
     }
 

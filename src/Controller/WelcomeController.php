@@ -34,8 +34,8 @@ class WelcomeController implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $controller = $app['controllers_factory'];
-        $controller->get('/', [$this, 'indexAction'])->bind('index');
-        $controller->get('/1', [$this, 'welcomeAction'])->bind('index1');
+        $controller->get('/index', [$this, 'indexAction'])->bind('index');
+//        $controller->get('/1', [$this, 'welcomeAction'])->bind('index1');
         return $controller;
     }
 
@@ -51,29 +51,29 @@ class WelcomeController implements ControllerProviderInterface
      */
     public function indexAction(Application $app, Request $request)
     {
-//        //return 'Witaj'.'{zmienna-imie}'.'!<br>'.$this->todayDate();
-//        $name = '{zmienna-imie}';
-////        $current_day = $this->todayDate();
+        //return 'Witaj'.'{zmienna-imie}'.'!<br>'.$this->todayDate();
+     //   $name = '{zmienna-imie}';
+//        $current_day = $this->todayDate();
 //        echo 'Test 333';
-        return $app['twig']->render('welcome/index.html.twig');
+        return $app['twig']->render('index.html.twig');
 
     }
 
-    public function welcomeAction(Application $app)
-    {
-        $name ='';
-
-        $login='';
-
-        $WelcomeRepository = new WelcomeRepository($app['db']);
-        $name = $WelcomeRepository->showName($login);
-
-        return $app['twig']->render(
-            'index.html.twig',
-            ['name' => $name]
-
-        );
-    }
+//    public function welcomeAction(Application $app)
+//    {
+//        $name ='';
+//
+//        $login='';
+//
+//        $WelcomeRepository = new WelcomeRepository($app['db']);
+//        $name = $WelcomeRepository->showName($login);
+//
+//        return $app['twig']->render(
+//            'index.html.twig',
+//            ['name' => $name]
+//
+//        );
+//    }
 
 //    private function todayDate(Application $app)
 //    {

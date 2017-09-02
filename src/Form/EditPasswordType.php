@@ -34,7 +34,8 @@ class EditPasswordType extends AbstractType
 
 
         $builder->add(
-            'User_password', RepeatedType::class, array(
+            'User_password', RepeatedType::class, array
+            (
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Length(
@@ -59,6 +60,6 @@ class EditPasswordType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'edit_user_type';
+        return 'edit_password_type';
     }
 }

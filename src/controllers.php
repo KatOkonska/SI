@@ -29,6 +29,8 @@ $app->get('/index', function () use ($app) {
     ->bind('index')
 ;
 
+$app->mount('/index', new WelcomeController());
+
 $app->mount('/user', new UserController());
 
 $app->mount('/calendar', new CalendarController());

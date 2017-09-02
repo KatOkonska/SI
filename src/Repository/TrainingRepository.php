@@ -97,16 +97,31 @@ class TrainingRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
+    private function getTrainingsCount($userID)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        $queryBuilder
+            ->select('*')
+            ->from('Sport_Name', 'snx')
+            ->innerJoin('snx','Sport', 'sx','sx.Sport_Name_ID = snx.Sport_Name_ID')
+            ->where('User_ID = '.$userID);
+
+        return $queryBuilder->execute()->rowCount();
+    }
+
     public function showWeekTraining($userID)
     {
         $queryBuilder = $this->db->createQueryBuilder();
+        $offset = $this->getTrainingsCount($userID);
+        $maxResults = 5;
         $queryBuilder
             ->select('*')
             ->from('Sport_Name', 'sn')
-            ->innerJoin('sn','Sport', 's','sn.Sport_Name_ID = s.Sport_ID')
+            ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
             ->where('User_ID = '.$userID)
-            ->orderBy('Sport_Name')
-            ->setMaxResults(5);
+            ->setFirstResult($offset - 5)
+            ->setMaxResults($maxResults);
 
         return $queryBuilder->execute()->fetchAll();
     }

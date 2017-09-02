@@ -32,7 +32,8 @@ class DeleteUserType extends AbstractType
     {
 
 
-        $builder->add(
+        $builder->add
+        (
             'User_password', HiddenType::class, array()
         );
 

@@ -9,6 +9,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -34,11 +35,16 @@ class LoginType extends AbstractType
 
                 ],
                 'constraints' => [
-                    new Assert\NotBlank(),
+                    new Assert\NotBlank(
+                        [
+                            'groups' => ['tag-default']
+                        ]
+                    ),
                     new Assert\Length(
                         [
+                            'groups' => ['tag-default'],
                             'min' => 1,
-                            'max' => 32,
+                            'max' => 32
                         ]
                     ),
                 ],
@@ -63,6 +69,18 @@ class LoginType extends AbstractType
                         ]
                     ),
                 ],
+            ]
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(
+            [
+                'validation_groups' => 'tag-default',
             ]
         );
     }

@@ -32,7 +32,8 @@ class DeleteSportNameType extends AbstractType
     {
 
 
-        $builder->add(
+        $builder->add
+        (
             'Sport_Name_ID', HiddenType::class, array()
         );
 

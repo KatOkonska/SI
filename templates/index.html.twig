@@ -2,11 +2,11 @@
 
 {% block content %}
 
-    {% if is_granted("ROLE_USER") %}
+    {% if is_granted ("ROLE_USER") %}
        <h1>
            {{  'hello'|trans }} {{ app.user.username }} !
        </h1>
-    {% elseif  is_granted("ROLE_ADMIN") %}
+    {% elseif  is_granted ("ROLE_ADMIN") %}
         <h1>
             {{  'hello'|trans }} Admin!
         </h1>

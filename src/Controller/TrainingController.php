@@ -66,46 +66,25 @@ class TrainingController implements ControllerProviderInterface
 
     public function addTrainingAction(Application $app, Request $request)
     {
-//        echo 'test1';
-//        var_dump($app['user']->getUsername());
-//        var_dump($app['user']->getRoles());
-//        foreach ($app as $k=>$v)
-//        {
-//            var_dump($app['user']);
-//            var_dump('lalala');
-//        }
-//        echo 'test2';
+        $userRepository = new UserRepository($app['db']);
+        $user = $userRepository->getUserByLogin($app['user']->getUsername());
 
-//        $usr= $app->get('security.context')->getToken()->getUser();
-//        var_dump($usr->getUsername());
-//       die;
-
-        $UserRepository = new UserRepository($app['db']);
-        $user = $UserRepository->getUserByLogin($app['user']->getUsername());
-
-
-        $tag = 'kaczka';
 
         $sportNameRepository = new SportNameRepository($app['db']);
         $choice['choice'] = $sportNameRepository->showAllSportName();
-//        var_dump($choice);
-//        die;
-
-
-
-//        $form = $app['form.factory']->createBuilder(new TrainingType($tag))->getForm();
         $form = $app['form.factory']->createBuilder(TrainingType::class, $choice, array(
             'data' => $choice,
         ))->getForm();
         $form->handleRequest($request);
 
         $errors ='';
+        $status='';
 
         if ($form->isSubmitted()) {
 
             if ($form->isValid()) {
-                $TrainingRepository = new TrainingRepository($app['db']);
-                $addTraining = $TrainingRepository->addTraining($form, $user['User_ID']);
+                $trainingRepository = new TrainingRepository($app['db']);
+                $addTraining = $trainingRepository->addTraining($form, $user['User_ID']);
 
                 echo '{{"sent_to_database"}}|translate';
 
@@ -118,6 +97,7 @@ class TrainingController implements ControllerProviderInterface
             'training/training_add.html.twig',
             [
                 'form' => $form->createView(),
+                'status'=> $status,
                 'error' => $errors,
             ]
         );
@@ -127,14 +107,12 @@ class TrainingController implements ControllerProviderInterface
     {
         $table =[];
 
-        $UserRepository = new UserRepository($app['db']);
-        $user = $UserRepository->getUserByLogin($app['user']->getUsername());
+        $userRepository = new UserRepository($app['db']);
+        $user = $userRepository->getUserByLogin($app['user']->getUsername());
 
-        $TrainingRepository = new TrainingRepository($app['db']);
-        $table = $TrainingRepository->showAllTraining($user['User_ID']);
+        $trainingRepository = new TrainingRepository($app['db']);
+        $table = $trainingRepository->showAllTraining($user['User_ID']);
 
-//        var_dump($table);
-//        die;
 
         return $app['twig']->render(
             'training/training_show_all.html.twig',
@@ -147,14 +125,11 @@ class TrainingController implements ControllerProviderInterface
     {
         $table =[];
 
-        $UserRepository = new UserRepository($app['db']);
-        $user = $UserRepository->getUserByLogin($app['user']->getUsername());
+        $userRepository = new UserRepository($app['db']);
+        $user = $userRepository->getUserByLogin($app['user']->getUsername());
 
-        $TrainingRepository = new TrainingRepository($app['db']);
-        $table = $TrainingRepository->showWeekTraining($user['User_ID']);
-
-//        var_dump($table);
-//        die;
+        $trainingRepository = new TrainingRepository($app['db']);
+        $table = $trainingRepository->showWeekTraining($user['User_ID']);
 
         return $app['twig']->render(
             'training/training_show_week.html.twig',
@@ -166,19 +141,19 @@ class TrainingController implements ControllerProviderInterface
     public function editTrainingAction(Application $app, $id, Request $request)
     {
 
-        $UserRepository = new UserRepository($app['db']);
-        $user = $UserRepository->getUserByLogin($app['user']->getUsername());
+        $userRepository = new UserRepository($app['db']);
+        $user = $userRepository->getUserByLogin($app['user']->getUsername());
 
 
         $sportNameRepository = new SportNameRepository($app['db']);
         $choice = $sportNameRepository->showAllSportName();
 
-        $TrainingRepository = new TrainingRepository($app['db']);
-        $one_training = $TrainingRepository->findOneTrainingById($id);
+        $trainingRepository = new TrainingRepository($app['db']);
+        $oneTraining = $trainingRepository->findOneTrainingById($id);
 
-        $one_training['choice'] = $choice;
+        $oneTraining['choice'] = $choice;
 
-        $form = $app['form.factory']->createBuilder(TrainingType::class, $one_training, array())->getForm();
+        $form = $app['form.factory']->createBuilder(TrainingType::class, $oneTraining, array())->getForm();
 
         $form->handleRequest($request);
 
@@ -186,15 +161,19 @@ class TrainingController implements ControllerProviderInterface
 
         $status = '';
 
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted())
+        {
 
-            if ($form->isValid()) {
-                $TrainingRepository = new TrainingRepository($app['db']);
-                $editTraining = $TrainingRepository->editTraining($id, $form, $user['User_ID']);
+            if ($form->isValid())
+            {
+                $trainingRepository = new TrainingRepository($app['db']);
+                $editTraining = $trainingRepository->editTraining($id, $form, $user['User_ID']);
 
                 $status = true;
 
-            } else{
+            }
+            else
+            {
                 $errors = $form->getErrors();
             }
         }
@@ -224,9 +203,11 @@ class TrainingController implements ControllerProviderInterface
         $errors ='';
 
 
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted())
+        {
 
-            if ($form->isValid()) {
+            if ($form->isValid())
+            {
                 $trainingRepository = new TrainingRepository($app['db']);
                 $deleteTraining = $trainingRepository->deleteTraining($id);
 
@@ -240,12 +221,15 @@ class TrainingController implements ControllerProviderInterface
 
                 return $app->redirect($app['url_generator']->generate('show_all_training'), 301);
 
-            } else{
+            }
+            else
+            {
                 $errors = $form->getErrors();
             }
         }
 
-        return $app['twig']->render(
+        return $app['twig']->render
+        (
             'training/training_delete.html.twig',
             [
                 'form' => $form->createView(),

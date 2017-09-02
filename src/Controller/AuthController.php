@@ -15,7 +15,6 @@ namespace Controller;
 use Form\EditPasswordType;
 use Form\LoginType;
 use Form\RegisterType;
-use Form\TrainingType;
 use Repository\UserRepository;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
@@ -65,7 +64,8 @@ class AuthController implements ControllerProviderInterface
         $user = ['login' => $app['session']->get('_security.last_username')];
         $form = $app['form.factory']->createBuilder(LoginType::class, $user)->getForm();
 
-        return $app['twig']->render(
+        return $app['twig']->render
+        (
             'auth/login.html.twig',
             [
                 'form' => $form->createView(),
@@ -97,21 +97,26 @@ class AuthController implements ControllerProviderInterface
 
         $status = '';
 
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted())
+        {
 
-            if ($form->isValid()) {
+            if ($form->isValid())
+            {
                 $UserRepository = new UserRepository($app['db']);
                 $register = $UserRepository->register($form, $app);
 
 
 
-            } else{
+            }
+            else
+            {
                 $errors = $form->getErrors();
             }
         }
 
 
-        return $app['twig']->render(
+        return $app['twig']->render
+        (
             'auth/register.html.twig',
             [
                 'form' => $form->createView(),
@@ -136,19 +141,21 @@ class AuthController implements ControllerProviderInterface
 
         $status = '';
 
-        if ($form->isSubmitted()) {
-            if ($form->isValid()) {
+        if ($form->isSubmitted())
+        {
+            if ($form->isValid())
+            {
                 $userRepository = new UserRepository($app['db']);
                 $editOwnPassword = $userRepository->editOwnPassword($user['User_ID'], $form, $app);
-
-
-
-            } else{
+            }
+            else
+            {
                 $errors = $form->getErrors();
             }
         }
 
-        return $app['twig']->render(
+        return $app['twig']->render
+        (
             'auth/edit_own_password.html.twig',
             [
                 'form' => $form->createView(),

@@ -32,7 +32,8 @@ class DeleteTrainingDayType extends AbstractType
     {
 
 
-        $builder->add(
+        $builder->add
+        (
             'Training_day_day_number', HiddenType::class, array()
         );
 
