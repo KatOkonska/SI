@@ -38,9 +38,43 @@ class TrainingController implements ControllerProviderInterface
         $controller->match('add', [$this, 'addTrainingAction'])
             ->method('POST|GET')
             ->bind('add_training');
-        $controller->match('show_all', [$this, 'showAllTrainingAction'])
-            ->method('POST|GET')
+
+//        $controller->match('show_all', [$this, 'showAllTrainingAction'])
+//            ->method('POST|GET')
+//            ->bind('show_all_training');
+
+        //-- work in progress
+//        $controller->get('show_all', [$this, 'indexAction'])
+//            ->value('page', 1)
+//            ->bind('show_all_training');
+//
+//        $controller->get('show_all/', [$this, 'indexAction'])
+//            ->value('page', 1)
+//            ->bind('show_all_training');
+//
+//        $controller->get('show_all/page/{page}', [$this, 'indexAction'])
+//            ->value('page', 1)
+//            ->bind('show_all_training');
+//
+//        $controller->get('show_all/{id}', [$this, 'indexAction'])
+//            ->value('id', 1)
+//            ->bind('show_all_training');
+//        //--
+
+//        $controller->get('show_all/{id}', [$this, 'indexAction'])
+//            ->value('id', 1)
+//            ->bind('show_all_training');
+
+        $controller->get('show_all/page/{page}', [$this, 'indexAction'])
+            ->value('page', 1)
             ->bind('show_all_training');
+        // Podpiąć pozostałe strony (show_all, show_all/, show_all/1)
+        // powinny wywoływać dokładnie to samo co:
+        // show_all/page, show_all/page/, show_all/page/1
+        // 1) naprawić że show_all/ oraz show_all/page/ oczekują na folder (przekierwoanie na domyślną wresję strony)
+        // 2) menu z przyciskami "next" "prev" żeby przełączać się między stronami nie zmieniająć ręcznie URLa...
+
+
         $controller->match('show_week', [$this, 'showWeekTrainingAction'])
             ->method('POST|GET')
             ->bind('show_week_training');
@@ -53,6 +87,27 @@ class TrainingController implements ControllerProviderInterface
 
 
         return $controller;
+    }
+
+    /**
+     * Index action.
+     *
+     * @param \Silex\Application $app  Silex application
+     * @param int                $page Current page number
+     *
+     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
+     */
+    public function indexAction(Application $app, $page = 1)
+    {
+        $userRepository = new UserRepository($app['db']);
+        $userID = $userRepository->getUserByLogin($app['user']->getUsername())['User_ID'];
+
+        $trainingRepository = new TrainingRepository($app['db']);
+
+        return $app['twig']->render(
+            'training/training_show_all.html.twig',
+            ['paginator' => $trainingRepository->findAllPaginated($page, $userID)]
+        );
     }
 
     /**

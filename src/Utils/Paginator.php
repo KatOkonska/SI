@@ -39,7 +39,7 @@ class Paginator
      *
      * @var int $maxPerPage
      */
-    protected $maxPerPage = 1;
+    protected $maxPerPage = 5;
 
     /**
      * Paginator constructor.
@@ -89,6 +89,8 @@ class Paginator
             'data' => $this->findData(),
         ];
     }
+
+
 
     /**
      * Gets data.

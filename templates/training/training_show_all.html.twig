@@ -2,25 +2,15 @@
 ? 'layout_admin.html.twig'
 : 'layout_user.html.twig' %}
 
-{% block title %}{{'title.list_training'|trans }}{% endblock %}
+{% block title %}{{'title.list_training'|trans }}
+    {% include 'default/_paginator.html.twig' with {
+    paginator: paginator,
+    route_name: 'show_all_training_paginated',
+    } %}
+{% endblock %}
 
 {% block content %}
     <h1>{{'title.list_training'|trans }}</h1>
-
-    {#{{ dump(table) }}#}
-
-    {#<h1>Dni treningu</h1>#}
-    {#<tr>#}
-        {#{% for data in table %}#}
-            {#<h2>dzien treningu</h2>#}
-            {#<td>{{ data.Sport_time }}</td>#}
-            {#<td>{{ data.Sport_kcal }}</td>#}
-            {#<td>{{ data.Sport_distance }}</td>#}
-            {#<td>{{ data.Sport_name_ID }}</td>#}
-            {#<br>#}
-        {#{% endfor %}#}
-    {#</tr>#}
-
 
     <article>
 
@@ -36,7 +26,7 @@
         </tr>
         </thead>
 
-            {% for data in table %}
+            {% for data in paginator.data %}
                 <tr>
                     <td>{{ data.Sport_time }}</td>
                     <td>{{ data.Sport_kcal }}</td>
