@@ -157,8 +157,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/fc/08/7a08fc" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/fc/3a/a23afc" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ff/6d/676dff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/layout_admin.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/layout_user.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Utils/Paginator.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/00/00e33c5dfaa401c4a3263781b2de6236c9ac3911e0df98f8f3fc3f4840d190cb.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/0c/0cfa02ca0c61fa9558971412f0c72c36d7dea98d74d4a01f96da24f0fe2300cb.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/19/19743a74f708cce9cf197a8de2ecb96ae197ce6cd9b1667ce80c3753e9449723.php" />
@@ -202,40 +201,9 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/fa/fad67d87b7bd9e79b749951b3cc1f2f424cd9c5b16aeececfdae072734966430.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/fc/fc2beab4541e3cba7759abf28a5dd6b7573916c919c410bf75729477ae98b641.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/fc/fc3c298f464b11391a7800f634b14ef4c5ac0c1461e5c4b1a112c3467ebb25fc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/add_sport.html.twig" afterPath="$PROJECT_DIR$/templates/admin/add_sport_name.html.twig" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/templates/test.html.twig" afterPath="$PROJECT_DIR$/var/cache/profiler/00/97/969700" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/AuthController.php" afterPath="$PROJECT_DIR$/src/Controller/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TrainingController.php" afterPath="$PROJECT_DIR$/src/Controller/TrainingController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TrainingDayController.php" afterPath="$PROJECT_DIR$/src/Controller/TrainingDayController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.php" afterPath="$PROJECT_DIR$/src/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/delete_sport_name.html.twig" afterPath="$PROJECT_DIR$/templates/admin/delete_sport_name.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/delete_user.html.twig" afterPath="$PROJECT_DIR$/templates/admin/delete_user.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/edit_password.html.twig" afterPath="$PROJECT_DIR$/templates/admin/edit_password.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/edit_sport_name.html.twig" afterPath="$PROJECT_DIR$/templates/admin/edit_sport_name.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/edit_user.html.twig" afterPath="$PROJECT_DIR$/templates/admin/edit_user.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig" afterPath="$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/show_all_training_days.html.twig" afterPath="$PROJECT_DIR$/templates/admin/show_all_training_days.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/show_all_trainings.html.twig" afterPath="$PROJECT_DIR$/templates/admin/show_all_trainings.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/show_all_users.html.twig" afterPath="$PROJECT_DIR$/templates/admin/show_all_users.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/auth/edit_own_password.html.twig" afterPath="$PROJECT_DIR$/templates/auth/edit_own_password.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/auth/register.html.twig" afterPath="$PROJECT_DIR$/templates/auth/register.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/calendar.html.twig" afterPath="$PROJECT_DIR$/templates/calendar.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/errors/404.html.twig" afterPath="$PROJECT_DIR$/templates/errors/404.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html.twig" afterPath="$PROJECT_DIR$/templates/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.html.twig" afterPath="$PROJECT_DIR$/templates/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_add.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_add.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_delete.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_delete.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_edit.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_show_all.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_show_all.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_show_week.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_show_week.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training_day/training_day_add.html.twig" afterPath="$PROJECT_DIR$/templates/training_day/training_day_add.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training_day/training_day_delete.html.twig" afterPath="$PROJECT_DIR$/templates/training_day/training_day_delete.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training_day/training_day_edit.html.twig" afterPath="$PROJECT_DIR$/templates/training_day/training_day_edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" afterPath="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/translations/messages.en.xlf" afterPath="$PROJECT_DIR$/translations/messages.en.xlf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/translations/validators.en.xlf" afterPath="$PROJECT_DIR$/translations/validators.en.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/translations/messages.pl.xlf" afterPath="$PROJECT_DIR$/translations/messages.pl.xlf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -257,33 +225,15 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="show_all_users.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/admin/show_all_users.html.twig">
+    <leaf>
+      <file leaf-file-name="Paginator.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Utils/Paginator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete_sport_name.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/admin/delete_sport_name.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="49" lean-forward="false" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="training_delete.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/training/training_delete.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="2448">
+              <caret line="136" column="1" lean-forward="false" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
+              <folding>
+                <element signature="e#6#32#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -341,7 +291,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/Form/EditUserType.php" />
         <option value="$PROJECT_DIR$/src/Form/TrainingType.php" />
-        <option value="$PROJECT_DIR$/translations/messages.pl.xlf" />
         <option value="$PROJECT_DIR$/src/controllers.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/templates/auth/register.html.twig" />
@@ -389,6 +338,7 @@
         <option value="$PROJECT_DIR$/templates/calendar.html.twig" />
         <option value="$PROJECT_DIR$/templates/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/errors/404.html.twig" />
+        <option value="$PROJECT_DIR$/translations/messages.pl.xlf" />
         <option value="$PROJECT_DIR$/src/Utils/Paginator.php" />
       </list>
     </option>
@@ -443,25 +393,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
+              <option name="myItemId" value="translations" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -476,6 +408,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Utils" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -619,7 +569,7 @@
       <workItem from="1504344339341" duration="236000" />
       <workItem from="1504365333348" duration="5418000" />
       <workItem from="1504378304300" duration="10725000" />
-      <workItem from="1504446135435" duration="9800000" />
+      <workItem from="1504446135435" duration="10502000" />
     </task>
     <task id="LOCAL-00001" summary="Zmiany z 21 sierpnia - formularz dodawania treningu">
       <created>1503346501422</created>
@@ -719,11 +669,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504390155426</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Dodano flash messages">
+      <created>1504458299933</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1504458299933</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242417000" />
+    <option name="totallyTimeSpent" value="243119000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -746,7 +703,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27037036" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980605" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27901235" sideWeight="0.49318954" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27901235" sideWeight="0.49318954" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -810,13 +767,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/default/_flash_messages.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/LoginType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -1048,14 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/translations/messages.en.xlf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="175" column="39" lean-forward="false" selection-start-line="175" selection-start-column="39" selection-end-line="175" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/add_sport_name.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1192,34 +1134,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/Paginator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="117" column="79" lean-forward="true" selection-start-line="117" selection-start-column="79" selection-end-line="117" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/var/cache/twig/8f/8fe2ee9105f8e849a62ef444d2a9c9a0197ea9f8f64861c46fcb25715d7e4920.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="57" column="105" lean-forward="false" selection-start-line="57" selection-start-column="105" selection-end-line="57" selection-end-column="105" />
           <folding>
-            <marker date="1504457517270" expanded="true" signature="3232:3244" ph="..." />
-            <marker date="1504457517270" expanded="true" signature="3878:3891" ph="..." />
-            <marker date="1504457517270" expanded="true" signature="4199:4212" ph="..." />
-            <marker date="1504457517270" expanded="true" signature="6000:6071" ph="..." />
-            <marker date="1504457517270" expanded="true" signature="6130:6184" ph="..." />
-            <marker date="1504457517270" expanded="true" signature="6213:6284" ph="..." />
+            <marker date="1504458560308" expanded="true" signature="3232:3244" ph="..." />
+            <marker date="1504458560308" expanded="true" signature="3878:3891" ph="..." />
+            <marker date="1504458560308" expanded="true" signature="4199:4212" ph="..." />
+            <marker date="1504458560308" expanded="true" signature="6000:6071" ph="..." />
+            <marker date="1504458560308" expanded="true" signature="6130:6184" ph="..." />
+            <marker date="1504458560308" expanded="true" signature="6213:6284" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_users.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,11 +1157,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_users.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/training/training_delete.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state relative-caret-position="126">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/messages.pl.xlf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-463">
+          <caret line="56" column="57" lean-forward="false" selection-start-line="56" selection-start-column="57" selection-end-line="56" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/messages.en.xlf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="63" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Paginator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="136" column="1" lean-forward="false" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
+          <folding>
+            <element signature="e#6#32#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -27,6 +27,35 @@
                 <target>Usunięto pomyślnie</target>
             </trans-unit>
 
+            <trans-unit id="message.added">
+                <source>message.added</source>
+                <target>Dodano pomyślnie</target>
+            </trans-unit>
+
+            <trans-unit id="message.edited">
+                <source>message.edited</source>
+                <target>Przeedytowano pomyślnie</target>
+            </trans-unit>
+
+            <trans-unit id="message.page_not_found">
+                <source>message.page_not_found"</source>
+                <target>Nie ma takiej strony</target>
+            </trans-unit>
+
+            <trans-unit id="message.created_account">
+                <source>"message.created_account"</source>
+                <target>Konto założone pomyślnie</target>
+            </trans-unit>
+
+            <trans-unit id="message.cant_delete_it">
+                <source>"message.cant_delete_it"</source>
+                <target>Nie możesz usunąć tego elementu</target>
+            </trans-unit>
+
+            <trans-unit id="message.cant_edit_it">
+                <source>"message.cant_edit_it"</source>
+                <target>Nie możesz edytować tego elementu</target>
+            </trans-unit>
 
             <trans-unit id="button.add">
                 <source>button.add</source>
