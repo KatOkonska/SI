@@ -72,7 +72,7 @@ class TrainingDayController implements ControllerProviderInterface
 
 
         $errors ='';
-        $status = '';
+
 
         if ($form->isSubmitted())
         {
@@ -81,6 +81,15 @@ class TrainingDayController implements ControllerProviderInterface
             {
                 $trainingDayRepository = new TrainingDayRepository($app['db']);
                 $addTraining = $trainingDayRepository->addTrainingDay($form, $user['User_ID']);
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.added',
+                    ]
+                );
+
+                return $app->redirect($app['url_generator']->generate('show_all_training_day'), 301);
 
 
             }
@@ -96,7 +105,6 @@ class TrainingDayController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'status'=> $status,
             ]
         );
     }
@@ -131,7 +139,7 @@ class TrainingDayController implements ControllerProviderInterface
         if(!in_array('ROLE_ADMIN', $userRepository->getUserRoles($user['User_ID'])) )
         {
             if (!$trainingDay) {
-                return $app->abort('404', 'message.cant_edit_training_day');
+                return $app->abort('404', 'message.cant_edit_it');
             }
         }
 
@@ -139,13 +147,19 @@ class TrainingDayController implements ControllerProviderInterface
         $form->handleRequest($request);
 
         $errors ='';
-        $status = '';
 
         if ($form->isSubmitted())
         {
             if ($form->isValid())
             {
                   $editSportName = $trainingDayRepository->editTrainingDay($id, $form);
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.edited',
+                    ]
+                );
 
 
                 return $app->redirect($app['url_generator']->generate('show_all_training_day'), 301);
@@ -164,7 +178,6 @@ class TrainingDayController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'status'=> $status,
                 'id' => $id
             ]
         );
@@ -190,7 +203,7 @@ class TrainingDayController implements ControllerProviderInterface
         {
             if (!$trainingDay)
             {
-                return $app->abort('404', 'message.cant_delete_training_day');
+                return $app->abort('404', 'message.cant_delete_it');
             }
         }
 

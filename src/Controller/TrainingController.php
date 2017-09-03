@@ -89,9 +89,11 @@ class TrainingController implements ControllerProviderInterface
                     'messages',
                     [
                         'type' => 'success',
-                        'message' => 'message.element_successfully_added',
+                        'message' => 'message.added',
                     ]
                 );
+                return $app->redirect($app['url_generator']->generate('show_all_training'), 301);
+
 
             } else{
                 $errors = $form->getErrors();
@@ -163,7 +165,7 @@ class TrainingController implements ControllerProviderInterface
 
         if (!$oneTraining)
         {
-                return $app->abort('404', 'message.cant_edit_training');
+                return $app->abort('404', 'message.cant_edit_it');
         }
 
         $sportNameRepository = new SportNameRepository($app['db']);
@@ -190,9 +192,10 @@ class TrainingController implements ControllerProviderInterface
                     'messages',
                     [
                         'type' => 'success',
-                        'message' => 'message.element_successfully_edited',
+                        'message' => 'message.edited',
                     ]
                 );
+                return $app->redirect($app['url_generator']->generate('show_all_training'), 301);
 
             }
             else
@@ -233,7 +236,7 @@ class TrainingController implements ControllerProviderInterface
         {
             if (!$oneTraining)
             {
-                return $app->abort('404', 'message.cant_delete_training');
+                return $app->abort('404', 'message.cant_delete_it');
             }
         }
 

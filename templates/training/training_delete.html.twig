@@ -1,4 +1,6 @@
-{% extends 'layout.html.twig' %}
+{% extends is_granted("ROLE_ADMIN") == 'true'
+? 'layout_admin.html.twig'
+: 'layout_user.html.twig' %}
 
 {% block title %}{{ 'header.delete_training'|trans}}{% endblock %}
 

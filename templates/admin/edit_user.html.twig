@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}{{ 'title.auth_add_training'|trans }}{% endblock %}
 
@@ -17,9 +17,6 @@
     {{ form_end(form) }}
 </div>
 
-    {% if status %}
-        <h2>{{ 'sent_to_database'|trans }}</h2>
-    {% endif %}
 {% endblock %}
 
 

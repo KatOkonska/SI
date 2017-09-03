@@ -1,10 +1,10 @@
-{% extends 'layout.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
-{% block title %}{{ 'title.auth_add_training'|trans }}{% endblock %}
+{% block title %}{{ 'title.edit_sport_name'|trans }}{% endblock %}
 
 {% block content %}
 <h1>{{ 'title.edit_sport_name'|trans }}</h1>
-<h2></h2>
+
 
 {% if error is defined and error|length %}
 {{ error }}
@@ -17,9 +17,6 @@
     {{ form_end(form) }}
 </div>
 
-    {% if status %}
-        <h2>{{ 'sent_to_database'|trans }}</h2>
-    {% endif %}
 {% endblock %}
 
 

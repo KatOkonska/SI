@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title '' %}{{ 'title.Sport_application'|trans }}</title>
+
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+    <body>
+
+    {% include 'default/_flash_messages.html.twig' %}
+        <nav class="navbar navbar-default">
+
+            <ul>
+                <li><a href="{{ url('auth_logout') }}">Logout</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Admin</a>
+                    <div class="dropdown-content">
+                        <a href="{{ url('add_sport') }}">{{  'menu.add_sport'|trans }}</a>
+                        <a href="{{ url('show_all_users') }}">{{ 'menu.show_all_users'|trans }}</a>
+                        <a href="{{ url('show_all_trainings') }}">{{ 'menu.show_all_trainings'|trans }}</a>
+                        <a href="{{ url('show_all_training_days') }}">{{  'menu.show_all_training_days'|trans }}</a>
+                        <a href="{{ url('show_all_sport_names') }}">{{ 'menu.show_all_sport_names'|trans }}</a>
+
+                    </div>
+                </li>
+
+
+            </ul>
+
+
+            <h1>{{"title.Sport_application" |trans }}</h1>
+
+            <h1>{{"hello" |trans }} Admin</h1>
+
+            <h3>{{"title.Budda_quote" |trans }} <br> ~Buddha</h3>
+
+
+            <div class="parallax"></div>
+
+            <div style="height:50px;">
+
+            </div>
+
+            {% for message in app.session.flashbag.get('messages') %}
+                <div class="error-message">
+                    <div class="{{ message.type }}"><strong>{{message.message|trans}}</strong></div>
+                </div>
+            {% endfor %}
+
+        </nav>
+
+        {#{% include 'default/_flash_messages.html.twig' %}#}
+
+        {% block content %}{% endblock %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer> Autor: Katarzyna Okońska 2017</footer>
+    </body>
+</html>

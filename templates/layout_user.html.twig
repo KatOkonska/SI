@@ -22,20 +22,10 @@
     {% include 'default/_flash_messages.html.twig' %}
 
         <nav class="navbar navbar-default">
-            <ul>
-                <li><a href="{{ url('index')}}">{{  'menu.home'|trans }}</a></li>
-                {#bind#}
-
-                <li><a href="{{ url('auth_login') }}">{{  'menu.login'|trans }}</a></li>
-
-                <li><a href="{{ url('auth_register') }}">{{  'menu.register'|trans }}</a></li>
-
-            </ul>
-
-
                 {% if is_granted("ROLE_USER") %}
 
                     <ul>
+                        <li><a href="{{ url('index')}}">{{  'menu.home'|trans }}</a></li>
                         <li><a href="{{ url('auth_logout') }}">Logout</a></li>
                         <li><a href="{{ url('auth_edit_own_password') }}">Change password</a></li>
                         {#<li><a href="{{ url('calendar') }}">Calendar</a></li>#}
@@ -62,24 +52,6 @@
 
                 {% endif %}
 
-
-            {% if is_granted("ROLE_ADMIN") %}
-                <ul>
-
-                    <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">Admin</a>
-                        <div class="dropdown-content">
-                            <a href="{{ url('add_sport') }}">{{  'menu.add_sport'|trans }}</a>
-                            <a href="{{ url('show_all_users') }}">{{ 'menu.show_all_users'|trans }}</a>
-                            <a href="{{ url('show_all_trainings') }}">{{ 'menu.show_all_trainings'|trans }}</a>
-                            <a href="{{ url('show_all_training_days') }}">{{  'menu.show_all_training_days'|trans }}</a>
-                            <a href="{{ url('show_all_sport_names') }}">{{ 'menu.show_all_sport_names'|trans }}</a>
-
-                        </div>
-                    </li>
-
-                </ul>
-            {% endif %}
 
 
 

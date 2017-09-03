@@ -22,6 +22,7 @@
                 <!--<target>Add sport name</target>-->
             <!--</trans-unit>-->
 
+           <!--message-->
             <trans-unit id="sent_to_database">
                 <source>sent_to_database</source>
                 <target>Sent to database</target>
@@ -32,6 +33,35 @@
                 <target>Deleted succesfully</target>
             </trans-unit>
 
+            <trans-unit id="message.added">
+                <source>message.added</source>
+                <target>Added succesfully</target>
+            </trans-unit>
+
+            <trans-unit id="message.edited">
+                <source>message.edited</source>
+                <target>Edited succesfully</target>
+            </trans-unit>
+
+            <trans-unit id="message.page_not_found">
+                <source>message.page_not_found"</source>
+                <target>Page not found</target>
+            </trans-unit>
+
+            <trans-unit id="message.created_account">
+                <source>"message.created_account"</source>
+                <target>Account has been created succesfully</target>
+            </trans-unit>
+
+            <trans-unit id="message.cant_delete_it">
+                <source>"message.cant_delete_it"</source>
+                <target>You can't delete chosen item</target>
+            </trans-unit>
+
+            <trans-unit id="message.cant_edit_it">
+                <source>"message.cant_edit_it"</source>
+                <target>You can't edit chosen item</target>
+            </trans-unit>
 
 
 
@@ -70,6 +100,11 @@
             <trans-unit id="header.delete_sport">
                 <source>header.delete_sport</source>
                 <target>Delete sport name</target>
+            </trans-unit>
+
+            <trans-unit id="header.add_sport_name">
+                <source>header.add_sport_name</source>
+                <target>Add sport name</target>
             </trans-unit>
 
             <trans-unit id="header.add_training">
@@ -138,7 +173,7 @@
             </trans-unit>
 
             <trans-unit id="title.list_all_users">
-                <source>title.list_all_sport_names</source>
+                <source>title.list_all_users</source>
                 <target>This is a list of all your users</target>
             </trans-unit>
 
@@ -249,7 +284,7 @@
 
             <!--welcome-->
 
-            <trans-unit id="hello}">
+            <trans-unit id="hello">
                 <source>hello</source>
                 <target>Hello</target>
             </trans-unit>
@@ -396,6 +431,8 @@
                     the stream always wins;
                     not through strength,
                     but through persistence.</target>
+
+
             </trans-unit>
         </body>
     </file>

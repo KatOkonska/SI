@@ -87,7 +87,6 @@ class AdminController implements ControllerProviderInterface
         $form->handleRequest($request);
 
         $errors ='';
-        $status = '';
 
 
         if ($form->isSubmitted())
@@ -98,6 +97,13 @@ class AdminController implements ControllerProviderInterface
                 $adminRepository = new AdminRepository($app['db']);
                 $register = $adminRepository->addSportName($form, $app);
 
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.added',
+                    ]
+                );
 
             }
             else
@@ -109,11 +115,10 @@ class AdminController implements ControllerProviderInterface
 
         return $app['twig']->render
         (
-            'admin/add_sport.html.twig',
+            'admin/add_sport_name.html.twig',
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'status'=> $status,
             ]
         );
     }
@@ -185,8 +190,6 @@ class AdminController implements ControllerProviderInterface
 
         $errors ='';
 
-        $status = '';
-
         if ($form->isSubmitted())
         {
 
@@ -194,6 +197,14 @@ class AdminController implements ControllerProviderInterface
             {
                 $adminRepository = new AdminRepository($app['db']);
                 $editUser = $adminRepository->editUser($id, $form);
+
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.edited',
+                    ]
+                );
             }
             else
                 {
@@ -207,7 +218,6 @@ class AdminController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'status'=> $status,
                 'id' => $id
             ]
         );
@@ -227,8 +237,6 @@ class AdminController implements ControllerProviderInterface
 
         $errors ='';
 
-        $status = '';
-
 
         if ($form->isSubmitted())
         {
@@ -237,7 +245,13 @@ class AdminController implements ControllerProviderInterface
                 $adminRepository = new AdminRepository($app['db']);
                 $editPassword = $adminRepository->editPassword($id, $form, $app);
 
-
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.edited',
+                    ]
+                );
 
             }
             else
@@ -252,7 +266,6 @@ class AdminController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'status'=> $status,
                 'id' => $id
             ]
         );
@@ -277,8 +290,6 @@ class AdminController implements ControllerProviderInterface
         $errors ='';
 
 
-        $status = '';
-
 
         if ($form->isSubmitted())
         {
@@ -286,6 +297,14 @@ class AdminController implements ControllerProviderInterface
             {
                 $adminRepository = new AdminRepository($app['db']);
                 $editSportName = $adminRepository->editSportName($id, $form, $app);
+
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.edited',
+                    ]
+                );
 
 
                 return $app->redirect($app['url_generator']->generate('show_all_sport_names'), 301);
@@ -302,7 +321,6 @@ class AdminController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'status'=> $status,
                 'id' => $id
             ]
         );

@@ -1,6 +1,8 @@
-{% extends 'layout.html.twig' %}
+{% extends is_granted("ROLE_ADMIN") == 'true'
+? 'layout_admin.html.twig'
+: 'layout_user.html.twig' %}
 
-{% block title %}{{  'title.edit_training'|trans }}{% endblock %}
+{% block title %}{{  'header.add_training'|trans }}{% endblock %}
 
 {% block content %}
     <h1>{{  'header.add_training'|trans }}</h1>
@@ -16,7 +18,4 @@
         {{ form_end(form) }}
     </div>
 
-    {% if status %}
-        <h2>{{ 'sent_to_database'|trans }}</h2>
-    {% endif %}
 {% endblock %}

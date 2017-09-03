@@ -95,8 +95,6 @@ class AuthController implements ControllerProviderInterface
 
         $errors ='';
 
-        $status = '';
-
         if ($form->isSubmitted())
         {
 
@@ -105,7 +103,13 @@ class AuthController implements ControllerProviderInterface
                 $UserRepository = new UserRepository($app['db']);
                 $register = $UserRepository->register($form, $app);
 
-
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.created_account',
+                    ]
+                );
 
             }
             else
@@ -121,7 +125,6 @@ class AuthController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'status'=> $status,
             ]
         );
     }
@@ -139,7 +142,6 @@ class AuthController implements ControllerProviderInterface
 
         $errors ='';
 
-        $status = '';
 
         if ($form->isSubmitted())
         {
@@ -147,6 +149,13 @@ class AuthController implements ControllerProviderInterface
             {
                 $userRepository = new UserRepository($app['db']);
                 $editOwnPassword = $userRepository->editOwnPassword($user['User_ID'], $form, $app);
+                $app['session']->getFlashBag()->add(
+                    'messages',
+                    [
+                        'type' => 'success',
+                        'message' => 'message.edited',
+                    ]
+                );
             }
             else
             {
@@ -160,7 +169,7 @@ class AuthController implements ControllerProviderInterface
             [
                 'form' => $form->createView(),
                 'error' => $errors,
-                'status'=> $status,
+
 
             ]
         );

@@ -1,5 +1,7 @@
-{% extends "layout.html.twig" %}
+{% extends is_granted("ROLE_USER") == 'true'
+? 'layout_user.html.twig'
+: 'layout.html.twig' %}
 
 {% block content %}
-    Page not found.
+    {{ "message.page_not_found"|trans }}
 {% endblock %}
