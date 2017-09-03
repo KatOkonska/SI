@@ -84,7 +84,7 @@ class Paginator
 
         return [
             'page' => $this->calculateCurrentPageNumber($pagesNumber),
-            'max_result' => $this->maxPerPage,
+            'max_results' => $this->maxPerPage,
             'pages_number' => $pagesNumber,
             'data' => $this->findData(),
         ];
@@ -115,6 +115,7 @@ class Paginator
     protected function countAllPages()
     {
         $result = $this->countQueryBuilder->execute()->fetch();
+
 
         if ($result) {
             $pagesNumber =  ceil($result['total_results'] / $this->maxPerPage);

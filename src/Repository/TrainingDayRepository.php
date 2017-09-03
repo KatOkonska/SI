@@ -12,6 +12,7 @@ use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DBALException;
 use Silex\Application;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Utils\Paginator;
 
 class TrainingDayRepository
 {
@@ -22,6 +23,8 @@ class TrainingDayRepository
      * @var \Doctrine\DBAL\Connection $db
      */
     protected $db;
+
+    const NUM_ITEMS = 5;
 
     /**
      * TagRepository constructor.
@@ -90,6 +93,35 @@ class TrainingDayRepository
         }
 
         return !$result ? [] : $result;
+    }
+
+    public function findAllPaginated($page = 1, $userID)
+    {
+        $countQueryBuilder = $this->queryAll($userID)
+            ->select('COUNT(DISTINCT td.Training_day_ID) AS total_results')
+            ->setMaxResults(self::NUM_ITEMS);
+
+
+
+        $paginator = new Paginator($this->queryAll($userID), $countQueryBuilder);
+        $paginator->setCurrentPage($page);
+        $paginator->setMaxPerPage(self::NUM_ITEMS);
+
+
+
+        return $paginator->getCurrentPageResults();
+    }
+
+
+
+
+    protected function queryAll($userID)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select('*')
+            ->from('Training_day', 'td')
+            ->where('td.User_ID = '.$userID);
     }
 
     protected function queryTrainingDayAll()

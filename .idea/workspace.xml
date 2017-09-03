@@ -157,7 +157,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/fc/08/7a08fc" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/fc/3a/a23afc" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ff/6d/676dff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/default/_paginator.html.twig" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/00/00e33c5dfaa401c4a3263781b2de6236c9ac3911e0df98f8f3fc3f4840d190cb.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/0c/0cfa02ca0c61fa9558971412f0c72c36d7dea98d74d4a01f96da24f0fe2300cb.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/19/19743a74f708cce9cf197a8de2ecb96ae197ce6cd9b1667ce80c3753e9449723.php" />
@@ -201,12 +200,17 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/fa/fad67d87b7bd9e79b749951b3cc1f2f424cd9c5b16aeececfdae072734966430.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/fc/fc2beab4541e3cba7759abf28a5dd6b7573916c919c410bf75729477ae98b641.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/fc/fc3c298f464b11391a7800f634b14ef4c5ac0c1461e5c4b1a112c3467ebb25fc.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Form/EditTrainingDayType.php" afterPath="" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/templates/test.html.twig" afterPath="$PROJECT_DIR$/var/cache/profiler/00/97/969700" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TrainingController.php" afterPath="$PROJECT_DIR$/src/Controller/TrainingController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TrainingDayController.php" afterPath="$PROJECT_DIR$/src/Controller/TrainingDayController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TrainingRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TrainingRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/Paginator.php" afterPath="$PROJECT_DIR$/src/Utils/Paginator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_add.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_add.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_show_all.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_show_all.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" afterPath="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -228,49 +232,59 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TrainingController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TrainingController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="78" column="32" lean-forward="true" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
-              <folding>
-                <element signature="e#145#173#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/TrainingRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-432">
-              <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-              <folding>
-                <element signature="e#110#139#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="training_show_all.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/training/training_show_all.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="TrainingDayController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Controller/TrainingDayController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="775">
+                  <caret line="154" column="52" lean-forward="false" selection-start-line="154" selection-start-column="52" selection-end-line="154" selection-end-column="52" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="training_show_all.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/training/training_show_all.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="424">
+                  <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TrainingDayRepository.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Repository/TrainingDayRepository.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="432">
+                  <caret line="123" column="36" lean-forward="false" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="TrainingDayController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Controller/TrainingDayController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1962">
+                  <caret line="154" column="52" lean-forward="false" selection-start-line="154" selection-start-column="52" selection-end-line="154" selection-end-column="52" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>repository</find>
-      <find>editAction</find>
-      <find>id</find>
-      <find>$user</find>
       <find>$id</find>
       <find>img</find>
       <find>class=&quot;btn btn-success&quot;</find>
@@ -297,6 +311,10 @@
       <find>hello</find>
       <find>add_sport</find>
       <find>list_all_users</find>
+      <find>var_</find>
+      <find>var_d</find>
+      <find>countAllPages</find>
+      <find>queryall</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -324,9 +342,7 @@
         <option value="$PROJECT_DIR$/src/Form/LoginType.php" />
         <option value="$PROJECT_DIR$/templates/default/_flash_messages.html.twig" />
         <option value="$PROJECT_DIR$/templates/default/_single_alert_message.html.twig" />
-        <option value="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/AdminRepository.php" />
-        <option value="$PROJECT_DIR$/src/Controller/TrainingDayController.php" />
         <option value="$PROJECT_DIR$/src/Controller/AuthController.php" />
         <option value="$PROJECT_DIR$/translations/validators.en.xlf" />
         <option value="$PROJECT_DIR$/translations/validators.pl.xlf" />
@@ -347,7 +363,6 @@
         <option value="$PROJECT_DIR$/templates/admin/edit_sport_name.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/delete_sport_name.html.twig" />
         <option value="$PROJECT_DIR$/templates/layout_user.html.twig" />
-        <option value="$PROJECT_DIR$/templates/training/training_add.html.twig" />
         <option value="$PROJECT_DIR$/templates/auth/edit_own_password.html.twig" />
         <option value="$PROJECT_DIR$/templates/training/training_delete.html.twig" />
         <option value="$PROJECT_DIR$/templates/training/training_edit.html.twig" />
@@ -355,16 +370,19 @@
         <option value="$PROJECT_DIR$/templates/training_day/training_day_add.html.twig" />
         <option value="$PROJECT_DIR$/templates/training_day/training_day_delete.html.twig" />
         <option value="$PROJECT_DIR$/templates/training_day/training_day_edit.html.twig" />
-        <option value="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" />
         <option value="$PROJECT_DIR$/templates/calendar.html.twig" />
         <option value="$PROJECT_DIR$/templates/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/errors/404.html.twig" />
         <option value="$PROJECT_DIR$/translations/messages.pl.xlf" />
-        <option value="$PROJECT_DIR$/src/Utils/Paginator.php" />
-        <option value="$PROJECT_DIR$/src/Repository/TrainingRepository.php" />
-        <option value="$PROJECT_DIR$/templates/default/_paginator.html.twig" />
-        <option value="$PROJECT_DIR$/templates/training/training_show_all.html.twig" />
+        <option value="$PROJECT_DIR$/templates/training/training_add.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/TrainingController.php" />
+        <option value="$PROJECT_DIR$/templates/training/training_show_all.html.twig" />
+        <option value="$PROJECT_DIR$/src/Utils/Paginator.php" />
+        <option value="$PROJECT_DIR$/templates/default/_paginator.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" />
+        <option value="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/TrainingRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TrainingDayController.php" />
       </list>
     </option>
   </component>
@@ -376,10 +394,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="67" />
-    <option name="y" value="24" />
-    <option name="width" value="1853" />
-    <option name="height" value="1056" />
+    <option name="x" value="171" />
+    <option name="y" value="153" />
+    <option name="width" value="1703" />
+    <option name="height" value="908" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -418,7 +436,57 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="translations" />
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="training" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Repository" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -562,7 +630,7 @@
       <workItem from="1504344339341" duration="236000" />
       <workItem from="1504365333348" duration="5418000" />
       <workItem from="1504378304300" duration="10725000" />
-      <workItem from="1504446135435" duration="15822000" />
+      <workItem from="1504446135435" duration="24495000" />
     </task>
     <task id="LOCAL-00001" summary="Zmiany z 21 sierpnia - formularz dodawania treningu">
       <created>1503346501422</created>
@@ -676,11 +744,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504458939611</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Dodano wstepnie paginacje">
+      <created>1504464399472</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1504464399472</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248439000" />
+    <option name="totallyTimeSpent" value="257112000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -692,10 +767,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="24" width="1853" height="1056" extended-state="6" />
+    <frame x="171" y="153" width="1703" height="908" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18926397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2063971" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33752862" sideWeight="0.5068104" order="7" side_tool="true" content_ui="tabs" />
@@ -703,7 +778,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27037036" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980605" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23590814" sideWeight="0.49318954" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2617284" sideWeight="0.49318954" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -759,39 +834,16 @@
     <MESSAGE value="Dodano flash messages oraz wstępnie klasę Paginator" />
     <MESSAGE value="Dodano flash messages" />
     <MESSAGE value="Dodano klasę Paginator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodano klasę Paginator" />
+    <MESSAGE value="Dodano wstepnie paginacje" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodano wstepnie paginacje" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Repository/TrainingDayRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/AdminRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="75" column="62" lean-forward="false" selection-start-line="75" selection-start-column="62" selection-end-line="75" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/TrainingType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="110" column="20" lean-forward="false" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/SportNameType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -845,21 +897,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TrainingDayController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="141" column="63" lean-forward="false" selection-start-line="141" selection-start-column="63" selection-end-line="141" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/var/cache/twig/0c/0cfa02ca0c61fa9558971412f0c72c36d7dea98d74d4a01f96da24f0fe2300cb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1504454202790" expanded="true" signature="5165:5174" ph="..." />
-            <marker date="1504454202790" expanded="true" signature="7860:8098" ph="..." />
+            <marker date="1504466580779" expanded="true" signature="5165:5174" ph="..." />
+            <marker date="1504466580779" expanded="true" signature="8426:8440" ph="..." />
           </folding>
         </state>
       </provider>
@@ -895,14 +939,6 @@
           <folding>
             <element signature="e#1212#1846#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="95" column="81" lean-forward="false" selection-start-line="95" selection-start-column="81" selection-end-line="95" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,14 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/training/training_add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/training/training_show_week.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1051,14 +1079,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/training_day/training_day_edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
@@ -1137,16 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/Paginator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="124" column="28" lean-forward="false" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="28" />
-          <folding>
-            <element signature="e#6#32#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/training/training_edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1163,39 +1173,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/default/_paginator.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/training/training_add.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/training/training_show_all.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/default/_paginator.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="25" />
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Paginator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#32#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TrainingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="45" selection-end-column="40" />
+          <folding>
+            <element signature="e#145#173#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/TrainingRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        <state relative-caret-position="90">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
             <element signature="e#110#139#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TrainingController.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/EditTrainingDayType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="78" column="32" lean-forward="true" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
-          <folding>
-            <element signature="e#145#173#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="18">
+          <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="95" column="81" lean-forward="false" selection-start-line="95" selection-start-column="81" selection-end-line="95" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="60" lean-forward="false" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/training/training_show_all.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TrainingDayRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="123" column="36" lean-forward="false" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TrainingDayController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1962">
+          <caret line="154" column="52" lean-forward="false" selection-start-line="154" selection-start-column="52" selection-end-line="154" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>

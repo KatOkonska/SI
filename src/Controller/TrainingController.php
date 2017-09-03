@@ -14,7 +14,9 @@ namespace Controller;
 
 
 use Form\DeleteTrainingType;
+use Form\TrainingDayType;
 use Form\TrainingType;
+use Repository\TrainingDayRepository;
 use Repository\TrainingRepository;
 use Repository\UserRepository;
 use Silex\Application;
@@ -39,35 +41,10 @@ class TrainingController implements ControllerProviderInterface
             ->method('POST|GET')
             ->bind('add_training');
 
-//        $controller->match('show_all', [$this, 'showAllTrainingAction'])
-//            ->method('POST|GET')
-//            ->bind('show_all_training');
-
-        //-- work in progress
-//        $controller->get('show_all', [$this, 'indexAction'])
-//            ->value('page', 1)
-//            ->bind('show_all_training');
-//
-//        $controller->get('show_all/', [$this, 'indexAction'])
-//            ->value('page', 1)
-//            ->bind('show_all_training');
-//
-//        $controller->get('show_all/page/{page}', [$this, 'indexAction'])
-//            ->value('page', 1)
-//            ->bind('show_all_training');
-//
-//        $controller->get('show_all/{id}', [$this, 'indexAction'])
-//            ->value('id', 1)
-//            ->bind('show_all_training');
-//        //--
-
-//        $controller->get('show_all/{id}', [$this, 'indexAction'])
-//            ->value('id', 1)
-//            ->bind('show_all_training');
-
-        $controller->get('show_all/page/{page}', [$this, 'indexAction'])
+        $controller->get('show_all/{page}', [$this, 'indexAction'])
             ->value('page', 1)
             ->bind('show_all_training');
+
         // Podpiąć pozostałe strony (show_all, show_all/, show_all/1)
         // powinny wywoływać dokładnie to samo co:
         // show_all/page, show_all/page/, show_all/page/1
@@ -103,7 +80,6 @@ class TrainingController implements ControllerProviderInterface
         $userID = $userRepository->getUserByLogin($app['user']->getUsername())['User_ID'];
 
         $trainingRepository = new TrainingRepository($app['db']);
-
         return $app['twig']->render(
             'training/training_show_all.html.twig',
             ['paginator' => $trainingRepository->findAllPaginated($page, $userID)]
@@ -127,18 +103,24 @@ class TrainingController implements ControllerProviderInterface
 
         $sportNameRepository = new SportNameRepository($app['db']);
         $choice['choice'] = $sportNameRepository->showAllSportName();
-        $form = $app['form.factory']->createBuilder(TrainingType::class, $choice, array(
+        $formTraining = $app['form.factory']->createBuilder(TrainingType::class, $choice, array(
             'data' => $choice,
         ))->getForm();
-        $form->handleRequest($request);
+        $formDate = $app['form.factory']->createBuilder(TrainingDayType::class)->getForm();
+
+
+        $formTraining->handleRequest($request);
+        $formDate->handleRequest($request);
 
         $errors ='';
 
-        if ($form->isSubmitted()) {
+        if ($formTraining->isSubmitted() && $formDate->isSubmitted()) {
 
-            if ($form->isValid()) {
+            if ($formTraining->isValid() && $formDate->isValid()) {
                 $trainingRepository = new TrainingRepository($app['db']);
-                $addTraining = $trainingRepository->addTraining($form, $user['User_ID']);
+                $trainingDayRepository = new TrainingDayRepository($app['db']);
+                $addTraining = $trainingRepository->addTraining($formTraining, $user['User_ID']);
+                $addDate = $trainingDayRepository->addTrainingDay($formDate, $user['User_ID']);
 
                 $app['session']->getFlashBag()->add(
                     'messages',
@@ -151,7 +133,8 @@ class TrainingController implements ControllerProviderInterface
 
 
             } else{
-                $errors = $form->getErrors();
+                $errors = $formTraining->getErrors();
+                $errors[] = $formDate->getErrors();
             }
         }
 
@@ -159,7 +142,8 @@ class TrainingController implements ControllerProviderInterface
         return $app['twig']->render(
             'training/training_add.html.twig',
             [
-                'form' => $form->createView(),
+                'formTraining' => $formTraining->createView(),
+                'formDate' => $formDate->createView(),
                 'error' => $errors,
             ]
         );

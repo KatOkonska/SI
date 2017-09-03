@@ -38,8 +38,11 @@ class TrainingDayController implements ControllerProviderInterface
         $controller->match('add', [$this, 'addTrainingDayAction'])
             ->method('POST|GET')
             ->bind('add_training_day');
-        $controller->match('show_all', [$this, 'showAllTrainingDayAction'])
-            ->method('POST|GET')
+//        $controller->match('show_all', [$this, 'showAllTrainingDayAction'])
+//            ->method('POST|GET')
+//            ->bind('show_all_training_day');
+        $controller->get('show_all/{page}', [$this, 'indexAction'])
+            ->value('page', 1)
             ->bind('show_all_training_day');
         $controller->match('delete_training_day/{id}', [$this, 'deleteTrainingDayAction'])
             ->method('GET|POST')
@@ -52,14 +55,20 @@ class TrainingDayController implements ControllerProviderInterface
         return $controller;
     }
 
-    /**
-     * Login action.
-     *
-     * @param \Silex\Application                        $app     Silex application
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
-     */
+    public function indexAction(Application $app, $page = 1)
+    {
+        $userRepository = new UserRepository($app['db']);
+        $user = $userRepository->getUserByLogin($app['user']->getUsername());
+
+        $trainingDayRepository = new TrainingDayRepository($app['db']);
+
+        return $app['twig']->render
+        (
+            'training_day/training_day_show_all.html.twig',
+            ['paginator' => $trainingDayRepository->findAllPaginated($page, $user['User_ID'])]
+
+        );
+    }
 
     public function addTrainingDayAction(Application $app, Request $request)
     {
@@ -143,7 +152,7 @@ class TrainingDayController implements ControllerProviderInterface
             }
         }
 
-        $form = $app['form.factory']->createBuilder(EditTrainingDayType::class, $trainingDay)->getForm();
+        $form = $app['form.factory']->createBuilder(TrainingDayType::class, $trainingDay)->getForm();
         $form->handleRequest($request);
 
         $errors ='';

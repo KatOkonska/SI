@@ -12,10 +12,11 @@
     {% endif %}
 
     <div>
-        {{ form_start(form, { method: 'post', action: path('add_training') }) }}
-        {{ form_widget(form) }}
+        {{ form_start(formTraining, { method: 'post', action: path('add_training') }) }}
+        {{ form_widget(formTraining) }}
+        {{ form_widget(formDate) }}
         <input type="submit" value="{{ 'button.add'|trans}}" class="button" />
-        {{ form_end(form) }}
+        {{ form_end(formTraining) }}
     </div>
 
 {% endblock %}

@@ -3,10 +3,6 @@
 : 'layout_user.html.twig' %}
 
 {% block title %}{{'title.list_training'|trans }}
-    {% include 'default/_paginator.html.twig' with {
-    paginator: paginator,
-    route_name: 'show_all_training_paginated',
-    } %}
 {% endblock %}
 
 {% block content %}
@@ -25,6 +21,7 @@
             <th>{{ 'table.delete'|trans }}</th>
         </tr>
         </thead>
+
 
             {% for data in paginator.data %}
                 <tr>
@@ -50,6 +47,11 @@
             {% endfor %}
 
     </table>
+
+        {% include 'default/_paginator.html.twig' with {
+        paginator: paginator,
+        route_name: 'show_all_training',
+        } %}
 
     </article>
 

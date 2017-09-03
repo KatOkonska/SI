@@ -17,7 +17,7 @@
         </tr>
         </thead>
 
-        {% for data in table %}
+        {% for data in paginator.data %}
             <tr>
                 <td>{{ data.Training_day_day_number}}</td>
 
@@ -36,5 +36,11 @@
         {% endfor %}
 
     </table>
+
+    {% include 'default/_paginator.html.twig' with {
+    paginator: paginator,
+    route_name: 'show_all_training_day',
+    } %}
+
 
 {% endblock %}

@@ -89,15 +89,22 @@ class TrainingRepository
     public function findAllPaginated($page = 1, $userID)
     {
         $countQueryBuilder = $this->queryAll($userID)
-            ->select('COUNT(DISTINCT s.Sport_Name_ID) AS total_results')
+            ->select('COUNT(DISTINCT s.Sport_ID) AS total_results')
             ->setMaxResults(self::NUM_ITEMS);
+
+
 
         $paginator = new Paginator($this->queryAll($userID), $countQueryBuilder);
         $paginator->setCurrentPage($page);
         $paginator->setMaxPerPage(self::NUM_ITEMS);
 
+
+
         return $paginator->getCurrentPageResults();
     }
+
+
+
 
     protected function queryAll($userID)
     {
@@ -132,31 +139,17 @@ class TrainingRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
-    private function getTrainingsCount($userID)
-    {
-        $queryBuilder = $this->db->createQueryBuilder();
-
-        $queryBuilder
-            ->select('*')
-            ->from('Sport_Name', 'snx')
-            ->innerJoin('snx','Sport', 'sx','sx.Sport_Name_ID = snx.Sport_Name_ID')
-            ->where('User_ID = '.$userID);
-
-        return $queryBuilder->execute()->rowCount();
-    }
 
     public function showWeekTraining($userID)
     {
         $queryBuilder = $this->db->createQueryBuilder();
-        $offset = $this->getTrainingsCount($userID);
-        $maxResults = 5;
         $queryBuilder
             ->select('*')
             ->from('Sport_Name', 'sn')
             ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
             ->where('User_ID = '.$userID)
-            ->setFirstResult($offset - 5)
-            ->setMaxResults($maxResults);
+            ->orderBy('s.Sport_ID', 'DESC')
+            ->setMaxResults(5);
 
         return $queryBuilder->execute()->fetchAll();
     }
