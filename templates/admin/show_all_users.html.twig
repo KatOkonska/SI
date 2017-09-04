@@ -20,7 +20,7 @@
         </tr>
         </thead>
 
-        {% for data in table %}
+        {% for data in paginator.data %}
             <tr>
                 <td>{{ data.User_ID }}</td>
                 <td>{{ data.User_login }}</td>
@@ -46,5 +46,11 @@
         {% endfor %}
 
     </table>
+
+
+    {% include 'default/_paginator.html.twig' with {
+    paginator: paginator,
+    route_name: 'show_all_users',
+    } %}
 
 {% endblock %}

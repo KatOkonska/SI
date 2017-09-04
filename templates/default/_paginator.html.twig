@@ -5,16 +5,59 @@
         {#* `paginator` - paginator#}
         {#* `route_name` - route name#}
 
-{% if paginator.page > 1 %}
-    {% set previous = (paginator.page - 1) %}
-    <a href="{{ url(route_name, {'page': previous}) }}" title="{{ 'label.nav.prev'|trans }}">
-        {{ 'labels.nav.prev'|trans }}
-    </a>
-{%  endif %}
+{#{% if paginator.page > 1 %}#}
+    {#{% set previous = (paginator.page - 1) %}#}
+    {#<a href="{{ url(route_name, {'page': previous}) }}" title="{{ 'label.nav.prev'|trans }}">#}
+        {#{{ 'labels.nav.prev'|trans }}#}
+    {#</a>#}
+{#{%  endif %}#}
 
-{% if paginator.page < paginator.pages_number %}
-    {% set next = (paginator.page + 1) %}
-    <a href="{{ url(route_name, {'page': next}) }}" title="{{ 'label.nav.next'|trans }}">
-        {{ 'label.nav.next'|trans }}
-    </a>
-{% endif  %}
+{#{% if paginator.page < paginator.pages_number %}#}
+    {#{% set next = (paginator.page + 1) %}#}
+    {#<a href="{{ url(route_name, {'page': next}) }}" title="{{ 'label.nav.next'|trans }}">#}
+        {#{{ 'label.nav.next'|trans }}#}
+    {#</a>#}
+{#{% endif  %}#}
+
+    {#
+    Default view for paginator.
+#}
+    <nav aria-label="...">
+
+        <br>
+
+
+        <ul class="paginator">
+            {% if paginator.page > 1 %}
+                {% set previous = (paginator.page - 1) %}
+
+                <li class="previous">
+                    <a href="{{ url(route_name, {'page': previous}) }}" title="{{ 'button.prev'|trans }}">
+                        <span aria-hidden="true">&larr;</span>{{ 'button.prev'|trans }}
+                    </a>
+                </li>
+            {% else %}
+                <li class="previous disabled">
+                    <a href="#" title="{{ 'button.prev'|trans  }}">
+                        <span aria-hidden="true">&larr;</span>{{ 'button.prev'|trans  }}
+                    </a>
+                </li>
+            {%  endif %}
+
+            {% if paginator.page < paginator.pages_number %}
+                {% set next = (paginator.page + 1) %}
+                <li class="next">
+                    <a href="{{ url(route_name, {'page': next}) }}" title="{{ 'button.next'|trans}}">
+                        {{ 'button.next'|trans}}<span aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="next disabled">
+                    <a href="#" title="{{ 'button.next'|trans}}">
+                        {{ 'button.next'|trans}}<span aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            {% endif  %}
+        </ul>
+
+    </nav>

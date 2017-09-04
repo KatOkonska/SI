@@ -87,11 +87,22 @@
                 <target>Change</target>
             </trans-unit>
 
+            <trans-unit id="button.next">
+                <source>button.next</source>
+                <target>Next</target>
+            </trans-unit>
+
+            <trans-unit id="button.prev">
+                <source>button.prev</source>
+                <target>Previous</target>
+            </trans-unit>
+
             <trans-unit id="button.login">
                 <source>button.login</source>
                 <target>Log in</target>
             </trans-unit>
 
+            <!--titles and headers-->
             <trans-unit id="title.delete_sport">
                 <source>title.delete_sport</source>
                 <target>Do you really want to delete this sport name?</target>

@@ -42,15 +42,32 @@ class AdminController implements ControllerProviderInterface
         $controller->match('add_sport', [$this, 'addSportAction'])
             ->method('GET|POST')
             ->bind('add_sport');
-        $controller->match('show_all_users', [$this, 'showAllUsersAction'])
-            ->method('GET|POST')
+//        $controller->match('show_all_users', [$this, 'showAllUsersAction'])
+//            ->method('GET|POST')
+//            ->bind('show_all_users');
+        $controller->get('show_all_users/{page}', [$this, 'indexUsersAction'])
+            ->value('page', 1)
             ->bind('show_all_users');
-        $controller->match('show_all_trainings', [$this, 'showAllTrainingsAction'])
-            ->method('GET|POST')
+//        $controller->match('show_all_trainings', [$this, 'showAllTrainingsAction'])
+//            ->method('GET|POST')
+//            ->bind('show_all_trainings');
+        $controller->get('show_all_trainings/{page}', [$this, 'indexTrainingsAction'])
+            ->value('page', 1)
             ->bind('show_all_trainings');
-        $controller->match('show_all_training_days', [$this, 'showAllTrainingDaysAction'])
-            ->method('GET|POST')
+
+//        $controller->match('show_all_training_days', [$this, 'showAllTrainingDaysAction'])
+//            ->method('GET|POST')
+//            ->bind('show_all_training_days');
+        $controller->get('show_all_training_days/{page}', [$this, 'indexTrainingDaysAction'])
+            ->value('page', 1)
             ->bind('show_all_training_days');
+//        $controller->match('show_all_sport_names', [$this, 'showAllSportNamesAction'])
+//            ->method('GET|POST')
+//            ->bind('show_all_sport_names');
+        $controller->get('show_all_sport_names/{page}', [$this, 'indexTrainingDaysAction'])
+            ->value('page', 1)
+            ->bind('show_all_sport_names');
+
         $controller->match('edit_user/{id}', [$this, 'editUserAction'])
             ->method('GET|POST')
             ->bind('edit_user');
@@ -60,9 +77,6 @@ class AdminController implements ControllerProviderInterface
         $controller->match('edit_sport_name/{id}', [$this, 'editSportNameAction'])
             ->method('GET|POST')
             ->bind('edit_sport_name');
-        $controller->match('show_all_sport_names', [$this, 'showAllSportNamesAction'])
-            ->method('GET|POST')
-            ->bind('show_all_sport_names');
         $controller->match('delete_user/{id}', [$this, 'deleteUserAction'])
             ->method('GET|POST')
             ->bind('delete_user');
@@ -71,6 +85,72 @@ class AdminController implements ControllerProviderInterface
             ->bind('delete_sport_name');
 
         return $controller;
+    }
+
+
+    public function indexUsersAction(Application $app, $page = 1)
+    {
+        $adminRepository = new AdminRepository($app['db']);
+        $table = $adminRepository->showAllUsers($app);
+
+        $adminRepository = new AdminRepository($app['db']);
+
+        return $app['twig']->render
+        (
+            'admin/show_all_users.html.twig',
+            ['paginator' => $adminRepository->findAllUsersPaginated($page)]
+
+        );
+    }
+
+
+    public function indexTrainingsAction(Application $app, $page = 1)
+    {
+        $adminRepository = new AdminRepository($app['db']);
+        $table = $adminRepository->showAllTrainings($app);
+
+        $adminRepository = new AdminRepository($app['db']);
+
+        return $app['twig']->render
+        (
+            'admin/show_all_trainings.html.twig',
+            ['paginator' => $adminRepository->findAllTrainingsPaginated($page)]
+
+        );
+    }
+
+    public function indexTrainingDaysAction(Application $app, $page = 1)
+    {
+        $table =[];
+
+        $adminRepository = new AdminRepository($app['db']);
+        $table = $adminRepository->showAllTrainingDays($app);
+
+        $adminRepository = new AdminRepository($app['db']);
+
+        return $app['twig']->render
+        (
+            'admin/show_all_training_days.html.twig',
+            ['paginator' => $adminRepository->findAllTrainingDaysPaginated($page)]
+
+        );
+    }
+
+    public function indexSportNameAction(Application $app, $page = 1)
+    {
+            $table =[];
+
+            $adminRepository = new AdminRepository($app['db']);
+            $table = $adminRepository->showAllSportNames($app);
+
+        $adminRepository = new AdminRepository($app['db']);
+
+        return $app['twig']->render
+        (
+            'admin/show_all_sport_names.html.twig',
+            ['paginator' => $adminRepository->findAllSportNamePaginated($page)]
+
+        );
     }
 
 

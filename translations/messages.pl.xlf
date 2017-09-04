@@ -77,10 +77,22 @@
                 <target>Zmień</target>
             </trans-unit>
 
+            <trans-unit id="button.next">
+                <source>button.next</source>
+                <target>Następna strona</target>
+            </trans-unit>
+
+            <trans-unit id="button.prev">
+                <source>button.prev</source>
+                <target>Poprzednia strona</target>
+            </trans-unit>
+
             <trans-unit id="button.login">
                 <source>button.login</source>
                 <target>Zaloguj się</target>
             </trans-unit>
+
+            <!--tytuły i nagłówki-->
 
             <trans-unit id="title.delete_sport">
                 <source>title.delete_sport</source>

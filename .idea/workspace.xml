@@ -6,211 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9aef3807-24e0-45b4-a6fa-ab47ee367865" name="Default" comment="Dodano flash messages">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/02/0f/b40f02" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/03/75/907503" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/07/6c/5e6c07" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/07/de/3bde07" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/0b/d6/41d60b" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/0e/ff/4eff0e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/0f/69/80690f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/12/cd/08cd12" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/14/df/f3df14" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/14/e5/8de514" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/16/3f/e23f16" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/17/61/b76117" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/18/62/2f6218" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/18/96/479618" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/1a/4a/984a1a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/1c/23/cd231c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/1d/00/5a001d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/1e/13/03131e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/28/66/2c6628" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/29/2c/852c29" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/2b/fb/8afb2b" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/2d/d3/7dd32d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/30/47/864730" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/33/ef/66ef33" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/34/0b/a00b34" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/36/e3/dbe336" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/3a/0c/5a0c3a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/3b/de/e5de3b" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/3c/29/91293c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/3e/34/ac343e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/3f/04/a5043f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/3f/7f/437f3f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/41/40/414041" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/41/98/839841" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/42/5e/ba5e42" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/44/61/386144" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/49/77/497749" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/4d/13/fa134d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/50/aa/a8aa50" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/50/b5/86b550" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/56/2b/b12b56" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/57/c5/b2c557" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/5c/fa/96fa5c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/5e/2b/232b5e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/5e/f9/99f95e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/60/21/f72160" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/61/9b/929b61" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/62/e7/78e762" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/64/4e/504e64" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/66/96/489666" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/66/cf/e9cf66" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/66/ea/9aea66" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/67/ba/1fba67" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/73/7c/e77c73" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/74/40/b54074" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/75/63/1a6375" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/76/d5/78d576" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/78/fe/a5fe78" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/79/a0/60a079" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/79/bc/92bc79" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/7a/0a/570a7a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/7b/91/af917b" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/7c/4a/6c4a7c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/81/17/381781" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/81/af/dcaf81" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/82/0d/270d82" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/82/3f/953f82" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/82/9f/a69f82" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/85/6a/a06a85" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/87/65/8a6587" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/88/7f/f77f88" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/88/f3/b0f388" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/8c/9a/469a8c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/8e/a5/d3a58e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/90/3a/693a90" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/94/0c/6d0c94" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/95/70/9e7095" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/97/0a/540a97" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/98/0f/a10f98" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/9b/57/4a579b" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/9f/79/bc799f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/a0/48/6348a0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/a1/9f/279fa1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/aa/6d/646daa" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/aa/c3/3ec3aa" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ab/d9/80d9ab" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ad/9d/d59dad" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/af/e6/f5e6af" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/b2/23/3323b2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/b2/2f/e52fb2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/b3/b2/6db2b3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/b3/d2/fdd2b3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/b4/5e/075eb4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/b6/02/b002b6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ba/1c/db1cba" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/bb/01/2201bb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/bb/15/0915bb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/bb/1b/b01bbb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/bb/35/df35bb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/be/08/fb08be" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/be/65/f965be" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/c0/b0/cdb0c0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/c2/05/9305c2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/c2/40/0640c2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/c5/07/b107c5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/c6/a2/40a2c6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/c9/8c/498cc9" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/cc/a0/59a0cc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/cd/a3/3ca3cd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ce/c1/9cc1ce" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/d0/36/7836d0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/d0/87/2887d0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/d0/a7/7fa7d0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/d4/d6/ebd6d4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/d6/c6/4ac6d6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/d7/7f/ac7fd7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/d9/13/b213d9" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/da/23/bc23da" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/da/72/9b72da" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/dd/7e/d47edd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/dd/ca/78cadd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/e0/2f/4c2fe0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/e0/da/0fdae0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/e3/66/ac66e3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/e4/28/a728e4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/e4/a2/2ca2e4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/e5/7f/a87fe5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/e6/56/4f56e6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/e6/aa/eaaae6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/e9/57/d357e9" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ea/50/0a50ea" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/eb/17/2617eb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/eb/1b/e21beb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/eb/c4/93c4eb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ec/15/3b15ec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ed/ff/35ffed" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ee/2a/242aee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ef/56/6c56ef" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ef/cf/cfcfef" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/f0/29/b029f0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/f2/34/cb34f2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/f4/69/f269f4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/f4/c9/13c9f4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/f7/31/be31f7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/f7/d8/e9d8f7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/f7/e8/8de8f7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/f7/f4/48f4f7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/fa/d1/fed1fa" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/fc/08/7a08fc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/fc/3a/a23afc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/profiler/ff/6d/676dff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/00/00e33c5dfaa401c4a3263781b2de6236c9ac3911e0df98f8f3fc3f4840d190cb.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/0c/0cfa02ca0c61fa9558971412f0c72c36d7dea98d74d4a01f96da24f0fe2300cb.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/19/19743a74f708cce9cf197a8de2ecb96ae197ce6cd9b1667ce80c3753e9449723.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/19/19888cfd3ed62035116b9e92c29dc3d846e7fb015518608bfd6c8082d91eaeee.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/1d/1d0d6ba50922674f1695ccb709d61d908109cab79e88b8bccc6582ed600a18d5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/21/21e15259ef631e4625cb2d06601199c373f1ba92f0eb7e8d3edca249a7f1793a.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/22/2208b3260c35d68a1140c5b9c4971f743c140e927b74f0c5ff9ecf8fea969564.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/2f/2ff282f848d004e250e1da9648218fb17d57d31d5e02f9fc53e7239aeb0dd6e4.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/30/304d4df04985c34b33142bbe13fe5a638454d471c3de939f0196cd6b64de86ba.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/31/3188fe75245ebbb537f00ed129594d9fd7c303de97a1a11bf88e47baee8f3c7f.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/39/398f5b923aeeb6cde1c702d93037bbd9d47027833f14dd085f818d4ea5d91988.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/3a/3a639e6005610fe32b09aa288c9bf5684beff864491e01825d59d6f4cd8075c9.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/3c/3c977b4608a0bdc6e91290f6283ae6d41a686f16a87ab3fa1b65b7cfc26f5efd.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/3d/3d34e70fc2728758e6832f880bc38b1171cd5b66595f2310b0412b398cfd4a20.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/49/493705670d285c7c17a23b73493d131522616d9501664a9eff5b458bebb6a57d.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/5b/5b8f8306cb821ac04dac113ba686d052027844a4a7f21a4494d0f110f7292c46.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/65/65902ec4d5a5aca97db11261748c77ab338988e03cde2cb88151e323b20cf3df.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/65/65d17d614c0ce6bd53683da9b8e90a854799eb3342cfcef1c8b912378d064e02.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/85/85891920d756f0ec9ed94465a745ed598b1ec204006107a51bb95174829ccec5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/8f/8f9172129d536e42aeba4022fc0bccacaaaba37bc381ab71dca9cd17bc4f44b4.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/8f/8fe2ee9105f8e849a62ef444d2a9c9a0197ea9f8f64861c46fcb25715d7e4920.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/96/9632f8af53bf452534874bd60842f9569c517221d8c2e0efb4e50177acaa22ae.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/9a/9a9e12e7d42e3483a2cc212aca1cf04001779a9e8b929f90f191301f390ad495.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/9e/9ef4bf0d27f71fffa77c62dcb3b93fdee95a63b7320e2412179080de3e64eee3.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/a0/a079768583c0ceb3c61ecd408deaafea1155ba5ef3710d82169cb8521cab0bcc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/a4/a427856f7714ab49cdcae8b6deb4a81628b03c0ffd9f320fba5c4a78a1b59559.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/a5/a5718a339591277d2c02812cfaccd646f63332e77ed5153d7e57243e0d23056e.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/a6/a61258135aa4116ab84f4fc37ae3b2f21a3dc6849c1c81307f5be196995511b4.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/aa/aab7a7adc67ec366f209b20dc7f4b06694c3500b8b7fa2d606d387c3438f90af.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/ad/ad8de1984dd0853e89cc3609b9ca0552e18452e3c4b214bcb6a8673436bd3f9f.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/b5/b515c0d48b79b9b55077f884aa027a39f56d6cd4e00625fd55826dabd9f68ee9.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/bb/bbaac00449ef6e34a30995731c7a054127a020fba18066572488b23320cc6f6c.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/ce/ce2f727f1d094636d08b86702b05f048480899f83ae47ce9d6f83f1597232109.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/cf/cf58d79a60deacd9435bb4b6069eba3f44a2ceae6af2061b579f2eafdcbe7ae6.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/d4/d4dec6dc47f4834c2e228179c81b341ae630767889922a8637a3b4d0ad4823dd.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/d5/d51b2532d925bd6369790f7e824d906a256492898f736d3b185814a8966e5708.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/e0/e0a524b5593ed1f452d429127a117bdefe3fdb8a845e87605ee4c6d9dd07b9f2.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/e3/e3187f39ad01ce3a1297dcdd417965f1f88b617b894b1e7be0b83ba6682b386c.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/e9/e9ddfe1c7d676aad4b548554d11d1ec08db1804643f1006b970de6363243268c.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/f0/f07a86da51c333a4716b105a9a34e527a5e046d9dda41fe145b56f53b9b204e6.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/fa/fad67d87b7bd9e79b749951b3cc1f2f424cd9c5b16aeececfdae072734966430.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/fc/fc2beab4541e3cba7759abf28a5dd6b7573916c919c410bf75729477ae98b641.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/twig/fc/fc3c298f464b11391a7800f634b14ef4c5ac0c1461e5c4b1a112c3467ebb25fc.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Form/EditTrainingDayType.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/test.html.twig" afterPath="$PROJECT_DIR$/var/cache/profiler/00/97/969700" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TrainingController.php" afterPath="$PROJECT_DIR$/src/Controller/TrainingController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TrainingDayController.php" afterPath="$PROJECT_DIR$/src/Controller/TrainingDayController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TrainingRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TrainingRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/Paginator.php" afterPath="$PROJECT_DIR$/src/Utils/Paginator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_add.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_add.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training/training_show_all.html.twig" afterPath="$PROJECT_DIR$/templates/training/training_show_all.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/AdminRepository.php" afterPath="$PROJECT_DIR$/src/Repository/AdminRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig" afterPath="$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/show_all_training_days.html.twig" afterPath="$PROJECT_DIR$/templates/admin/show_all_training_days.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/show_all_trainings.html.twig" afterPath="$PROJECT_DIR$/templates/admin/show_all_trainings.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/show_all_users.html.twig" afterPath="$PROJECT_DIR$/templates/admin/show_all_users.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/default/_paginator.html.twig" afterPath="$PROJECT_DIR$/templates/default/_paginator.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" afterPath="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/translations/messages.en.xlf" afterPath="$PROJECT_DIR$/translations/messages.en.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/translations/messages.pl.xlf" afterPath="$PROJECT_DIR$/translations/messages.pl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/main.css" afterPath="$PROJECT_DIR$/web/css/main.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -234,32 +41,22 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf>
-          <file leaf-file-name="TrainingDayController.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Controller/TrainingDayController.php">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="training_day_show_all.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="775">
-                  <caret line="154" column="52" lean-forward="false" selection-start-line="154" selection-start-column="52" selection-end-line="154" selection-end-column="52" />
+                <state relative-caret-position="370">
+                  <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="training_show_all.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/training/training_show_all.html.twig">
+          <file leaf-file-name="TrainingController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Controller/TrainingController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="424">
-                  <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TrainingDayRepository.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Repository/TrainingDayRepository.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="123" column="36" lean-forward="false" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
+                <state relative-caret-position="209">
+                  <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="45" selection-end-column="40" />
                   <folding />
                 </state>
               </provider>
@@ -272,8 +69,8 @@
           <file leaf-file-name="TrainingDayController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controller/TrainingDayController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1962">
-                  <caret line="154" column="52" lean-forward="false" selection-start-line="154" selection-start-column="52" selection-end-line="154" selection-end-column="52" />
+                <state relative-caret-position="208">
+                  <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -285,8 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$id</find>
-      <find>img</find>
       <find>class=&quot;btn btn-success&quot;</find>
       <find>Oxy</find>
       <find>font</find>
@@ -315,6 +110,8 @@
       <find>var_d</find>
       <find>countAllPages</find>
       <find>queryall</find>
+      <find>ul</find>
+      <find>change</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -332,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Form/TrainingType.php" />
         <option value="$PROJECT_DIR$/src/controllers.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/templates/auth/register.html.twig" />
@@ -342,7 +138,6 @@
         <option value="$PROJECT_DIR$/src/Form/LoginType.php" />
         <option value="$PROJECT_DIR$/templates/default/_flash_messages.html.twig" />
         <option value="$PROJECT_DIR$/templates/default/_single_alert_message.html.twig" />
-        <option value="$PROJECT_DIR$/src/Repository/AdminRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/AuthController.php" />
         <option value="$PROJECT_DIR$/translations/validators.en.xlf" />
         <option value="$PROJECT_DIR$/translations/validators.pl.xlf" />
@@ -350,16 +145,10 @@
         <option value="$PROJECT_DIR$/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/templates/layout_admin.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/edit_password.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/show_all_users.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/show_all_trainings.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/delete_user.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/add_sport.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/edit_user.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/add_sport_name.html.twig" />
-        <option value="$PROJECT_DIR$/translations/messages.en.xlf" />
-        <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
-        <option value="$PROJECT_DIR$/templates/admin/show_all_training_days.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/edit_sport_name.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/delete_sport_name.html.twig" />
         <option value="$PROJECT_DIR$/templates/layout_user.html.twig" />
@@ -373,16 +162,24 @@
         <option value="$PROJECT_DIR$/templates/calendar.html.twig" />
         <option value="$PROJECT_DIR$/templates/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/errors/404.html.twig" />
-        <option value="$PROJECT_DIR$/translations/messages.pl.xlf" />
         <option value="$PROJECT_DIR$/templates/training/training_add.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/TrainingController.php" />
         <option value="$PROJECT_DIR$/templates/training/training_show_all.html.twig" />
         <option value="$PROJECT_DIR$/src/Utils/Paginator.php" />
-        <option value="$PROJECT_DIR$/templates/default/_paginator.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" />
-        <option value="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/TrainingRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/TrainingDayController.php" />
+        <option value="$PROJECT_DIR$/templates/admin/show_all_users.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/show_all_trainings.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/show_all_training_days.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/AdminRepository.php" />
+        <option value="$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/web/css/main.css" />
+        <option value="$PROJECT_DIR$/translations/messages.en.xlf" />
+        <option value="$PROJECT_DIR$/translations/messages.pl.xlf" />
+        <option value="$PROJECT_DIR$/templates/default/_paginator.html.twig" />
+        <option value="$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig" />
       </list>
     </option>
   </component>
@@ -394,9 +191,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="171" />
-    <option name="y" value="153" />
-    <option name="width" value="1703" />
+    <option name="x" value="-17" />
+    <option name="y" value="52" />
+    <option name="width" value="1893" />
     <option name="height" value="908" />
   </component>
   <component name="ProjectView">
@@ -414,6 +211,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -436,25 +235,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
+              <option name="myItemId" value="translations" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -486,14 +267,12 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Repository" />
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -631,6 +410,7 @@
       <workItem from="1504365333348" duration="5418000" />
       <workItem from="1504378304300" duration="10725000" />
       <workItem from="1504446135435" duration="24495000" />
+      <workItem from="1504541525325" duration="6382000" />
     </task>
     <task id="LOCAL-00001" summary="Zmiany z 21 sierpnia - formularz dodawania treningu">
       <created>1503346501422</created>
@@ -755,7 +535,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257112000" />
+    <option name="totallyTimeSpent" value="263494000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,20 +547,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="171" y="153" width="1703" height="908" extended-state="0" />
-    <editor active="true" />
+    <frame x="-17" y="52" width="1893" height="908" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2063971" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18733081" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33752862" sideWeight="0.5068104" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27037036" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980605" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2617284" sideWeight="0.49318954" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26049381" sideWeight="0.49318954" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -844,35 +624,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Form/SportNameType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/EditSportNameType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/errors/default.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -893,26 +648,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-496">
           <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/twig/0c/0cfa02ca0c61fa9558971412f0c72c36d7dea98d74d4a01f96da24f0fe2300cb.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1504466580779" expanded="true" signature="5165:5174" ph="..." />
-            <marker date="1504466580779" expanded="true" signature="8426:8440" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/var/cache/twig/0c/0cfa02ca0c61fa9558971412f0c72c36d7dea98d74d4a01f96da24f0fe2300cb.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="111" column="18" lean-forward="false" selection-start-line="111" selection-start-column="18" selection-end-line="111" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,9 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
           <caret line="67" column="24" lean-forward="false" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
-          <folding>
-            <element signature="e#1212#1846#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -946,7 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="44" column="19" lean-forward="false" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,15 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,15 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_trainings.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,7 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,15 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="237" column="20" lean-forward="false" selection-start-line="237" selection-start-column="20" selection-end-line="237" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,23 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_training_days.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="58" lean-forward="false" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1042,7 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,7 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,7 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,7 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,7 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,7 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1098,38 +782,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="55" lean-forward="false" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/twig/8f/8fe2ee9105f8e849a62ef444d2a9c9a0197ea9f8f64861c46fcb25715d7e4920.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="57" column="105" lean-forward="false" selection-start-line="57" selection-start-column="105" selection-end-line="57" selection-end-column="105" />
-          <folding>
-            <marker date="1504458560308" expanded="true" signature="3232:3244" ph="..." />
-            <marker date="1504458560308" expanded="true" signature="3878:3891" ph="..." />
-            <marker date="1504458560308" expanded="true" signature="4199:4212" ph="..." />
-            <marker date="1504458560308" expanded="true" signature="6000:6071" ph="..." />
-            <marker date="1504458560308" expanded="true" signature="6130:6184" ph="..." />
-            <marker date="1504458560308" expanded="true" signature="6213:6284" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/var/cache/twig/8f/8fe2ee9105f8e849a62ef444d2a9c9a0197ea9f8f64861c46fcb25715d7e4920.php" />
     <entry file="file://$PROJECT_DIR$/templates/admin/delete_sport_name.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="49" lean-forward="false" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_users.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,15 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translations/messages.pl.xlf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-463">
-          <caret line="56" column="57" lean-forward="false" selection-start-line="56" selection-start-column="57" selection-end-line="56" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1153,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,15 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translations/messages.en.xlf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="230" column="42" lean-forward="true" selection-start-line="230" selection-start-column="42" selection-end-line="230" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,15 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/default/_paginator.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1193,27 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
           <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#32#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TrainingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="45" selection-end-column="40" />
-          <folding>
-            <element signature="e#145#173#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1222,19 +833,12 @@
         <state relative-caret-position="90">
           <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
-            <element signature="e#110#139#0#PHP" expanded="true" />
+            <element signature="e#110#139#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/EditTrainingDayType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/EditTrainingDayType.php" />
     <entry file="file://$PROJECT_DIR$/src/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -1247,30 +851,146 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="60" lean-forward="false" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/training/training_show_all.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
+        <state relative-caret-position="900">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_trainings.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="48" column="17" lean-forward="false" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_users.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_training_days.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/twbs/bootstrap/dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="4817" column="0" lean-forward="false" selection-start-line="4817" selection-start-column="0" selection-end-line="4817" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="214" column="4" lean-forward="false" selection-start-line="214" selection-start-column="4" selection-end-line="214" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/_paginator.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+          <folding>
+            <element signature="e#1064#1070#0#HTML" expanded="true" />
+            <element signature="e#1337#1343#0#HTML" expanded="true" />
+            <element signature="e#1774#1780#0#HTML" expanded="true" />
+            <element signature="e#2040#2046#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/TrainingDayRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="123" column="36" lean-forward="false" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
+        <state relative-caret-position="306">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/messages.pl.xlf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="81" column="39" lean-forward="false" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/AdminRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="286" column="50" lean-forward="false" selection-start-line="286" selection-start-column="50" selection-end-line="286" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="68" column="40" lean-forward="false" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="37" lean-forward="false" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/messages.en.xlf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="803">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/training_day/training_day_show_all.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TrainingDayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1962">
-          <caret line="154" column="52" lean-forward="false" selection-start-line="154" selection-start-column="52" selection-end-line="154" selection-end-column="52" />
+        <state relative-caret-position="208">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TrainingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="45" selection-end-column="40" />
           <folding />
         </state>
       </provider>

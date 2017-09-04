@@ -22,6 +22,7 @@ use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DBALException;
 use Silex\Application;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Utils\Paginator;
 
 /**
  * Class UserRepository.
@@ -36,6 +37,8 @@ class AdminRepository
      * @var \Doctrine\DBAL\Connection $db
      */
     protected $db;
+
+    const NUM_ITEMS = 5;
 
     /**
      * TagRepository constructor.
@@ -108,23 +111,6 @@ class AdminRepository
 
         return !$result ? [] : $result;
     }
-
-    protected function querySportNameAll()
-    {
-        $queryBuilder = $this->db->createQueryBuilder();
-
-        return $queryBuilder->select('*')
-            ->from('Sport_Name', 'sn');
-    }
-
-    protected function queryUserAll()
-    {
-        $queryBuilder = $this->db->createQueryBuilder();
-
-        return $queryBuilder->select('*')
-            ->from('User', 'u');
-    }
-
 
     public function editUser($id, $form)
     {
@@ -203,8 +189,113 @@ class AdminRepository
         return $this->db->delete('Sport_Name', ['Sport_Name_ID' => $id]);
     }
 
+//    paginacja
+
+    public function findAllUsersPaginated($page = 1)
+    {
+        $countQueryBuilder = $this->queryUserAll()
+            ->select('COUNT(DISTINCT u.User_ID) AS total_results')
+            ->setMaxResults(self::NUM_ITEMS);
 
 
 
+        $paginator = new Paginator($this->queryUserAll(), $countQueryBuilder);
+        $paginator->setCurrentPage($page);
+        $paginator->setMaxPerPage(self::NUM_ITEMS);
+
+
+
+        return $paginator->getCurrentPageResults();
+    }
+
+
+    protected function queryUserAll()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select('*')
+            ->from('User', 'u');
+    }
+
+    public function findAllTrainingsPaginated($page = 1)
+    {
+        $countQueryBuilder = $this->queryAllTrainings()
+            ->select('COUNT(DISTINCT s.Sport_ID) AS total_results')
+            ->setMaxResults(self::NUM_ITEMS);
+
+
+
+        $paginator = new Paginator($this->queryAllTrainings(), $countQueryBuilder);
+        $paginator->setCurrentPage($page);
+        $paginator->setMaxPerPage(self::NUM_ITEMS);
+
+
+
+        return $paginator->getCurrentPageResults();
+    }
+
+    protected function queryAllTrainings()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder
+            ->select('*')
+            ->from('Sport', 's')
+            ->leftJoin('s','Sport_Name', 'sn','s.Sport_Name_ID = sn.Sport_Name_ID');
+
+
+
+    }
+
+    public function findAllTrainingDaysPaginated($page = 1)
+    {
+        $countQueryBuilder = $this->queryAllTrainingDays()
+            ->select('COUNT(DISTINCT td.Training_day_ID) AS total_results')
+            ->setMaxResults(self::NUM_ITEMS);
+
+
+
+        $paginator = new Paginator($this->queryAllTrainingDays(), $countQueryBuilder);
+        $paginator->setCurrentPage($page);
+        $paginator->setMaxPerPage(self::NUM_ITEMS);
+
+
+
+        return $paginator->getCurrentPageResults();
+    }
+
+    protected function queryAllTrainingDays()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select('*')
+            ->from('Training_day', 'td');
+    }
+
+
+    protected function querySportNameAll()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select('*')
+            ->from('Sport_Name', 'sn');
+    }
+
+    public function findAllSportNamePaginated($page = 1)
+    {
+        $countQueryBuilder = $this->queryUserAll()
+            ->select('COUNT(DISTINCT sn.Sport_Name_ID) AS total_results')
+            ->setMaxResults(self::NUM_ITEMS);
+
+
+
+        $paginator = new Paginator($this->queryUserAll(), $countQueryBuilder);
+        $paginator->setCurrentPage($page);
+        $paginator->setMaxPerPage(self::NUM_ITEMS);
+
+
+
+        return $paginator->getCurrentPageResults();
+    }
 
 }
