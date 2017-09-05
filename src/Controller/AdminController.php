@@ -64,7 +64,7 @@ class AdminController implements ControllerProviderInterface
 //        $controller->match('show_all_sport_names', [$this, 'showAllSportNamesAction'])
 //            ->method('GET|POST')
 //            ->bind('show_all_sport_names');
-        $controller->get('show_all_sport_names/{page}', [$this, 'indexTrainingDaysAction'])
+        $controller->get('show_all_sport_names/{page}', [$this, 'indexSportNameAction'])
             ->value('page', 1)
             ->bind('show_all_sport_names');
 

@@ -273,23 +273,16 @@ class AdminRepository
     }
 
 
-    protected function querySportNameAll()
-    {
-        $queryBuilder = $this->db->createQueryBuilder();
-
-        return $queryBuilder->select('*')
-            ->from('Sport_Name', 'sn');
-    }
 
     public function findAllSportNamePaginated($page = 1)
     {
-        $countQueryBuilder = $this->queryUserAll()
+        $countQueryBuilder = $this->querySportNameAll()
             ->select('COUNT(DISTINCT sn.Sport_Name_ID) AS total_results')
             ->setMaxResults(self::NUM_ITEMS);
 
 
 
-        $paginator = new Paginator($this->queryUserAll(), $countQueryBuilder);
+        $paginator = new Paginator($this->querySportNameAll(), $countQueryBuilder);
         $paginator->setCurrentPage($page);
         $paginator->setMaxPerPage(self::NUM_ITEMS);
 
@@ -298,4 +291,11 @@ class AdminRepository
         return $paginator->getCurrentPageResults();
     }
 
+    protected function querySportNameAll()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select('*')
+            ->from('Sport_Name', 'sn');
+    }
 }

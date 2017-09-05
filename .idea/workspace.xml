@@ -7,10 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9aef3807-24e0-45b4-a6fa-ab47ee367865" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/CalendarController.php" afterPath="$PROJECT_DIR$/src/Controller/CalendarController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/WelcomeController.php" afterPath="$PROJECT_DIR$/src/Controller/WelcomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/CalendarRepository.php" afterPath="$PROJECT_DIR$/src/Repository/CalendarRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/AdminRepository.php" afterPath="$PROJECT_DIR$/src/Repository/AdminRepository.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,84 +30,59 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CalendarController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CalendarController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="24" column="62" lean-forward="false" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
-              <folding>
-                <element signature="e#30#67#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/CalendarRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="2" selection-end-line="53" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WelcomeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/WelcomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controllers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingDayController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TrainingDayController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="210" column="82" lean-forward="false" selection-start-line="210" selection-start-column="65" selection-end-line="210" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingDayRepository.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Repository/TrainingDayRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="108" column="24" lean-forward="false" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="200">
+                  <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="218">
+                  <caret line="138" column="61" lean-forward="false" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AdminRepository.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Repository/AdminRepository.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="43">
+                  <caret line="278" column="55" lean-forward="false" selection-start-line="278" selection-start-column="55" selection-end-line="278" selection-end-column="55" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="AdminRepository.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Repository/AdminRepository.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="978">
+                  <caret line="299" column="5" lean-forward="false" selection-start-line="299" selection-start-column="5" selection-end-line="299" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>class=&quot;btn btn-success&quot;</find>
       <find>Oxy</find>
       <find>font</find>
       <find>font-fami</find>
@@ -139,6 +112,7 @@
       <find>queryall</find>
       <find>ul</find>
       <find>change</find>
+      <find>findA</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -189,9 +163,7 @@
         <option value="$PROJECT_DIR$/templates/admin/show_all_users.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/show_all_trainings.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/show_all_training_days.html.twig" />
-        <option value="$PROJECT_DIR$/src/Repository/AdminRepository.php" />
         <option value="$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/translations/messages.en.xlf" />
         <option value="$PROJECT_DIR$/translations/messages.pl.xlf" />
@@ -207,6 +179,8 @@
         <option value="$PROJECT_DIR$/src/Controller/CalendarController.php" />
         <option value="$PROJECT_DIR$/src/Repository/CalendarRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/TrainingDayRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/AdminRepository.php" />
       </list>
     </option>
   </component>
@@ -218,7 +192,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="67" />
+    <option name="x" value="72" />
     <option name="y" value="153" />
     <option name="width" value="1853" />
     <option name="height" value="908" />
@@ -442,7 +416,7 @@
       <workItem from="1504378304300" duration="10725000" />
       <workItem from="1504446135435" duration="24495000" />
       <workItem from="1504541525325" duration="6626000" />
-      <workItem from="1504637205116" duration="8447000" />
+      <workItem from="1504637205116" duration="9720000" />
     </task>
     <task id="LOCAL-00001" summary="Zmiany z 21 sierpnia - formularz dodawania treningu">
       <created>1503346501422</created>
@@ -577,11 +551,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504647782078</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Dodano poprawki do Calendar Controller">
+      <created>1504649777788</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1504649777788</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272185000" />
+    <option name="totallyTimeSpent" value="273458000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,7 +574,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="153" width="1853" height="908" extended-state="0" />
+    <frame x="72" y="153" width="1853" height="908" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18926397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -663,7 +644,8 @@
     <MESSAGE value="Dodano wstepnie paginacje" />
     <MESSAGE value="Dodano paginację" />
     <MESSAGE value="Dodano modyfikację Training i Training day" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodano modyfikację Training i Training day" />
+    <MESSAGE value="Dodano poprawki do Calendar Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodano poprawki do Calendar Controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -850,21 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="68" column="40" lean-forward="false" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="37" lean-forward="false" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/translations/messages.en.xlf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -885,14 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-394">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/AdminRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="122" column="30" lean-forward="false" selection-start-line="122" selection-start-column="14" selection-end-line="122" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -976,14 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1046,6 +997,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="108" column="24" lean-forward="false" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/show_all_sport_names.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="37" lean-forward="false" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="138" column="61" lean-forward="false" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/AdminRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="278" column="55" lean-forward="false" selection-start-line="278" selection-start-column="55" selection-end-line="278" selection-end-column="55" />
           <folding />
         </state>
       </provider>
