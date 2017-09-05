@@ -99,6 +99,20 @@ class TrainingDayRepository
         return !$result ? [] : $result;
     }
 
+    public function showNextTrainings($userID)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+        $queryBuilder->select('*')
+            ->from('Training_day')
+//            ->where('Training_day_day_number' >= DATE_SUB(NOW(), INTERVAL 1 YEAR));
+            ->where('Training_day_day_number >= \''.date('Y-m-d').' 00:00:00\'')
+            ->andWhere('User_ID = :User_ID')
+            ->setParameter(':User_ID', $userID, \PDO::PARAM_INT);
+
+
+        return $queryBuilder->execute()->fetchAll();
+    }
+
     public function findAllPaginated($page = 1, $userID)
     {
         $countQueryBuilder = $this->queryAll($userID)

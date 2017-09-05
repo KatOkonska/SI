@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Repository\TrainingDayRepository;
 use Repository\UserRepository;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
@@ -21,7 +22,7 @@ class CalendarController implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $controller = $app['controllers_factory'];
-        $controller->get('/', [$this, 'showLastMonthAction'])
+        $controller->get('/', [$this, 'showNextTrainingsAction'])
             ->method('POST|GET')
             ->bind('calendar');
 //        $controller->get('/', [$this, 'displayCurrentDateAction'])
@@ -44,12 +45,15 @@ class CalendarController implements ControllerProviderInterface
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      */
-    public function showLastMonthAction(Application $app)
+    public function showNextTrainingsAction(Application $app)
     {
         $calendar=[];
 
-        $CalendarRepository = new CalendarRepository($app['db']);
-        $calendar = $CalendarRepository->showLastMonth();
+        $userRepository = new UserRepository($app['db']);
+        $user = $userRepository->getUserByLogin($app['user']->getUsername());
+
+        $TrainingDayRepository = new TrainingDayRepository($app['db']);
+        $calendar = $TrainingDayRepository->showNextTrainings($user['User_ID']);
 
         return $app['twig']->render(
             'calendar.html.twig',

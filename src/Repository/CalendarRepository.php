@@ -41,17 +41,17 @@ class CalendarRepository
         echo "Today is " . date("Y/m/d") . "<br>";
     }
 
-    public function showLastMonth()
-    {
-        $queryBuilder = $this->db->createQueryBuilder();
-        $queryBuilder->select('*')
-            ->from('Training_day')
-//            ->where('Training_day_day_number' >= DATE_SUB(NOW(), INTERVAL 1 YEAR));
-        ->where('Training_day_day_number >= \''.date('Y-m-d').' 00:00:00\'');
-
-
-        return $queryBuilder->execute()->fetchAll();
-    }
+//    public function showNextTrainings()
+//    {
+//        $queryBuilder = $this->db->createQueryBuilder();
+//        $queryBuilder->select('*')
+//            ->from('Training_day')
+////            ->where('Training_day_day_number' >= DATE_SUB(NOW(), INTERVAL 1 YEAR));
+//        ->where('Training_day_day_number >= \''.date('Y-m-d').' 00:00:00\'');
+//
+//
+//        return $queryBuilder->execute()->fetchAll();
+//    }
 
 //select
 //*
