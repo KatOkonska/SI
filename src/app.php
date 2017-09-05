@@ -27,7 +27,7 @@ $app->register(
         'db.options' => [
             'driver'    => 'pdo_mysql',
             'host'      => 'localhost',
-            'dbname'    => '15_okonska',
+            'dbname'    => 'okonska',
             'user'      => 'root',
             'password'  => 'Malybratpatrzy8',
             'charset'   => 'utf8',

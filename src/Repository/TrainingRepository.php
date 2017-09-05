@@ -36,7 +36,7 @@ class TrainingRepository
         $this->db = $db;
     }
 
-    public function addTraining($form, $userID)
+    public function addTraining($form, $userID, $dateId)
     {
         $formData = $form->getData();
         $queryBuilder = $this->db->createQueryBuilder();
@@ -47,14 +47,16 @@ class TrainingRepository
                     'Sport_kcal' => '?',
                     'Sport_distance' => '?',
                     'Sport_name_ID' => '?',
-                    'User_ID' => '?'
+                    'User_ID' => '?',
+                    'Training_day_ID' => '?'
                 )
             )
             ->setParameter(0, $formData['Sport_time'])
             ->setParameter(1, $formData['Sport_kcal'])
             ->setParameter(2, $formData['Sport_distance'])
             ->setParameter(3, $formData['Sport_name_ID'])
-            ->setParameter(4, $userID);
+            ->setParameter(4, $userID)
+            ->setParameter(5, $dateId);
 
         return $queryBuilder->execute();
     }
@@ -114,7 +116,8 @@ class TrainingRepository
             ->select('*')
             ->from('Sport_Name', 'sn')
             ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
-            ->where('User_ID = '.$userID);
+            ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID')
+            ->where('s.User_ID = '.$userID);
     }
 
     public function showAllTraining($userID)
@@ -166,6 +169,17 @@ class TrainingRepository
         $queryBuilder = $this->querySportAll();
         $queryBuilder->where('s.Sport_ID = :id')
             ->setParameter(':id', $id, \PDO::PARAM_INT);
+        $result = $queryBuilder->execute()->fetch();
+
+        return !$result ? [] : $result;
+    }
+
+
+    public function findOneTrainingByDate($dateId)
+    {
+        $queryBuilder = $this->querySportAll();
+        $queryBuilder->where('s.Training_day_ID = :id')
+            ->setParameter(':id', $dateId, \PDO::PARAM_INT);
         $result = $queryBuilder->execute()->fetch();
 
         return !$result ? [] : $result;

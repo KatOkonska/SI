@@ -119,8 +119,9 @@ class TrainingController implements ControllerProviderInterface
             if ($formTraining->isValid() && $formDate->isValid()) {
                 $trainingRepository = new TrainingRepository($app['db']);
                 $trainingDayRepository = new TrainingDayRepository($app['db']);
-                $addTraining = $trainingRepository->addTraining($formTraining, $user['User_ID']);
                 $addDate = $trainingDayRepository->addTrainingDay($formDate, $user['User_ID']);
+                $addTraining = $trainingRepository->addTraining($formTraining, $user['User_ID'], $addDate);
+
 
                 $app['session']->getFlashBag()->add(
                     'messages',
@@ -207,14 +208,21 @@ class TrainingController implements ControllerProviderInterface
                 return $app->abort('404', 'message.cant_edit_it');
         }
 
+
         $sportNameRepository = new SportNameRepository($app['db']);
         $choice = $sportNameRepository->showAllSportName();
-
         $oneTraining['choice'] = $choice;
-
         $form = $app['form.factory']->createBuilder(TrainingType::class, $oneTraining, array())->getForm();
 
+
+        $trainingDayRepository = new TrainingDayRepository($app['db']);
+        $oneTrainingDay = $trainingDayRepository->findOneTrainingDayById($oneTraining['Training_day_ID']);
+        $formDate = $app['form.factory']->createBuilder(TrainingDayType::class, $oneTrainingDay)->getForm();
+
+
+
         $form->handleRequest($request);
+        $formDate->handleRequest($request);
 
         $errors ='';
 
@@ -226,6 +234,8 @@ class TrainingController implements ControllerProviderInterface
             {
                 $trainingRepository = new TrainingRepository($app['db']);
                 $editTraining = $trainingRepository->editTraining($id, $form, $user['User_ID']);
+
+                $editTrainingDay = $trainingDayRepository->editTrainingDay($oneTraining['Training_day_ID'], $formDate);
 
                 $app['session']->getFlashBag()->add(
                     'messages',
@@ -248,6 +258,7 @@ class TrainingController implements ControllerProviderInterface
             'training/training_edit.html.twig',
             [
                 'form' => $form->createView(),
+                'formDate' => $formDate->createView(),
                 'error' => $errors,
                 'id' => $id
             ]
@@ -291,6 +302,9 @@ class TrainingController implements ControllerProviderInterface
             {
                 $trainingRepository = new TrainingRepository($app['db']);
                 $deleteTraining = $trainingRepository->deleteTraining($id);
+
+                $trainingDayRepository = new TrainingDayRepository($app['db']);
+                $trainingDayRepository->deleteTrainingDay($oneTraining['Training_day_ID']);
 
                 $app['session']->getFlashBag()->add(
                     'messages',

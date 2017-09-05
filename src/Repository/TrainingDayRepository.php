@@ -50,7 +50,11 @@ class TrainingDayRepository
             ->setParameter(0, date_format($formData['Training_day_day_number'], 'Y-m-d'))
             ->setParameter(1, $userID);
 
-        return $queryBuilder->execute();
+
+        $queryBuilder->execute();
+
+
+        return $this->db->lastInsertId();
     }
 
     public function showAllTrainingDay($userID)

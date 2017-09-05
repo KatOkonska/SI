@@ -17,6 +17,7 @@
             <th>{{ 'table.sport_kcal'|trans }}</th>
             <th>{{ 'table.sport_distance'|trans }}</th>
             <th>{{ 'table.sport_name'|trans }}</th>
+            <th>{{ 'table.sport_date'|trans }}</th>
             <th>{{ 'table.edit'|trans }}</th>
             <th>{{ 'table.delete'|trans }}</th>
         </tr>
@@ -29,6 +30,7 @@
                     <td>{{ data.Sport_kcal }}</td>
                     <td>{{ data.Sport_distance }}</td>
                     <td>{{ data.Sport_Name }}</td>
+                    <td>{{ data.Training_day_day_number|date("Y-m-d") }}</td>
 
                     <td>
                         <a class="btn btn-default" href="{{ url('edit_training', {'id': data.Sport_ID})}}" title="{{ 'auth.logout.label'|trans }}">

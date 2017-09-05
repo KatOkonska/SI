@@ -17,6 +17,7 @@ use Form\DeleteTrainingDayType;
 use Form\EditTrainingDayType;
 use Form\TrainingDayType;
 use Repository\TrainingDayRepository;
+use Repository\TrainingRepository;
 use Repository\UserRepository;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
@@ -228,6 +229,14 @@ class TrainingDayController implements ControllerProviderInterface
 
             if ($form->isValid())
             {
+
+                $trainingRepository = new TrainingRepository($app['db']);
+                $training = $trainingRepository->findOneTrainingByDate($trainingDay['Training_day_ID']);
+
+                if($training){
+                     $trainingRepository->deleteTraining($training['Sport_ID']);
+                }
+
                 $trainingDayRepository = new TrainingDayRepository($app['db']);
                 $deleteTrainingDay = $trainingDayRepository->deleteTrainingDay($id);
 
