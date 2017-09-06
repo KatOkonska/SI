@@ -1,26 +1,9 @@
-{% extends is_granted("ROLE_ADMIN") == 'true'
-? 'layout_admin.html.twig'
-: 'layout_user.html.twig' %}
+{% extends 'layout_user.html.twig' %}
 
 {% block title %}{{'title.list_training_5'|trans }}{% endblock %}
 
 {% block content %}
     <h1>{{'title.list_training_5'|trans }}</h1>
-
-    {#{{ dump(table) }}#}
-
-    {#<h1>Dni treningu</h1>#}
-    {#<tr>#}
-    {#{% for data in table %}#}
-    {#<h2>dzien treningu</h2>#}
-    {#<td>{{ data.Sport_time }}</td>#}
-    {#<td>{{ data.Sport_kcal }}</td>#}
-    {#<td>{{ data.Sport_distance }}</td>#}
-    {#<td>{{ data.Sport_name_ID }}</td>#}
-    {#<br>#}
-    {#{% endfor %}#}
-    {#</tr>#}
-
 
     <table class="vitamins" width="50%" align="center" text-align="center">
         <thead>
@@ -29,19 +12,27 @@
             <th>{{ 'table.sport_kcal'|trans }}</th>
             <th>{{ 'table.sport_distance'|trans }}</th>
             <th>{{ 'table.sport_name'|trans }}</th>
+            <th>{{ 'label.Training_day'|trans}}</th>
 
         </tr>
         </thead>
 
-        {% for data in table %}
+        {% for data in paginator.data %}
             <tr>
                 <td>{{ data.Sport_time }}</td>
                 <td>{{ data.Sport_kcal }}</td>
                 <td>{{ data.Sport_distance }}</td>
-                <td>{{ data.Sport_name_ID }}</td>
+                <td>{{ data.Sport_Name}}</td>
+                <td>{{ data.Training_day_day_number|date("Y-m-d") }}</td>
             </tr>
         {% endfor %}
 
     </table>
+
+    {% include 'default/_paginator.html.twig' with {
+    paginator: paginator,
+    route_name: 'show_all_training',
+    } %}
+
 
 {% endblock %}

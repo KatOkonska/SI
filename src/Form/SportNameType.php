@@ -27,7 +27,7 @@ class SportNameType extends AbstractType
             'Sport_Name',
             TextType::class,
             [
-                'label' => 'label.Sport_name',
+                'label' => 'label.Sport_Name',
                 'required' => true,
                 'attr' => [
                     'max_length' => 32,

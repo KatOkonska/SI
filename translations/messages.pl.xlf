@@ -94,6 +94,11 @@
 
             <!--tytuły i nagłówki-->
 
+            <trans-unit id="header.future_trainings">
+                <source>header.future_trainings</source>
+                <target>Twoje przyszłe treningi</target>
+            </trans-unit>
+
             <trans-unit id="title.delete_sport">
                 <source>title.delete_sport</source>
                 <target>Czy na pewno chcesz usunąć tę nazwę sportu?</target>

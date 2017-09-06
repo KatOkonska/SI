@@ -37,7 +37,7 @@ class EditSportNameType extends AbstractType
             'Sport_Name',
             TextType::class,
             [
-                'label' => 'label.Sport_Name',
+                'label' => 'table.sport_name',
                 'required' => true,
                 'attr' => [
                     'max_length' => 32,

@@ -104,7 +104,6 @@ class TrainingDayRepository
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder->select('*')
             ->from('Training_day')
-//            ->where('Training_day_day_number' >= DATE_SUB(NOW(), INTERVAL 1 YEAR));
             ->where('Training_day_day_number >= \''.date('Y-m-d').' 00:00:00\'')
             ->andWhere('User_ID = :User_ID')
             ->setParameter(':User_ID', $userID, \PDO::PARAM_INT);
@@ -137,7 +136,8 @@ class TrainingDayRepository
     {
         $queryBuilder = $this->db->createQueryBuilder();
 
-        return $queryBuilder->select('*')
+        return $queryBuilder
+            ->select('*')
             ->from('Training_day', 'td')
             ->where('td.User_ID = '.$userID);
     }

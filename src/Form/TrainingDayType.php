@@ -35,7 +35,7 @@ class TrainingDayType extends AbstractType
             'Training_day_day_number',
             DateType::class,
             [
-                'label' => 'label.time',
+                'label' => 'label.Training_day',
                 'required' => true,
 
                 'constraints' => [

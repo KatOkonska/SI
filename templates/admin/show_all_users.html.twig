@@ -12,7 +12,6 @@
         <tr>
             <th>{{'table.user_id'|trans }}</th>
             <th>{{'table.login'|trans }}</th>
-            <th>{{'table.password'|trans }}</th>
             <th>{{'table.role'|trans }}</th>
             <th>{{'table.edit'|trans }}</th>
             <th>{{'table.change_password'|trans }}</th>
@@ -24,21 +23,20 @@
             <tr>
                 <td>{{ data.User_ID }}</td>
                 <td>{{ data.User_login }}</td>
-                <td>{{ data.User_password }}</td>
-                <td>{{ data.Role_ID }}</td>
+                <td>{{ data.Name }}</td>
                 <td>
-                    <a class="btn btn-default" href="{{ url('edit_user',{'id':data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
+                    <a class="btn btn-default" href="{{ url('edit_user',{'id':data.User_ID} )}}" title="  {{ 'button.change'|trans }}">
                         {{ 'button.change'|trans }}
                     </a>
                 </td>
                 <td>
-                    <a class="btn btn-default" href="{{ url('edit_password',{'id':data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
+                    <a class="btn btn-default" href="{{ url('edit_password',{'id':data.User_ID} )}}" title=" {{ 'button.change'|trans }}">
                         {{ 'button.change'|trans }}
                     </a>
                 </td>
 
                 <td>
-                    <a class="btn btn-default" href="{{ url('delete_user',{'id':data.User_ID} )}}" title="{{ 'auth.logout.label'|trans }}">
+                    <a class="btn btn-default" href="{{ url('delete_user',{'id':data.User_ID} )}}" title=" {{ 'button.delete'|trans }}">
                         {{ 'button.delete'|trans }}
                     </a>
                 </td>

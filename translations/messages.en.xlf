@@ -103,6 +103,12 @@
             </trans-unit>
 
             <!--titles and headers-->
+
+            <trans-unit id="header.future_trainings">
+                <source>header.future_trainings</source>
+                <target>Your future trainings</target>
+            </trans-unit>
+
             <trans-unit id="title.delete_sport">
                 <source>title.delete_sport</source>
                 <target>Do you really want to delete this sport name?</target>

@@ -1,7 +1,11 @@
 {% extends is_granted("ROLE_USER") == 'true'
 ? 'layout_user.html.twig'
 : 'layout.html.twig' %}
+<title>{% block title '' %}{{ 'title.Sport_application'|trans }}</title>
 
 {% block content %}
+    <body>
+    {% include 'default/_flash_messages.html.twig' %}
     {{ "message.page_not_found"|trans }}
+    </body>
 {% endblock %}

@@ -214,7 +214,8 @@ class AdminRepository
         $queryBuilder = $this->db->createQueryBuilder();
 
         return $queryBuilder->select('*')
-            ->from('User', 'u');
+            ->from('User', 'u')
+            ->innerJoin('u', 'Role','r','u.Role_ID = r.Role_ID; ' );
     }
 
     public function findAllTrainingsPaginated($page = 1)
@@ -240,8 +241,9 @@ class AdminRepository
 
         return $queryBuilder
             ->select('*')
-            ->from('Sport', 's')
-            ->leftJoin('s','Sport_Name', 'sn','s.Sport_Name_ID = sn.Sport_Name_ID');
+            ->from('Sport_Name', 'sn')
+            ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
+            ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID');
 
 
 

@@ -1,23 +1,16 @@
-{% extends is_granted("ROLE_ADMIN") == 'true'
-? 'layout_admin.html.twig'
-: 'layout_user.html.twig' %}
+{% extends 'layout_user.html.twig' %}
 
-{% block title %}'To Twój Kalendarz'{% endblock %}
+{% block title %}{{ 'hello'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Oto Twój kalendarz treningów z ostatniego miesiąca</h1>
+    <h1>{{ 'header.future_trainings'|trans }}</h1>
 
-{#{{ dump(calendar) }}#}
-
-    <h2>Dni treningu</h2>
     <tr>
         {% for data in calendar %}
             <h3>{{  'table.training_day'|trans }}</h3>
-            <td>{{ data.Training_day_day_number }}</td>
+            <td>{{ data.Training_day_day_number|date("Y-m-d") }}</td>
              <br>
         {% endfor %}
     </tr>
-
-{#{{ currentDate}}#}
 
 {% endblock %}

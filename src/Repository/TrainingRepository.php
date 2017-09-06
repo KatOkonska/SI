@@ -123,15 +123,6 @@ class TrainingRepository
     public function showAllTraining($userID)
     {
         $queryBuilder = $this->db->createQueryBuilder();
-//        $queryBuilder->select('Sport_time', 'Sport_kcal', 'Sport_distance', 'Sport_name_ID', 'Sport_ID')
-//            ->from('Sport')
-//            ->where('User_ID = '.$userID); -> to na pewno działa
-
-//        SELECT * FROM Sport_Name INNER JOIN Sport ON Sport_Name.Sport_Name_ID = Sport.Sport_ID;
-
-//        SELECT * FROM Sport_Name INNER JOIN Sport ON Sport.Sport_Name_ID = Sport_Name.Sport_Name_ID;
-//
-
 
         $queryBuilder
             ->select('*')
@@ -155,6 +146,38 @@ class TrainingRepository
             ->setMaxResults(5);
 
         return $queryBuilder->execute()->fetchAll();
+    }
+
+    public function findWeekPaginated($page = 1, $userID)
+    {
+        $countQueryBuilder = $this->queryWeekTraining($userID)
+            ->select('COUNT(DISTINCT s.Sport_ID) AS total_results')
+            ->setMaxResults(self::NUM_ITEMS);
+
+
+
+        $paginator = new Paginator($this->queryWeekTraining($userID), $countQueryBuilder);
+        $paginator->setCurrentPage($page);
+        $paginator->setMaxPerPage(self::NUM_ITEMS);
+
+
+
+        return $paginator->getCurrentPageResults();
+    }
+
+
+    protected function queryWeekTraining($userID)
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder
+            ->select('*')
+            ->from('Sport_Name', 'sn')
+            ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
+            ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID')
+            ->where('s.User_ID = '.$userID)
+            ->orderBy('s.Sport_ID', 'DESC')
+            ->setMaxResults(5);
     }
 
     /**

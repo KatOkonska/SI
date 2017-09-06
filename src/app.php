@@ -51,7 +51,7 @@ $app->register(
                 'form' => [
                     'login_path' => 'auth_login',
                     'check_path' => 'auth_login_check',
-                    'default_target_path' => 'calendar',
+                    'default_target_path' => 'index',
                     'username_parameter' => 'login_type[login]',
                     'password_parameter' => 'login_type[password]',
                 ],
@@ -120,8 +120,5 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
 
     return $twig;
 });
-
-//dump($app['security.encoder.bcrypt']->encodePassword('test', ''));
-//dump($app['security.encoder.bcrypt']->encodePassword('qAWfMuqyVEe5', ''));
 
 return $app;

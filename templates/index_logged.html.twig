@@ -1,0 +1,22 @@
+{% extends is_granted("ROLE_USER") == 'true'
+? 'layout_user.html.twig'
+: 'layout.html.twig' %}
+
+{% block content %}
+
+    {% if is_granted ("ROLE_USER") %}
+       <h1>
+           {{  'hello'|trans }} {{ app.user.username }} !
+       </h1>
+    {% elseif  is_granted ("ROLE_ADMIN") %}
+        <h1>
+            {{  'hello'|trans }} Admin!
+        </h1>
+    {%  else %}
+        <h1>
+            {{  'hello'|trans }} {{  'stranger'|trans }}
+        </h1>
+  {% endif %}
+
+
+{% endblock %}

@@ -52,8 +52,12 @@ class TrainingController implements ControllerProviderInterface
         // 2) menu z przyciskami "next" "prev" żeby przełączać się między stronami nie zmieniająć ręcznie URLa...
 
 
-        $controller->match('show_week', [$this, 'showWeekTrainingAction'])
-            ->method('POST|GET')
+//        $controller->match('show_week', [$this, 'showWeekTrainingAction'])
+//            ->method('POST|GET')
+//            ->bind('show_week_training');
+
+        $controller->get('show_week/{page}', [$this, 'showWeekAction'])
+            ->value('page', 1)
             ->bind('show_week_training');
         $controller->match('edit/{id}', [$this, 'editTrainingAction'])
             ->method('POST|GET')
@@ -83,6 +87,18 @@ class TrainingController implements ControllerProviderInterface
         return $app['twig']->render(
             'training/training_show_all.html.twig',
             ['paginator' => $trainingRepository->findAllPaginated($page, $userID)]
+        );
+    }
+
+    public function showWeekAction(Application $app, $page = 1)
+    {
+        $userRepository = new UserRepository($app['db']);
+        $userID = $userRepository->getUserByLogin($app['user']->getUsername())['User_ID'];
+
+        $trainingRepository = new TrainingRepository($app['db']);
+        return $app['twig']->render(
+            'training/training_show_week.html.twig',
+            ['paginator' => $trainingRepository->findWeekPaginated($page, $userID)]
         );
     }
 

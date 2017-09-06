@@ -1,6 +1,4 @@
-{% extends is_granted("ROLE_ADMIN") == 'true'
-? 'layout_admin.html.twig'
-: 'layout_user.html.twig' %}
+{% extends 'layout_user.html.twig' %}
 
 {% block title %}{{'title.list_training'|trans }}
 {% endblock %}
@@ -17,7 +15,7 @@
             <th>{{ 'table.sport_kcal'|trans }}</th>
             <th>{{ 'table.sport_distance'|trans }}</th>
             <th>{{ 'table.sport_name'|trans }}</th>
-            <th>{{ 'table.sport_date'|trans }}</th>
+            <th>{{ 'label.Training_day'|trans}}</th>
             <th>{{ 'table.edit'|trans }}</th>
             <th>{{ 'table.delete'|trans }}</th>
         </tr>
@@ -33,14 +31,14 @@
                     <td>{{ data.Training_day_day_number|date("Y-m-d") }}</td>
 
                     <td>
-                        <a class="btn btn-default" href="{{ url('edit_training', {'id': data.Sport_ID})}}" title="{{ 'auth.logout.label'|trans }}">
+                        <a class="btn btn-default" href="{{ url('edit_training', {'id': data.Sport_ID})}}" title="{{ 'button.change'|trans }}">
                         {{ 'button.change'|trans }}
                         </a>
                     </td>
 
 
                     <td>
-                        <a class="btn btn-default" href="{{ url('delete_training', {'id':data.Sport_ID})}}" title="{{ 'auth.logout.label'|trans }}">
+                        <a class="btn btn-default" href="{{ url('delete_training', {'id':data.Sport_ID})}}" title="  {{ 'button.delete'|trans }}">
                             {{ 'button.delete'|trans }}
                         </a>
                     </td>
