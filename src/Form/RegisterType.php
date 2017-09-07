@@ -55,7 +55,7 @@ class RegisterType extends AbstractType
                         ])
             ] ,
             'type' => PasswordType::class,
-            'invalid_message' => 'The password fields must match.',
+            'invalid_message' => 'danger.password_dont_match',
             'options' => array('attr' => array('class' => 'password-field')),
             'required' => true,
             'first_options'  => array('label' => 'Password'),

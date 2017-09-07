@@ -28,6 +28,21 @@
                 <target>Sent to database</target>
             </trans-unit>
 
+            <trans-unit id="danger.password_dont_match">
+                <source>danger.password_dont_match</source>
+                <target>Password don't match, try again</target>
+            </trans-unit>
+
+            <trans-unit id="message.cant_be_deleted">
+                <source>message.cant_be_deleted</source>
+                <target>You cant delete used sport name. You should delete trainings before.</target>
+            </trans-unit>
+
+            <trans-unit id="error.login_exists">
+                <source>error.login_exists</source>
+                <target>This login exists. Use different.</target>
+            </trans-unit>
+
             <trans-unit id="message.deleted">
                 <source>message.deleted</source>
                 <target>Deleted succesfully</target>
@@ -44,22 +59,22 @@
             </trans-unit>
 
             <trans-unit id="message.page_not_found">
-                <source>message.page_not_found"</source>
+                <source>message.page_not_found</source>
                 <target>Page not found</target>
             </trans-unit>
 
             <trans-unit id="message.created_account">
-                <source>"message.created_account"</source>
+                <source>message.created_account</source>
                 <target>Account has been created succesfully</target>
             </trans-unit>
 
             <trans-unit id="message.cant_delete_it">
-                <source>"message.cant_delete_it"</source>
+                <source>message.cant_delete_it</source>
                 <target>You can't delete chosen item</target>
             </trans-unit>
 
             <trans-unit id="message.cant_edit_it">
-                <source>"message.cant_edit_it"</source>
+                <source>message.cant_edit_it</source>
                 <target>You can't edit chosen item</target>
             </trans-unit>
 

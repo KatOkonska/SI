@@ -1,7 +1,7 @@
 {% extends is_granted("ROLE_USER") == 'true'
 ? 'layout_user.html.twig'
 : 'layout.html.twig' %}
-<title>{% block title '' %}{{ 'title.Sport_application'|trans }}</title>
+{% block title  %} {{ 'title.Sport_application'|trans }} {% endblock %}
 
 {% block content %}
     <body>

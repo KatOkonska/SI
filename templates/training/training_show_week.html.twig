@@ -17,7 +17,7 @@
         </tr>
         </thead>
 
-        {% for data in paginator.data %}
+        {% for data in paginator %}
             <tr>
                 <td>{{ data.Sport_time }}</td>
                 <td>{{ data.Sport_kcal }}</td>
@@ -28,11 +28,5 @@
         {% endfor %}
 
     </table>
-
-    {% include 'default/_paginator.html.twig' with {
-    paginator: paginator,
-    route_name: 'show_all_training',
-    } %}
-
 
 {% endblock %}

@@ -100,16 +100,33 @@ class AuthController implements ControllerProviderInterface
 
             if ($form->isValid())
             {
-                $UserRepository = new UserRepository($app['db']);
-                $register = $UserRepository->register($form, $app);
+                $userRepository = new UserRepository($app['db']);
+                $checkIfUserOriginal = $userRepository->getUserByLogin($form['login']->getData());
 
-                $app['session']->getFlashBag()->add(
-                    'messages',
-                    [
-                        'type' => 'success',
-                        'message' => 'message.created_account',
-                    ]
-                );
+                if (!$checkIfUserOriginal)
+                {
+                    $register = $userRepository->register($form, $app);
+
+                    $app['session']->getFlashBag()->add(
+                        'messages',
+                        [
+                            'type' => 'success',
+                            'message' => 'message.created_account',
+                        ]
+                    );
+                }
+                else
+                {
+                    $app['session']->getFlashBag()->add(
+                        'messages',
+                        [
+                            'type' => 'error',
+                            'message' => 'error.login_exists',
+                        ]
+                    );
+                }
+
+
 
             }
             else

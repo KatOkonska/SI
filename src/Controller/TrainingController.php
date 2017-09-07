@@ -90,7 +90,7 @@ class TrainingController implements ControllerProviderInterface
         );
     }
 
-    public function showWeekAction(Application $app, $page = 1)
+    public function showWeekAction(Application $app)
     {
         $userRepository = new UserRepository($app['db']);
         $userID = $userRepository->getUserByLogin($app['user']->getUsername())['User_ID'];
@@ -98,7 +98,7 @@ class TrainingController implements ControllerProviderInterface
         $trainingRepository = new TrainingRepository($app['db']);
         return $app['twig']->render(
             'training/training_show_week.html.twig',
-            ['paginator' => $trainingRepository->findWeekPaginated($page, $userID)]
+            ['paginator' => $trainingRepository->showWeekTraining($userID)]
         );
     }
 

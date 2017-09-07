@@ -139,7 +139,8 @@ class TrainingDayRepository
         return $queryBuilder
             ->select('*')
             ->from('Training_day', 'td')
-            ->where('td.User_ID = '.$userID);
+            ->where('td.User_ID = '.$userID)
+            ->orderBy('td.Training_day_day_number', 'ASC');
     }
 
     protected function queryTrainingDayAll()

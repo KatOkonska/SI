@@ -406,6 +406,10 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
+    /**
+     * @param Application $app
+     * @return mixed
+     */
     public function showAllSportNamesAction(Application $app)
     {
         $table =[];
@@ -421,6 +425,12 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
+    /**
+     * @param Application $app
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|void
+     */
     public function deleteSportNameAction(Application $app, $id, Request $request)
     {
         $adminRepository = new AdminRepository($app['db']);
@@ -442,15 +452,30 @@ class AdminController implements ControllerProviderInterface
             if ($form->isValid())
             {
                 $adminRepository = new AdminRepository($app['db']);
-                $deleteSportName = $adminRepository->deleteSportName($id);
+                $sportNameIsNotRelated = $adminRepository->findAllTrainingsBySportName($id);
+                if (!$sportNameIsNotRelated)
+                {
+                    $deleteSportName = $adminRepository->deleteSportName($id);
 
-                $app['session']->getFlashBag()->add(
-                    'messages',
-                    [
-                        'type' => 'info',
-                        'message' => 'message.deleted',
-                    ]
-                );
+                    $app['session']->getFlashBag()->add(
+                        'messages',
+                        [
+                            'type' => 'info',
+                            'message' => 'message.deleted',
+                        ]
+                    );
+                }
+                else
+                {
+                    $app['session']->getFlashBag()->add(
+                        'messages',
+                        [
+                            'type' => 'info',
+                            'message' => 'message.cant_be_deleted',
+                        ]
+                    );
+                }
+
                 return $app->redirect($app['url_generator']->generate('show_all_sport_names'), 301);
 
             }

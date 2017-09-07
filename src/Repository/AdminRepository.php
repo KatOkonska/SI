@@ -243,9 +243,18 @@ class AdminRepository
             ->select('*')
             ->from('Sport_Name', 'sn')
             ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
-            ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID');
+            ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID')
+            ->innerJoin('s','User', 'u','s.User_ID = u.User_ID')
+            ->orderBy('u.User_ID', 'ASC');
+    }
 
-
+    public function findAllTrainingsBySportName($sportNameID)
+    {
+        $queryBuilder = $this->queryAllTrainings();
+        $queryBuilder
+            ->where('sn.Sport_Name_ID = :id')
+            ->setParameter(':id', $sportNameID, \PDO::PARAM_INT);
+        return $queryBuilder->execute()->fetchAll();
 
     }
 
@@ -271,7 +280,9 @@ class AdminRepository
         $queryBuilder = $this->db->createQueryBuilder();
 
         return $queryBuilder->select('*')
-            ->from('Training_day', 'td');
+            ->from('Training_day', 'td')
+            ->innerJoin('td','User', 'u','td.User_ID = u.User_ID')
+            ->orderBy('u.User_ID', 'ASC');
     }
 
 
@@ -300,4 +311,6 @@ class AdminRepository
         return $queryBuilder->select('*')
             ->from('Sport_Name', 'sn');
     }
+
+
 }

@@ -117,7 +117,8 @@ class TrainingRepository
             ->from('Sport_Name', 'sn')
             ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
             ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID')
-            ->where('s.User_ID = '.$userID);
+            ->where('s.User_ID = '.$userID)
+            ->orderBy('td.Training_day_day_number', 'ASC');
     }
 
     public function showAllTraining($userID)
@@ -141,44 +142,45 @@ class TrainingRepository
             ->select('*')
             ->from('Sport_Name', 'sn')
             ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
-            ->where('User_ID = '.$userID)
-            ->orderBy('s.Sport_ID', 'DESC')
+            ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID')
+            ->where('s.User_ID = '.$userID)
+            ->orderBy('td.Training_day_day_number', 'ASC')
             ->setMaxResults(5);
 
         return $queryBuilder->execute()->fetchAll();
     }
+//
+//    public function findWeekPaginated($page = 1, $userID)
+//    {
+//        $countQueryBuilder = $this->queryWeekTraining($userID)
+//            ->select('COUNT(DISTINCT s.Sport_ID) AS total_results')
+//            ->setMaxResults(self::NUM_ITEMS);
+//
+//
+//
+//        $paginator = new Paginator($this->queryWeekTraining($userID), $countQueryBuilder);
+//        $paginator->setCurrentPage($page);
+//        $paginator->setMaxPerPage(self::NUM_ITEMS);
+//
+//
+//
+//        return $paginator->getCurrentPageResults();
+//    }
 
-    public function findWeekPaginated($page = 1, $userID)
-    {
-        $countQueryBuilder = $this->queryWeekTraining($userID)
-            ->select('COUNT(DISTINCT s.Sport_ID) AS total_results')
-            ->setMaxResults(self::NUM_ITEMS);
 
-
-
-        $paginator = new Paginator($this->queryWeekTraining($userID), $countQueryBuilder);
-        $paginator->setCurrentPage($page);
-        $paginator->setMaxPerPage(self::NUM_ITEMS);
-
-
-
-        return $paginator->getCurrentPageResults();
-    }
-
-
-    protected function queryWeekTraining($userID)
-    {
-        $queryBuilder = $this->db->createQueryBuilder();
-
-        return $queryBuilder
-            ->select('*')
-            ->from('Sport_Name', 'sn')
-            ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
-            ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID')
-            ->where('s.User_ID = '.$userID)
-            ->orderBy('s.Sport_ID', 'DESC')
-            ->setMaxResults(5);
-    }
+//    protected function queryWeekTraining($userID)
+//    {
+//        $queryBuilder = $this->db->createQueryBuilder();
+//
+//        return $queryBuilder
+//            ->select('*')
+//            ->from('Sport_Name', 'sn')
+//            ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
+//            ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID')
+//            ->where('s.User_ID = '.$userID)
+//            ->orderBy('s.Sport_ID', 'DESC')
+//            ->setMaxResults(5);
+//    }
 
     /**
      * Find one record.
