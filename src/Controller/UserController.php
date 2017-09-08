@@ -1,10 +1,5 @@
 <?php
-/**
- * Calendar controller.
- *
- * @copyright (c) 2016 Tomasz Chojna
- * @link http://epi.chojna.info.pl
- */
+
 namespace Controller;
 
 use Silex\Api\ControllerProviderInterface;
@@ -33,37 +28,5 @@ class UserController implements ControllerProviderInterface
         return $controller;
     }
 
-    /**
-     * Index action.
-     *
-     * @param \Silex\Application                        $app     Silex application
-     * @param \Symfony\Component\HttpFoundation\Request $request Request object
-     *
-     * @return string Response
-     */
-    public function indexAction(Application $app, Request $request)
-    {
-        //return 'Witaj'.'{zmienna-imie}'.'!<br>'.$this->todayDate();
-        $name = '{zmienna-imie}';
-        $current_day = $this->todayDate();
-        echo 'Test User 12345';
-        return $app['twig']->render('welcome/index.html.twig', ['name' => $name]);
 
-    }
-
-    public function todayDate()
-    {
-        $weekdays = array('niedziela', 'poniedzialek', 'wtorek', 'sroda', 'czwartek', 'piatek','sobota');
-        return 'Dzisiaj jest '.$weekdays[date('w')].'!';
-    }
-
-    public function nextTrainingDay()
-    {
-        echo 'Twój następny trening odbędzie się'.'!';
-    }
-
-    public function lastTraining()
-    {
-
-    }
 }

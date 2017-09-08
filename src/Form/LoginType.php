@@ -35,14 +35,9 @@ class LoginType extends AbstractType
 
                 ],
                 'constraints' => [
-                    new Assert\NotBlank(
-                        [
-                            'groups' => ['tag-default']
-                        ]
-                    ),
+                    new Assert\NotBlank(),
                     new Assert\Length(
                         [
-                            'groups' => ['tag-default'],
                             'min' => 1,
                             'max' => 32
                         ]
@@ -73,19 +68,7 @@ class LoginType extends AbstractType
         );
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(
-            [
-                'validation_groups' => 'tag-default',
-            ]
-        );
-    }
-
-    /**
+   /**
      * {@inheritdoc}
      */
     public function getBlockPrefix()

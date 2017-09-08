@@ -31,7 +31,8 @@ use Symfony\Component\HttpFoundation\Request;
 class TrainingDayController implements ControllerProviderInterface
 {
     /**
-     * {@inheritdoc}
+     * @param Application $app
+     * @return mixed
      */
     public function connect(Application $app)
     {
@@ -39,9 +40,6 @@ class TrainingDayController implements ControllerProviderInterface
         $controller->match('add', [$this, 'addTrainingDayAction'])
             ->method('POST|GET')
             ->bind('add_training_day');
-//        $controller->match('show_all', [$this, 'showAllTrainingDayAction'])
-//            ->method('POST|GET')
-//            ->bind('show_all_training_day');
         $controller->get('show_all/{page}', [$this, 'indexAction'])
             ->value('page', 1)
             ->bind('show_all_training_day');
@@ -56,6 +54,12 @@ class TrainingDayController implements ControllerProviderInterface
         return $controller;
     }
 
+    /**
+     * Show user's training days
+     * @param Application $app
+     * @param int $page
+     * @return mixed
+     */
     public function indexAction(Application $app, $page = 1)
     {
         $userRepository = new UserRepository($app['db']);
@@ -71,6 +75,12 @@ class TrainingDayController implements ControllerProviderInterface
         );
     }
 
+    /**
+     * Add training day
+     * @param Application $app
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
     public function addTrainingDayAction(Application $app, Request $request)
     {
 
@@ -119,39 +129,32 @@ class TrainingDayController implements ControllerProviderInterface
         );
     }
 
-
-    public function showAllTrainingDayAction(Application $app)
-    {
-        $table =[];
-
-        $userRepository = new UserRepository($app['db']);
-        $user = $userRepository->getUserByLogin($app['user']->getUsername());
-
-        $trainingDayRepository = new TrainingDayRepository($app['db']);
-        $table = $trainingDayRepository->showAllTrainingDay($user['User_ID']);
-
-        return $app['twig']->render
-        (
-            'training_day/training_day_show_all.html.twig',
-            ['table' => $table]
-
-        );
-    }
-
+    /**
+     * Edit training day
+     * @param Application $app
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
     public function editTrainingDayAction(Application $app, $id, Request $request  )
     {
         $userRepository = new UserRepository($app['db']);
         $user = $userRepository->getUserByLogin($app['user']->getUsername());
-
         $trainingDayRepository = new TrainingDayRepository($app['db']);
-        $trainingDay = $trainingDayRepository->findOneTrainingDayByIdAndUser($id, $user['User_ID']);
 
-        if(!in_array('ROLE_ADMIN', $userRepository->getUserRoles($user['User_ID'])) )
+        if (in_array('ROLE_ADMIN', $userRepository->getUserRoles($user['User_ID'])) )
         {
-            if (!$trainingDay) {
+            $trainingDay = $trainingDayRepository->findOneTrainingDayById($id);
+        }
+        else
+        {
+            $trainingDay = $trainingDayRepository->findOneTrainingDayByIdAndUser($id, $user['User_ID']);
+        }
+
+            if (!$trainingDay)
+            {
                 return $app->abort('404', 'message.cant_edit_it');
             }
-        }
 
         $form = $app['form.factory']->createBuilder(TrainingDayType::class, $trainingDay)->getForm();
         $form->handleRequest($request);
@@ -193,8 +196,8 @@ class TrainingDayController implements ControllerProviderInterface
         );
     }
 
-
     /**
+     * Delete training day
      * @param Application $app
      * @param $id
      * @param Request $request

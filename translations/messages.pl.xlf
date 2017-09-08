@@ -17,9 +17,34 @@
                 <!--<target>Czas777</target>-->
             <!--</trans-unit>-->
 
+            <trans-unit id="User">
+                <source>User</source>
+                <target>Użytkownik</target>
+            </trans-unit>
+
+            <trans-unit id="Admin">
+                <source>Admin</source>
+                <target>Administrator</target>
+            </trans-unit>
+
             <trans-unit id="sent_to_database">
                 <source>sent_to_database</source>
                 <target>Wysłano do bazy</target>
+            </trans-unit>
+
+            <trans-unit id="danger.password_dont_match">
+                <source>danger.password_dont_match</source>
+                <target>Hasła nie pasują do siebie, spróbuj ponownie</target>
+            </trans-unit>
+
+            <trans-unit id="message.cant_be_deleted">
+                <source>message.cant_be_deleted</source>
+                <target>Nie możesz usunąć tej nazwy sportu, zanim nie usuniesz treningów, które jej używają.</target>
+            </trans-unit>
+
+            <trans-unit id="error.login_exists">
+                <source>error.login_exists</source>
+                <target>Taki login już istnieje. Spróbuj użyć innego.</target>
             </trans-unit>
 
             <trans-unit id="message.deleted">
@@ -61,6 +86,8 @@
                 <source>button.add</source>
                 <target>Dodaj</target>
             </trans-unit>
+
+            <!--button-->
 
             <trans-unit id="button.register">
                 <source>button.register</source>
@@ -107,6 +134,11 @@
             <trans-unit id="header.delete_sport">
                 <source>header.delete_sport</source>
                 <target>Usuń nazwę sportu</target>
+            </trans-unit>
+
+            <trans-unit id="header.add_sport_name">
+                <source>header.add_sport_name</source>
+                <target>Dodaj nazwę sportu</target>
             </trans-unit>
 
             <trans-unit id="header.add_training">

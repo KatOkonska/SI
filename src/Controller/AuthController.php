@@ -27,8 +27,11 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class AuthController implements ControllerProviderInterface
 {
+
     /**
-     * {@inheritdoc}
+     * Connect
+     * @param Application $app
+     * @return mixed
      */
     public function connect(Application $app)
     {
@@ -59,6 +62,12 @@ class AuthController implements ControllerProviderInterface
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      */
+    /**
+     * Login
+     * @param Application $app
+     * @param Request $request
+     * @return mixed
+     */
     public function loginAction(Application $app, Request $request)
     {
         $user = ['login' => $app['session']->get('_security.last_username')];
@@ -81,6 +90,10 @@ class AuthController implements ControllerProviderInterface
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      */
+    /** Logout
+     * @param Application $app
+     * @return mixed
+     */
     public function logoutAction(Application $app)
     {
         $app['session']->clear();
@@ -88,6 +101,12 @@ class AuthController implements ControllerProviderInterface
         return $app['twig']->render('auth/logout.html.twig', []);
     }
 
+    /**
+     * Register
+     * @param Application $app
+     * @param Request $request
+     * @return mixed
+     */
     public function registerAction (Application $app, Request $request)
     {
         $form = $app['form.factory']->createBuilder(RegisterType::class)->getForm();
@@ -146,10 +165,14 @@ class AuthController implements ControllerProviderInterface
         );
     }
 
+    /**
+     * Edit own password
+     * @param Application $app
+     * @param Request $request
+     * @return mixed
+     */
     public function editOwnPasswordAction(Application $app,  Request $request)
     {
-//
-
         $UserRepository = new UserRepository($app['db']);
         $user = $UserRepository->getUserByLogin($app['user']->getUsername());
 

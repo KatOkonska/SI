@@ -27,7 +27,7 @@ class TrainingRepository
     const NUM_ITEMS = 5;
 
     /**
-     * TagRepository constructor.
+     * TrainingRepository constructor.
      *
      * @param \Doctrine\DBAL\Connection $db
      */
@@ -36,6 +36,12 @@ class TrainingRepository
         $this->db = $db;
     }
 
+    /**
+     * @param $form
+     * @param $userID
+     * @param $dateId
+     * @return \Doctrine\DBAL\Driver\Statement|int
+     */
     public function addTraining($form, $userID, $dateId)
     {
         $formData = $form->getData();
@@ -43,50 +49,52 @@ class TrainingRepository
         $queryBuilder->insert('Sport')
             ->values(
                 array(
-                    'Sport_time' => '?',
-                    'Sport_kcal' => '?',
-                    'Sport_distance' => '?',
-                    'Sport_name_ID' => '?',
-                    'User_ID' => '?',
-                    'Training_day_ID' => '?'
+                    'Sport_time' => ':sport_time',
+                    'Sport_kcal' => ':sport_kcal',
+                    'Sport_distance' => ':sport_distance',
+                    'Sport_name_ID' => ':sport_name_ID',
+                    'User_ID' => ':user_ID',
+                    'Training_day_ID' => ':date_ID'
                 )
             )
-            ->setParameter(0, $formData['Sport_time'])
-            ->setParameter(1, $formData['Sport_kcal'])
-            ->setParameter(2, $formData['Sport_distance'])
-            ->setParameter(3, $formData['Sport_name_ID'])
-            ->setParameter(4, $userID)
-            ->setParameter(5, $dateId);
+            ->setParameter(':sport_time', $formData['Sport_time'])
+            ->setParameter(':sport_kcal', $formData['Sport_kcal'])
+            ->setParameter(':sport_distance', $formData['Sport_distance'])
+            ->setParameter(':sport_name_ID', $formData['Sport_name_ID'])
+            ->setParameter(':user_ID', $userID)
+            ->setParameter(':date_ID', $dateId);
 
         return $queryBuilder->execute();
     }
 
+    /**
+     * @param $id
+     * @param $form
+     * @return \Doctrine\DBAL\Driver\Statement|int
+     */
     public function editTraining($id, $form)
     {
         $formData = $form->getData();
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder->update('Sport')
-            ->set('Sport_time', '?')
-            ->set('Sport_kcal', '?')
-            ->set('Sport_distance', '?')
-            ->set('Sport_name_ID', '?')
-            ->where('Sport_ID = ?')
-            ->setParameter(0, $formData['Sport_time'])
-            ->setParameter(1, $formData['Sport_kcal'])
-            ->setParameter(2, $formData['Sport_distance'])
-            ->setParameter(3, $formData['Sport_name_ID'])
-            ->setParameter(4, $id);
+            ->set('Sport_time', ':sport_time')
+            ->set('Sport_kcal', ':sport_kcal')
+            ->set('Sport_distance', ':sport_distance')
+            ->set('Sport_name_ID', ':sport_name_ID')
+            ->where('Sport_ID = :id')
+            ->setParameter(':sport_time', $formData['Sport_time'])
+            ->setParameter(':sport_kcal', $formData['Sport_kcal'])
+            ->setParameter(':sport_distance', $formData['Sport_distance'])
+            ->setParameter(':sport_name_ID', $formData['Sport_name_ID'])
+            ->setParameter(':id', $id);
 
         return $queryBuilder->execute();
     }
-
-
     /**
-     * Get records paginated.
-     *
-     * @param int $page Current page number
-     *
-     * @return array Result
+     * Show all trainings
+     * @param int $page
+     * @param $userID
+     * @return array
      */
     public function findAllPaginated($page = 1, $userID)
     {
@@ -106,8 +114,11 @@ class TrainingRepository
     }
 
 
-
-
+    /**
+     * Query to show all trainings
+     * @param $userID
+     * @return $this
+     */
     protected function queryAll($userID)
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -121,21 +132,12 @@ class TrainingRepository
             ->orderBy('td.Training_day_day_number', 'ASC');
     }
 
-    public function showAllTraining($userID)
-    {
-        $queryBuilder = $this->db->createQueryBuilder();
-
-        $queryBuilder
-            ->select('*')
-            ->from('Sport_Name', 'sn')
-            ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
-            ->where('s.User_ID = '.$userID);
-
-        return $queryBuilder->execute()->fetchAll();
-    }
-
-
-    public function showWeekTraining($userID)
+    /**
+     * Show last 5 trainings
+     * @param $userID
+     * @return array
+     */
+    public function showLast5Training($userID)
     {
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder
@@ -149,41 +151,9 @@ class TrainingRepository
 
         return $queryBuilder->execute()->fetchAll();
     }
-//
-//    public function findWeekPaginated($page = 1, $userID)
-//    {
-//        $countQueryBuilder = $this->queryWeekTraining($userID)
-//            ->select('COUNT(DISTINCT s.Sport_ID) AS total_results')
-//            ->setMaxResults(self::NUM_ITEMS);
-//
-//
-//
-//        $paginator = new Paginator($this->queryWeekTraining($userID), $countQueryBuilder);
-//        $paginator->setCurrentPage($page);
-//        $paginator->setMaxPerPage(self::NUM_ITEMS);
-//
-//
-//
-//        return $paginator->getCurrentPageResults();
-//    }
-
-
-//    protected function queryWeekTraining($userID)
-//    {
-//        $queryBuilder = $this->db->createQueryBuilder();
-//
-//        return $queryBuilder
-//            ->select('*')
-//            ->from('Sport_Name', 'sn')
-//            ->innerJoin('sn','Sport', 's','s.Sport_Name_ID = sn.Sport_Name_ID')
-//            ->innerJoin('s','Training_day', 'td','s.Training_day_ID = td.Training_day_ID')
-//            ->where('s.User_ID = '.$userID)
-//            ->orderBy('s.Sport_ID', 'DESC')
-//            ->setMaxResults(5);
-//    }
 
     /**
-     * Find one record.
+     * Find training by ID
      *
      * @param string $id Element id
      *
@@ -199,7 +169,11 @@ class TrainingRepository
         return !$result ? [] : $result;
     }
 
-
+    /**
+     * Find one training by date
+     * @param $dateId
+     * @return array|mixed
+     */
     public function findOneTrainingByDate($dateId)
     {
         $queryBuilder = $this->querySportAll();
@@ -210,6 +184,11 @@ class TrainingRepository
         return !$result ? [] : $result;
     }
 
+    /**
+     * @param $id
+     * @param $userID
+     * @return array|mixedFind one training by user and ID
+     */
     public function findOneTrainingByIdAndUser($id, $userID)
     {
         $queryBuilder = $this->querySportAll();
@@ -223,7 +202,7 @@ class TrainingRepository
     }
 
     /**
-     * Query all records.
+     * Query to get trainigs
      *
      * @return \Doctrine\DBAL\Query\QueryBuilder Result
      */
@@ -235,7 +214,11 @@ class TrainingRepository
             ->from('Sport', 's');
     }
 
-
+    /**
+     * Query to get training
+     * @param $ID
+     * @return array
+     */
     public function getTraining($ID)
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -246,7 +229,11 @@ class TrainingRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
-
+    /**
+     * Delete training
+     * @param $id
+     * @return int
+     */
     public function deleteTraining($id)
     {
         return $this->db->delete('Sport', ['Sport_ID' => $id]);

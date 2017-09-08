@@ -32,9 +32,9 @@ class AdminController implements ControllerProviderInterface
 {
 
 
-
     /**
-     * {@inheritdoc}
+     * @param Application $app
+     * @return mixed
      */
     public function connect(Application $app)
     {
@@ -42,32 +42,18 @@ class AdminController implements ControllerProviderInterface
         $controller->match('add_sport', [$this, 'addSportAction'])
             ->method('GET|POST')
             ->bind('add_sport');
-//        $controller->match('show_all_users', [$this, 'showAllUsersAction'])
-//            ->method('GET|POST')
-//            ->bind('show_all_users');
         $controller->get('show_all_users/{page}', [$this, 'indexUsersAction'])
             ->value('page', 1)
             ->bind('show_all_users');
-//        $controller->match('show_all_trainings', [$this, 'showAllTrainingsAction'])
-//            ->method('GET|POST')
-//            ->bind('show_all_trainings');
         $controller->get('show_all_trainings/{page}', [$this, 'indexTrainingsAction'])
             ->value('page', 1)
             ->bind('show_all_trainings');
-
-//        $controller->match('show_all_training_days', [$this, 'showAllTrainingDaysAction'])
-//            ->method('GET|POST')
-//            ->bind('show_all_training_days');
         $controller->get('show_all_training_days/{page}', [$this, 'indexTrainingDaysAction'])
             ->value('page', 1)
             ->bind('show_all_training_days');
-//        $controller->match('show_all_sport_names', [$this, 'showAllSportNamesAction'])
-//            ->method('GET|POST')
-//            ->bind('show_all_sport_names');
         $controller->get('show_all_sport_names/{page}', [$this, 'indexSportNameAction'])
             ->value('page', 1)
             ->bind('show_all_sport_names');
-
         $controller->match('edit_user/{id}', [$this, 'editUserAction'])
             ->method('GET|POST')
             ->bind('edit_user');
@@ -87,7 +73,12 @@ class AdminController implements ControllerProviderInterface
         return $controller;
     }
 
-
+    /**
+     * Show all users
+     * @param Application $app
+     * @param int $page
+     * @return mixed
+     */
     public function indexUsersAction(Application $app, $page = 1)
     {
         $adminRepository = new AdminRepository($app['db']);
@@ -103,7 +94,12 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
-
+    /**
+     * Show all trainings
+     * @param Application $app
+     * @param int $page
+     * @return mixed
+     */
     public function indexTrainingsAction(Application $app, $page = 1)
     {
         $adminRepository = new AdminRepository($app['db']);
@@ -119,6 +115,12 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
+    /**
+     * Show all training days
+     * @param Application $app
+     * @param int $page
+     * @return mixed
+     */
     public function indexTrainingDaysAction(Application $app, $page = 1)
     {
         $table =[];
@@ -136,6 +138,12 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
+    /**
+     * Show all sport names
+     * @param Application $app
+     * @param int $page
+     * @return mixed
+     */
     public function indexSportNameAction(Application $app, $page = 1)
     {
             $table =[];
@@ -155,6 +163,7 @@ class AdminController implements ControllerProviderInterface
 
 
     /**
+     * Add sport name
      * @param Application $app
      * @param Request $request
      * @return mixed
@@ -203,22 +212,12 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
-    public function showAllUsersAction(Application $app)
-    {
-        $table =[];
 
-        $adminRepository = new AdminRepository($app['db']);
-        $table = $adminRepository->showAllUsers($app);
-
-
-        return $app['twig']->render
-        (
-            'admin/show_all_users.html.twig',
-            ['table' => $table]
-
-        );
-    }
-
+    /**
+     * Show all trainings
+     * @param Application $app
+     * @return mixed
+     */
     public function showAllTrainingsAction(Application $app)
     {
         $table =[];
@@ -234,6 +233,11 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
+    /**
+     * Show all training days
+     * @param Application $app
+     * @return mixed
+     */
     public function showAllTrainingDaysAction(Application $app)
     {
         $table =[];
@@ -250,6 +254,12 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
+    /**
+     * Edit user
+     * @param Application $app
+     * @param $id
+     * @param Request $request
+     */
     public function editUserAction(Application $app, $id, Request $request)
     {
         $adminRepository = new AdminRepository($app['db']);
@@ -261,7 +271,7 @@ class AdminController implements ControllerProviderInterface
 
         $data['choice'] = array
         (
-            'Użytkownik' => 2,
+            'User' => 2,
             'Admin' => 1
         );
         $form = $app['form.factory']->createBuilder(EditUserType::class, $data)->getForm();
@@ -303,6 +313,12 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
+    /**
+     * Edit password
+     * @param Application $app
+     * @param $id
+     * @param Request $request
+     */
     public function editPasswordAction(Application $app, $id, Request $request)
     {
         $adminRepository = new AdminRepository($app['db']);
@@ -351,7 +367,13 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
-
+    /**
+     * Edit sport name
+     * @param Application $app
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
 
     public function editSportNameAction(Application $app, $id, Request $request)
     {
@@ -407,6 +429,7 @@ class AdminController implements ControllerProviderInterface
     }
 
     /**
+     * Show all sport names
      * @param Application $app
      * @return mixed
      */
@@ -426,10 +449,11 @@ class AdminController implements ControllerProviderInterface
     }
 
     /**
+     * Delete sport name
      * @param Application $app
      * @param $id
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|void
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function deleteSportNameAction(Application $app, $id, Request $request)
     {
@@ -496,7 +520,13 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
-
+    /**
+     * Delete user
+     * @param Application $app
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
     public function deleteUserAction(Application $app, $id, Request $request)
     {
         $adminRepository = new AdminRepository($app['db']);
@@ -547,8 +577,4 @@ class AdminController implements ControllerProviderInterface
             ]
         );
     }
-
-
-
-
 }

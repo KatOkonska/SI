@@ -25,7 +25,7 @@ use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Utils\Paginator;
 
 /**
- * Class UserRepository.
+ * Class AdminRepository.
  *
  * @package Repository
  */
@@ -41,7 +41,7 @@ class AdminRepository
     const NUM_ITEMS = 5;
 
     /**
-     * TagRepository constructor.
+     * AdminRepository constructor.
      *
      * @param \Doctrine\DBAL\Connection $db
      */
@@ -51,7 +51,7 @@ class AdminRepository
     }
 
     /**
-     * Loads user by login.
+     * Show all users
      *
      * @param string $login User login
      * @throws UsernameNotFoundException
@@ -59,7 +59,10 @@ class AdminRepository
      *
      * @return array Result
      */
-
+    /**
+     * @param Application $app
+     * @return array
+     */
     public function showAllUsers(Application $app)
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -69,6 +72,11 @@ class AdminRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
+    /**
+     * Show all trainings
+     * @param Application $app
+     * @return array
+     */
     public function showAllTrainings(Application $app)
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -82,6 +90,11 @@ class AdminRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
+    /**
+     * Show all training days
+     * @param Application $app
+     * @return array
+     */
     public function showAllTrainingDays(Application $app)
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -91,7 +104,11 @@ class AdminRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
-
+    /**
+     * Find user by ID
+     * @param $id
+     * @return array|mixed
+     */
     public function findOneUserById($id)
     {
         $queryBuilder = $this->queryUserAll();
@@ -102,6 +119,11 @@ class AdminRepository
         return !$result ? [] : $result;
     }
 
+    /**
+     * Find sport name by ID
+     * @param $id
+     * @return array|mixed
+     */
     public function findOneSportNameById($id)
     {
         $queryBuilder = $this->querySportNameAll();
@@ -112,41 +134,64 @@ class AdminRepository
         return !$result ? [] : $result;
     }
 
+    /**
+     * Edit user
+     * @param $id
+     * @param $form
+     * @return \Doctrine\DBAL\Driver\Statement|int
+     */
     public function editUser($id, $form)
     {
         $formData = $form->getData();
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder->update('User')
-            ->set('User_login', '?')
-            ->set('Role_ID', '?')
-            ->where('User_ID = ?')
-            ->setParameter(0, $formData['User_login'])
-            ->setParameter(1, $formData['Role_ID'])
-            ->setParameter(2, $id);
+            ->set('User_login', ':user_login')
+            ->set('Role_ID', ':role_id')
+            ->where('User_ID = :user_id')
+            ->setParameter(':user_login', $formData['User_login'])
+            ->setParameter(':role_id', $formData['Role_ID'])
+            ->setParameter(':user_id', $id);
 
         return $queryBuilder->execute();
     }
 
+    /**
+     * Delete user
+     * @param $id
+     * @return int
+     */
     public function deleteUser($id)
     {
         return $this->db->delete('User', ['User_ID' => $id]);
     }
 
 
-
+    /**
+     * Edit password
+     * @param $id
+     * @param $form
+     * @param Application $app
+     * @return \Doctrine\DBAL\Driver\Statement|int
+     */
     public function editPassword($id, $form, Application $app)
     {
         $formData = $form->getData();
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder->update('User')
-            ->set('User_password', '?')
-            ->where('User_ID = ?')
-            ->setParameter(0, $app['security.encoder.bcrypt']->encodePassword($formData['User_password'], ''))
-            ->setParameter(1, $id);
+            ->set('User_password', ':user_password')
+            ->where('User_ID = :user_id')
+            ->setParameter(':user_password', $app['security.encoder.bcrypt']->encodePassword($formData['User_password'], ''))
+            ->setParameter(':user_id', $id);
 
         return $queryBuilder->execute();
     }
 
+    /**
+     * Add sport name
+     * @param $form
+     * @param Application $app
+     * @return \Doctrine\DBAL\Driver\Statement|int
+     */
     public function addSportName($form, Application $app)
     {
         $formData = $form->getData();
@@ -154,14 +199,19 @@ class AdminRepository
         $queryBuilder->insert('Sport_Name')
             ->values(
                 array(
-                    'Sport_Name' => '?',
+                    'Sport_Name' => ':sport_name',
                 )
             )
-            ->setParameter(0, $formData['Sport_Name']);
+            ->setParameter(':sport_name', $formData['Sport_Name']);
 
         return $queryBuilder->execute();
     }
 
+    /**
+     * Show all sport names
+     * @param Application $app
+     * @return array
+     */
     public function showAllSportNames(Application $app)
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -171,26 +221,42 @@ class AdminRepository
         return $queryBuilder->execute()->fetchAll();
     }
 
+    /**
+     * Edit sport name
+     * @param $id
+     * @param $form
+     * @param Application $app
+     * @return \Doctrine\DBAL\Driver\Statement|int
+     */
     public function editSportName($id, $form, Application $app)
     {
         $formData = $form->getData();
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder->update('Sport_Name')
-            ->set('Sport_Name', '?')
-            ->where('Sport_Name_ID = ?')
-            ->setParameter(0, $formData['Sport_Name'])
-            ->setParameter(1, $id);
+            ->set('Sport_Name', ':sport_name')
+            ->where('Sport_Name_ID = :sport_name_ID')
+            ->setParameter(':sport_name', $formData['Sport_Name'])
+            ->setParameter(':sport_name_ID', $id);
 
         return $queryBuilder->execute();
     }
 
+    /**
+     * Delete sport name
+     * @param $id
+     * @return int
+     */
     public function deleteSportName($id)
     {
         return $this->db->delete('Sport_Name', ['Sport_Name_ID' => $id]);
     }
 
 //    paginacja
-
+    /**
+     * Show all users
+     * @param int $page
+     * @return array
+     */
     public function findAllUsersPaginated($page = 1)
     {
         $countQueryBuilder = $this->queryUserAll()
@@ -208,23 +274,29 @@ class AdminRepository
         return $paginator->getCurrentPageResults();
     }
 
-
+    /**
+     * Query to show users and roles
+     * @return $this
+     */
     protected function queryUserAll()
     {
         $queryBuilder = $this->db->createQueryBuilder();
 
         return $queryBuilder->select('*')
             ->from('User', 'u')
-            ->innerJoin('u', 'Role','r','u.Role_ID = r.Role_ID; ' );
+            ->innerJoin('u', 'Role','r','u.Role_ID = r.Role_ID' );
     }
 
+    /**
+     * Show all trainings
+     * @param int $page
+     * @return array
+     */
     public function findAllTrainingsPaginated($page = 1)
     {
         $countQueryBuilder = $this->queryAllTrainings()
             ->select('COUNT(DISTINCT s.Sport_ID) AS total_results')
             ->setMaxResults(self::NUM_ITEMS);
-
-
 
         $paginator = new Paginator($this->queryAllTrainings(), $countQueryBuilder);
         $paginator->setCurrentPage($page);
@@ -235,6 +307,10 @@ class AdminRepository
         return $paginator->getCurrentPageResults();
     }
 
+    /**
+     * Query to show all trainings
+     * @return $this
+     */
     protected function queryAllTrainings()
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -248,6 +324,11 @@ class AdminRepository
             ->orderBy('u.User_ID', 'ASC');
     }
 
+    /**
+     * Show all trainings by sport name
+     * @param $sportNameID
+     * @return mixed
+     */
     public function findAllTrainingsBySportName($sportNameID)
     {
         $queryBuilder = $this->queryAllTrainings();
@@ -258,6 +339,11 @@ class AdminRepository
 
     }
 
+    /**
+     * Show all training days
+     * @param int $page
+     * @return array
+     */
     public function findAllTrainingDaysPaginated($page = 1)
     {
         $countQueryBuilder = $this->queryAllTrainingDays()
@@ -275,6 +361,10 @@ class AdminRepository
         return $paginator->getCurrentPageResults();
     }
 
+    /**
+     * Query to show all training days
+     * @return $this
+     */
     protected function queryAllTrainingDays()
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -286,7 +376,11 @@ class AdminRepository
     }
 
 
-
+    /**
+     * Show all sport names
+     * @param int $page
+     * @return array
+     */
     public function findAllSportNamePaginated($page = 1)
     {
         $countQueryBuilder = $this->querySportNameAll()
@@ -304,6 +398,10 @@ class AdminRepository
         return $paginator->getCurrentPageResults();
     }
 
+    /**
+     * Query to show all sport names
+     * @return $this
+     */
     protected function querySportNameAll()
     {
         $queryBuilder = $this->db->createQueryBuilder();

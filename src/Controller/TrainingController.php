@@ -25,14 +25,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Repository\SportNameRepository;
 
 /**
- * Class AuthController
+ * Class TrainingController
  *
  * @package Controller
  */
 class TrainingController implements ControllerProviderInterface
 {
     /**
-     * {@inheritdoc}
+     * @param Application $app
+     * @return mixed
      */
     public function connect(Application $app)
     {
@@ -40,25 +41,12 @@ class TrainingController implements ControllerProviderInterface
         $controller->match('add', [$this, 'addTrainingAction'])
             ->method('POST|GET')
             ->bind('add_training');
-
         $controller->get('show_all/{page}', [$this, 'indexAction'])
             ->value('page', 1)
             ->bind('show_all_training');
-
-        // Podpiąć pozostałe strony (show_all, show_all/, show_all/1)
-        // powinny wywoływać dokładnie to samo co:
-        // show_all/page, show_all/page/, show_all/page/1
-        // 1) naprawić że show_all/ oraz show_all/page/ oczekują na folder (przekierwoanie na domyślną wresję strony)
-        // 2) menu z przyciskami "next" "prev" żeby przełączać się między stronami nie zmieniająć ręcznie URLa...
-
-
-//        $controller->match('show_week', [$this, 'showWeekTrainingAction'])
-//            ->method('POST|GET')
-//            ->bind('show_week_training');
-
-        $controller->get('show_week/{page}', [$this, 'showWeekAction'])
+        $controller->get('show_last_5/{page}', [$this, 'showLast5TrainingAction'])
             ->value('page', 1)
-            ->bind('show_week_training');
+            ->bind('show_last_5_training');
         $controller->match('edit/{id}', [$this, 'editTrainingAction'])
             ->method('POST|GET')
             ->bind('edit_training');
@@ -71,7 +59,7 @@ class TrainingController implements ControllerProviderInterface
     }
 
     /**
-     * Index action.
+     * Show user's trainings
      *
      * @param \Silex\Application $app  Silex application
      * @param int                $page Current page number
@@ -90,25 +78,28 @@ class TrainingController implements ControllerProviderInterface
         );
     }
 
-    public function showWeekAction(Application $app)
+    /**
+     * Show user's last 5 trainings
+     * @param Application $app
+     * @return mixed
+     */
+    public function showLast5TrainingAction(Application $app)
     {
         $userRepository = new UserRepository($app['db']);
         $userID = $userRepository->getUserByLogin($app['user']->getUsername())['User_ID'];
 
         $trainingRepository = new TrainingRepository($app['db']);
         return $app['twig']->render(
-            'training/training_show_week.html.twig',
-            ['paginator' => $trainingRepository->showWeekTraining($userID)]
+            'training/training_show_last_5.html.twig',
+            ['paginator' => $trainingRepository->showLast5Training($userID)]
         );
     }
 
     /**
-     * Login action.
-     *
-     * @param \Silex\Application                        $app     Silex application
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
+     * Add training
+     * @param Application $app
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
 
     public function addTrainingAction(Application $app, Request $request)
@@ -166,41 +157,13 @@ class TrainingController implements ControllerProviderInterface
         );
     }
 
-        public function showAllTrainingAction(Application $app)
-    {
-        $table =[];
-
-        $userRepository = new UserRepository($app['db']);
-        $user = $userRepository->getUserByLogin($app['user']->getUsername());
-
-        $trainingRepository = new TrainingRepository($app['db']);
-        $table = $trainingRepository->showAllTraining($user['User_ID']);
-
-
-        return $app['twig']->render(
-            'training/training_show_all.html.twig',
-            ['table' => $table]
-
-        );
-    }
-
-    public function showWeekTrainingAction(Application $app)
-    {
-        $table =[];
-
-        $userRepository = new UserRepository($app['db']);
-        $user = $userRepository->getUserByLogin($app['user']->getUsername());
-
-        $trainingRepository = new TrainingRepository($app['db']);
-        $table = $trainingRepository->showWeekTraining($user['User_ID']);
-
-        return $app['twig']->render(
-            'training/training_show_week.html.twig',
-            ['table' => $table]
-
-        );
-    }
-
+    /**
+     * Edit training
+     * @param Application $app
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
     public function editTrainingAction(Application $app, $id, Request $request)
     {
 
@@ -284,6 +247,7 @@ class TrainingController implements ControllerProviderInterface
     }
 
     /**
+     * Delete training
      * @param Application $app
      * @param $id
      * @param Request $request

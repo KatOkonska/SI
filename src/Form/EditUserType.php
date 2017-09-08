@@ -53,32 +53,12 @@ class EditUserType extends AbstractType
             ]
         );
 
-//        $builder->add(
-//            'User_password',
-//            TextType::class,
-//            [
-//                'label' => 'label.password',
-//                'required' => true,
-//                'attr' => [
-//                    'max_length' => 32,
-//                ],
-//                'constraints' => [
-//                    new Assert\NotBlank(),
-//                    new Assert\Length(
-//                        [
-//                            'min' => 1,
-//                            'max' => 32,
-//                        ]
-//                    ),
-//                ],
-//            ]
-//        );
 
         $builder->add(
             'Role_ID',
             ChoiceType::class,
             [
-                'label' => 'label.Role_ID',
+                'label' => 'table.role',
                 'required' => true,
                 'attr' => [],
                 'choices' => $choices,

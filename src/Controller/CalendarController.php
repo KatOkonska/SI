@@ -6,8 +6,6 @@ use Repository\TrainingDayRepository;
 use Repository\UserRepository;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Repository\CalendarRepository;
 
 /**
  * Class CalendarController.
@@ -17,7 +15,8 @@ use Repository\CalendarRepository;
 class CalendarController implements ControllerProviderInterface
 {
     /**
-     * {@inheritdoc}
+     * @param Application $app
+     * @return mixed
      */
     public function connect(Application $app)
     {
@@ -25,16 +24,6 @@ class CalendarController implements ControllerProviderInterface
         $controller->get('/', [$this, 'showNextTrainingsAction'])
             ->method('POST|GET')
             ->bind('calendar');
-//        $controller->get('/', [$this, 'displayCurrentDateAction'])
-//            ->method('POST|GET')
-//            ->bind('calendar');
-
-//        $controller->get('/', [$this, 'showName'])
-//            ->method('POST|GET')
-//            ->bind('calendar');
-
-//        $controller->get('/{id}', [$this, 'viewAction'])->bind('tag_view');
-
         return $controller;
     }
 
@@ -44,6 +33,11 @@ class CalendarController implements ControllerProviderInterface
      * @param \Silex\Application $app Silex application
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
+     */
+    /**
+     * Show next trainings
+     * @param Application $app
+     * @return mixed
      */
     public function showNextTrainingsAction(Application $app)
     {

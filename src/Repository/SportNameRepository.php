@@ -9,9 +9,6 @@
 namespace Repository;
 
 use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\DBALException;
-use Silex\Application;
-use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 
 class SportNameRepository
 {
@@ -21,10 +18,11 @@ class SportNameRepository
      *
      * @var \Doctrine\DBAL\Connection $db
      */
+
     protected $db;
 
     /**
-     * TagRepository constructor.
+     * SportNameRepository constructor.
      *
      * @param \Doctrine\DBAL\Connection $db
      */
@@ -33,7 +31,10 @@ class SportNameRepository
         $this->db = $db;
     }
 
-
+    /**
+     * Show all sport names
+     * @return array
+     */
     public function showAllSportName()
     {
         $queryBuilder = $this->db->createQueryBuilder();

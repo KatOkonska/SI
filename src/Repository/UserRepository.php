@@ -31,7 +31,7 @@ class UserRepository
     protected $db;
 
     /**
-     * TagRepository constructor.
+     * UserRepository constructor.
      *
      * @param \Doctrine\DBAL\Connection $db
      */
@@ -60,10 +60,6 @@ class UserRepository
                 );
             }
 
-//            var_dump($user);
-//
-//            die;
-
             $roles = $this->getUserRoles($user['User_ID']);
 
             if (!$roles || !count($roles)) {
@@ -87,7 +83,7 @@ class UserRepository
     }
 
     /**
-     * Gets user data by login.
+     * Get user data by login.
      *
      * @param string $login User login
      * @throws \Doctrine\DBAL\DBALException
@@ -109,9 +105,15 @@ class UserRepository
         }
     }
 
+    /**
+     * Get user by id
+     * @param $id
+     * @return array|mixed
+     */
     public function getUserByID($id)
     {
-        try {
+        try
+        {
             $queryBuilder = $this->db->createQueryBuilder();
             $queryBuilder->select('u.User_ID', 'u.User_login', 'u.User_password')
                 ->from('User', 'u')
@@ -125,7 +127,7 @@ class UserRepository
     }
 
     /**
-     * Gets user roles by User ID.
+     * Get user role by user ID.
      *
      * @param integer $userId User ID
      * @throws \Doctrine\DBAL\DBALException
@@ -136,7 +138,8 @@ class UserRepository
     {
         $roles = [];
 
-        try {
+        try
+        {
             $queryBuilder = $this->db->createQueryBuilder();
             $queryBuilder->select('r.Name')
                 ->from('User', 'u')
@@ -150,11 +153,19 @@ class UserRepository
             }
 
             return $roles;
-        } catch (DBALException $exception) {
+        }
+        catch (DBALException $exception)
+        {
             return $roles;
         }
     }
 
+    /**
+     * Register user
+     * @param $form
+     * @param Application $app
+     * @return \Doctrine\DBAL\Driver\Statement|int
+     */
     public function register($form, Application $app)
     {
         $formData = $form->getData();
@@ -162,50 +173,35 @@ class UserRepository
         $queryBuilder->insert('User')
             ->values(
                 array(
-                    'User_login' => '?',
-                    'User_password' => '?',
+                    'User_login' => ':login',
+                    'User_password' => ':password',
                     'Role_ID' => '2'
                 )
             )
-        ->setParameter(0, $formData['login'])
-        ->setParameter(1, $app['security.encoder.bcrypt']->encodePassword($formData['password'], ''));
+        ->setParameter(':login', $formData['login'])
+        ->setParameter(':password', $app['security.encoder.bcrypt']->encodePassword($formData['password'], ''));
 
 
         return $queryBuilder->execute();
     }
 
+    /**
+     * Edit own password
+     * @param $id
+     * @param $form
+     * @param Application $app
+     * @return \Doctrine\DBAL\Driver\Statement|int
+     */
     public function editOwnPassword($id, $form, Application $app)
     {
         $formData = $form->getData();
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder->update('User')
-            ->set('User_password', '?')
-            ->where('User_ID = ?')
-            ->setParameter(0, $app['security.encoder.bcrypt']->encodePassword($formData['User_password'], ''))
-            ->setParameter(1, $id);
+            ->set('User_password', ':user_password')
+            ->where('User_ID = :user_id')
+            ->setParameter(':user_password', $app['security.encoder.bcrypt']->encodePassword($formData['User_password'], ''))
+            ->setParameter(':user_id', $id);
 
         return $queryBuilder->execute();
     }
-
-
-//    public function addTraining($form)
-//    {
-//        $formData = $form->getData();
-//        $queryBuilder = $this->db->createQueryBuilder();
-//        $queryBuilder->insert('Sport')
-//            ->values(
-//                array(
-//                    'Sport_time' => '?',
-//                    'Sport_kcal' => '?',
-//                    'Sport_distance' => '?',
-//                    'Sport_name' => '?'
-//                )
-//            )
-//            ->setParameter(0, $formData['time'])
-//            ->setParameter(1, $formData['kcal'])
-//            ->setParameter(2, $formData['distance'])
-//            ->setParameter(3, $formData['name']);
-//
-//        return $queryBuilder->execute();
-//    }
 }
