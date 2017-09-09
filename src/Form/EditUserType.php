@@ -10,7 +10,6 @@
 namespace Form;
 
 use Symfony\Component\Form\AbstractType;
-use Doctrine\DBAL\Connection;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -24,7 +23,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 class EditUserType extends AbstractType
 {
     /**
-     * {@inheritdoc}
+     * Edit user type
+     * @param FormBuilderInterface $builder
+     * @param array $options
      */
 
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -72,7 +73,7 @@ class EditUserType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
     public function getBlockPrefix()
     {

@@ -3,16 +3,9 @@
 {% block title %}{{ 'button.login'|trans}}{% endblock %}
 
 {% block content %}
-    {#{% form_theme form with ['bootstrap_3_horizontal_layout.html.twig', 'form/form_errors.html.twig'] %}#}
     <h1>{{ 'button.login'|trans}}</h1>
 
     {% if error is defined and error|length %}
-        {#{% include 'default/_single_alert_message.html.twig' with {#}
-        {#is_single_message: true,#}
-        {#is_dismissible: false,#}
-        {#type: 'danger',#}
-        {#message: error,#}
-        {#} %}#}
         {{error}}
     {% endif %}
 

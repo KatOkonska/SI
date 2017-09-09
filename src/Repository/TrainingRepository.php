@@ -185,6 +185,7 @@ class TrainingRepository
     }
 
     /**
+     * Query to find one training by id and user
      * @param $id
      * @param $userID
      * @return array|mixedFind one training by user and ID
@@ -202,7 +203,7 @@ class TrainingRepository
     }
 
     /**
-     * Query to get trainigs
+     * Query to get trainings
      *
      * @return \Doctrine\DBAL\Query\QueryBuilder Result
      */

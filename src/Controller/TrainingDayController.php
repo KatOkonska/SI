@@ -14,7 +14,6 @@ namespace Controller;
 
 
 use Form\DeleteTrainingDayType;
-use Form\EditTrainingDayType;
 use Form\TrainingDayType;
 use Repository\TrainingDayRepository;
 use Repository\TrainingRepository;
@@ -136,8 +135,7 @@ class TrainingDayController implements ControllerProviderInterface
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function editTrainingDayAction(Application $app, $id, Request $request  )
-    {
+    public function editTrainingDayAction(Application $app, $id, Request $request  ){
         $userRepository = new UserRepository($app['db']);
         $user = $userRepository->getUserByLogin($app['user']->getUsername());
         $trainingDayRepository = new TrainingDayRepository($app['db']);
@@ -165,7 +163,7 @@ class TrainingDayController implements ControllerProviderInterface
         {
             if ($form->isValid())
             {
-                  $editSportName = $trainingDayRepository->editTrainingDay($id, $form);
+                $editSportName = $trainingDayRepository->editTrainingDay($id, $form);
                 $app['session']->getFlashBag()->add(
                     'messages',
                     [

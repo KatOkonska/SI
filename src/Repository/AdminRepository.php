@@ -19,7 +19,6 @@
 namespace Repository;
 
 use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\DBALException;
 use Silex\Application;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Utils\Paginator;
@@ -59,10 +58,7 @@ class AdminRepository
      *
      * @return array Result
      */
-    /**
-     * @param Application $app
-     * @return array
-     */
+
     public function showAllUsers(Application $app)
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -251,9 +247,8 @@ class AdminRepository
         return $this->db->delete('Sport_Name', ['Sport_Name_ID' => $id]);
     }
 
-//    paginacja
     /**
-     * Show all users
+     * Show all users (paginated)
      * @param int $page
      * @return array
      */

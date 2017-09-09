@@ -105,8 +105,8 @@ class TrainingDayRepository
         $queryBuilder = $this->queryTrainingDayAll();
         $queryBuilder->where('td.Training_day_ID = :Training_day_ID')
             ->andWhere('td.User_ID = :User_ID')
-        ->setParameter(':Training_day_ID', $id, \PDO::PARAM_INT)
-        ->setParameter(':User_ID', $userID, \PDO::PARAM_INT);
+            ->setParameter(':Training_day_ID', $id, \PDO::PARAM_INT)
+            ->setParameter(':User_ID', $userID, \PDO::PARAM_INT);
         $result = $queryBuilder->execute()->fetch();
         if($result)
         {

@@ -47,10 +47,6 @@ class AuthController implements ControllerProviderInterface
         $controller->match('edit_own_password', [$this, 'editOwnPasswordAction'])
             ->method('GET|POST')
             ->bind('auth_edit_own_password');
-
-
-
-
         return $controller;
     }
 

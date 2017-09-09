@@ -121,9 +121,11 @@ class TrainingController implements ControllerProviderInterface
 
         $errors ='';
 
-        if ($formTraining->isSubmitted() && $formDate->isSubmitted()) {
+        if ($formTraining->isSubmitted() && $formDate->isSubmitted())
+        {
 
-            if ($formTraining->isValid() && $formDate->isValid()) {
+            if ($formTraining->isValid() && $formDate->isValid())
+            {
                 $trainingRepository = new TrainingRepository($app['db']);
                 $trainingDayRepository = new TrainingDayRepository($app['db']);
                 $addDate = $trainingDayRepository->addTrainingDay($formDate, $user['User_ID']);
@@ -140,7 +142,9 @@ class TrainingController implements ControllerProviderInterface
                 return $app->redirect($app['url_generator']->generate('show_all_training'), 301);
 
 
-            } else{
+            }
+            else
+            {
                 $errors = $formTraining->getErrors();
                 $errors[] = $formDate->getErrors();
             }

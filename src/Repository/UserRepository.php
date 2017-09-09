@@ -51,10 +51,12 @@ class UserRepository
      */
     public function loadUserByLogin($login)
     {
-        try {
+        try
+        {
             $user = $this->getUserByLogin($login);
 
-            if (!$user || !count($user)) {
+            if (!$user || !count($user))
+            {
                 throw new UsernameNotFoundException(
                     sprintf('Username "%s" does not exist.', $login)
                 );
@@ -62,7 +64,8 @@ class UserRepository
 
             $roles = $this->getUserRoles($user['User_ID']);
 
-            if (!$roles || !count($roles)) {
+            if (!$roles || !count($roles))
+            {
                 throw new UsernameNotFoundException(
                     sprintf('Username "%s" does not exist.', $login)
                 );
@@ -73,11 +76,15 @@ class UserRepository
                 'password' => $user['User_password'],
                 'roles' => $roles,
             ];
-        } catch (DBALException $exception) {
+        }
+        catch (DBALException $exception)
+        {
             throw new UsernameNotFoundException(
                 sprintf('Username "%s" does not exist.', $login)
             );
-        } catch (UsernameNotFoundException $exception) {
+        }
+        catch (UsernameNotFoundException $exception)
+        {
             throw $exception;
         }
     }
@@ -92,7 +99,8 @@ class UserRepository
      */
     public function getUserByLogin($login)
     {
-        try {
+        try
+        {
             $queryBuilder = $this->db->createQueryBuilder();
             $queryBuilder->select('u.User_ID', 'u.User_login', 'u.User_password')
                 ->from('User', 'u')
@@ -100,7 +108,8 @@ class UserRepository
                 ->setParameter(':login', $login, \PDO::PARAM_STR);
 
             return $queryBuilder->execute()->fetch();
-        } catch (DBALException $exception) {
+        }
+        catch (DBALException $exception) {
             return [];
         }
     }
@@ -121,7 +130,8 @@ class UserRepository
                 ->setParameter(':id', $id, \PDO::PARAM_STR);
 
             return $queryBuilder->execute()->fetch();
-        } catch (DBALException $exception) {
+        }
+        catch (DBALException $exception) {
             return [];
         }
     }
@@ -148,7 +158,8 @@ class UserRepository
                 ->setParameter(':id', $userId, \PDO::PARAM_INT);
             $result = $queryBuilder->execute()->fetchAll();
 
-            if ($result) {
+            if ($result)
+            {
                 $roles = array_column($result, 'Name');
             }
 
@@ -178,8 +189,8 @@ class UserRepository
                     'Role_ID' => '2'
                 )
             )
-        ->setParameter(':login', $formData['login'])
-        ->setParameter(':password', $app['security.encoder.bcrypt']->encodePassword($formData['password'], ''));
+            ->setParameter(':login', $formData['login'])
+            ->setParameter(':password', $app['security.encoder.bcrypt']->encodePassword($formData['password'], ''));
 
 
         return $queryBuilder->execute();

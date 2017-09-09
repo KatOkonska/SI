@@ -27,13 +27,7 @@ class CalendarController implements ControllerProviderInterface
         return $controller;
     }
 
-    /**
-     * Index action.
-     *
-     * @param \Silex\Application $app Silex application
-     *
-     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
-     */
+
     /**
      * Show next trainings
      * @param Application $app

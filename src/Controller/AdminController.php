@@ -74,7 +74,7 @@ class AdminController implements ControllerProviderInterface
     }
 
     /**
-     * Show all users
+     * Show all users (paginated)
      * @param Application $app
      * @param int $page
      * @return mixed
@@ -95,7 +95,7 @@ class AdminController implements ControllerProviderInterface
     }
 
     /**
-     * Show all trainings
+     * Show all trainings (paginated)
      * @param Application $app
      * @param int $page
      * @return mixed
@@ -116,7 +116,7 @@ class AdminController implements ControllerProviderInterface
     }
 
     /**
-     * Show all training days
+     * Show all training days (paginated)
      * @param Application $app
      * @param int $page
      * @return mixed
@@ -139,7 +139,7 @@ class AdminController implements ControllerProviderInterface
     }
 
     /**
-     * Show all sport names
+     * Show all sport names (paginated)
      * @param Application $app
      * @param int $page
      * @return mixed
@@ -212,47 +212,6 @@ class AdminController implements ControllerProviderInterface
         );
     }
 
-
-    /**
-     * Show all trainings
-     * @param Application $app
-     * @return mixed
-     */
-    public function showAllTrainingsAction(Application $app)
-    {
-        $table =[];
-
-        $adminRepository = new AdminRepository($app['db']);
-        $table = $adminRepository->showAllTrainings($app);
-
-
-        return $app['twig']->render
-        (
-            'admin/show_all_trainings.html.twig',
-            ['table' => $table]
-        );
-    }
-
-    /**
-     * Show all training days
-     * @param Application $app
-     * @return mixed
-     */
-    public function showAllTrainingDaysAction(Application $app)
-    {
-        $table =[];
-
-        $adminRepository = new AdminRepository($app['db']);
-        $table = $adminRepository->showAllTrainingDays($app);
-
-
-        return $app['twig']->render
-        (
-            'admin/show_all_training_days.html.twig',
-            ['table' => $table]
-
-        );
-    }
 
     /**
      * Edit user
@@ -425,26 +384,6 @@ class AdminController implements ControllerProviderInterface
                 'error' => $errors,
                 'id' => $id
             ]
-        );
-    }
-
-    /**
-     * Show all sport names
-     * @param Application $app
-     * @return mixed
-     */
-    public function showAllSportNamesAction(Application $app)
-    {
-        $table =[];
-
-        $adminRepository = new AdminRepository($app['db']);
-        $table = $adminRepository->showAllSportNames($app);
-
-
-        return $app['twig']->render
-        (
-            'admin/show_all_sport_names.html.twig',
-            ['table' => $table]
         );
     }
 

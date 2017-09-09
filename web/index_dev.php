@@ -1,8 +1,5 @@
 <?php
 
-//phpinfo();
-//die;
-
 use Symfony\Component\Debug\Debug;
 
 // This check prevents access to debug front controllers that are deployed by accident to production servers.
@@ -23,7 +20,4 @@ $app = require __DIR__.'/../src/app.php';
 require __DIR__.'/../config/dev.php';
 require __DIR__.'/../src/controllers.php';
 $app->run();
-
-//$kaczka = new \Repository\LoggingRepository();
-//$kaczka->findAll();
 

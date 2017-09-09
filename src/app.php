@@ -88,7 +88,8 @@ $app->register(
         'locale_fallbacks' => array('en'),
     ]
 );
-$app->extend('translator', function ($translator, $app) {
+$app->extend('translator', function ($translator, $app)
+{
 
     $translator->addResource('xliff', __DIR__ . '/../translations/messages.en.xlf', 'en', 'messages');
     $translator->addResource('xliff', __DIR__.'/../translations/validators.en.xlf', 'en', 'validators');

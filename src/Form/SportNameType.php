@@ -6,7 +6,6 @@
 namespace Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -19,7 +18,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 class SportNameType extends AbstractType
 {
     /**
-     * {@inheritdoc}
+     * Sport name type
+     * @param FormBuilderInterface $builder
+     * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -48,7 +49,7 @@ class SportNameType extends AbstractType
 
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
     public function getBlockPrefix()
     {

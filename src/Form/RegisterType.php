@@ -20,7 +20,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 class RegisterType extends AbstractType
 {
     /**
-     * {@inheritdoc}
+     * Register type
+     * @param FormBuilderInterface $builder
+     * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -63,53 +65,10 @@ class RegisterType extends AbstractType
             )
         );
 
-//        $builder->add(
-//            'password',
-//            PasswordType::class,
-//            [
-//                'label' => 'label.password',
-//                'required' => true,
-//                'attr' => [
-//                    'max_length' => 32,
-//
-//                ],
-//                'constraints' => [
-//                    new Assert\NotBlank(),
-//                    new Assert\Length(
-//                        [
-//                            'min' => 8,
-//                            'max' => 32,
-//                        ]
-//                    ),
-//                ],
-//            ]
-//        );
-//
-//        $builder->add(
-//            'password2',
-//            PasswordType::class,
-//            [
-//                'label' => 'label.password2',
-//                'required' => true,
-//                'attr' => [
-//                    'max_length' => 32,
-//
-//                ],
-//                'constraints' => [
-//                    new Assert\NotBlank(),
-//                    new Assert\Length(
-//                        [
-//                            'min' => 8,
-//                            'max' => 32,
-//                        ]
-//                    ),
-//                ],
-//            ]
-//        );
     }
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
     public function getBlockPrefix()
     {
